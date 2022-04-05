@@ -18,7 +18,7 @@ Back in this repository, go to `settings` -> `secrets` -> `Actions` and click th
 
 Name the secret "GH_TOKEN" and paste in the token you copied in the previous step.
 
-### 2. Add a secret to the forked repo
+### 3. Personas
 1. A freshman CS major.
 2. A sophomore trying to pick his concentration.
 3. A senior looking to see if he has met all of the graduation requirements.
