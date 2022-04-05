@@ -19,6 +19,6 @@ Back in this repository, go to `settings` -> `secrets` -> `Actions` and click th
 Name the secret "GH_TOKEN" and paste in the token you copied in the previous step.
 
 ### 3. Personas
-1. A freshman CS major.
-2. A sophomore trying to pick his concentration.
+1. A freshman CS major looking to see what classes he has to take next.
+2. A sophomore trying to pick his concentration based off of the classes he has already taken.
 3. A senior looking to see if he has met all of the graduation requirements.
