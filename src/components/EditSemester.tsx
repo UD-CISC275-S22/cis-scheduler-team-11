@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import { Semester } from "../interfaces/semester";
+import { Plan } from "../interfaces/plan";
 
 export function EditSemester({
     changeEditing,
-    semester,
-    editSemester,
-    deleteSemester
+    plan,
+    editPlan,
+    deletePlan
 }: {
     changeEditing: () => void;
-    semester: Semester;
-    editSemester: (id: string, newSemester: Semester) => void;
-    deleteSemester: (id: string) => void;
+    plan: Plan;
+    editPlan: (id: number, newPlan: Plan) => void;
+    deletePlan: (id: number) => void;
 }): JSX.Element {
     const [enrolled, setEnrolled] = useState<boolean>(false);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -19,8 +19,8 @@ export function EditSemester({
         setEnrolled(!enrolled);
     }
     function save() {
-        editSemester(semester.id, {
-            ...semester
+        editPlan(plan.id, {
+            ...plan
         });
         changeEditing();
     }
@@ -42,11 +42,11 @@ export function EditSemester({
                         Cancel
                     </Button>
                     <Button
-                        onClick={() => deleteSemester(semester.id)}
+                        onClick={() => deletePlan(plan.id)}
                         variant="danger"
                         className="me-8"
                     >
-                        Delete Semester
+                        Delete Plan
                     </Button>
                 </Col>
             </Row>
