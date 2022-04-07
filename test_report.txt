@@ -22,7 +22,7 @@
       at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (117 ms)
+  ✕ renders the course name somewhere (125 ms)
 
   ● renders the course name somewhere
 
@@ -34,7 +34,7 @@ FAIL src/App.test.tsx
     [36m<header[39m
       [33mclass[39m=[32m"App-header"[39m
     [36m>[39m
-      [0mUD CISC275 with React Hooks and TypeScript By Shaun & Andrew![0m
+      [0mUD CISC275 with React Hooks and TypeScript By Shaun Gupta & Andrew Long & Andrew Gkonos![0m
     [36m</header>[39m
 
     Ignored nodes: comments, <script />, <style />
@@ -56,7 +56,7 @@ FAIL src/App.test.tsx
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
-            [0mUD CISC275 with React Hooks and TypeScript By Shaun & Andrew![0m
+            [0mUD CISC275 with React Hooks and TypeScript By Shaun Gupta & Andrew Long & Andrew Gkonos![0m
           [36m</header>[39m
           [36m<div>[39m
             [36m<h3>[39m
@@ -371,5 +371,5 @@ All files          |      35 |        0 |   30.76 |      35 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        1.952 s
+Time:        2.062 s
 Ran all test suites.
