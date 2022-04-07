@@ -1,4 +1,5 @@
 import React from "react";
+import Single_Semester_Display from "./components/single_semester";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -11,6 +12,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
+            <Single_Semester_Display></Single_Semester_Display>
         </div>
     );
 }
