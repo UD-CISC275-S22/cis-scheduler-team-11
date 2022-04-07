@@ -9,8 +9,7 @@ const COURSES = courses.map(
 );
 
 export function ClassPicker(): JSX.Element {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [options, setOptions] = useState<Course[]>(COURSES);
+    const [options] = useState<Course[]>(COURSES);
     const [schedule, setSchedule] = useState<string[]>([]);
 
     function chooseSchedule(course: string) {
