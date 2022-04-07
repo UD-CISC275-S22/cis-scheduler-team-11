@@ -6,5 +6,5 @@ export interface Course {
     /** Number of credits for the course */
     credits: number;
     /** The current status of the course */
-    status: string;
+    enrolled: boolean;
 }
