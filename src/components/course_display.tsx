@@ -1,8 +1,8 @@
 import React from "react";
 import { Course } from "../interfaces/course";
 
-function course_display(course: Course): JSX.Element {
-    const { id, title, credits, status } = course;
+function display({ id, title, credits, status }: Course): JSX.Element {
+    //const { id, title, credits, status } = course;
     return (
         <div>
             {title} {id} <br />
@@ -13,4 +13,4 @@ function course_display(course: Course): JSX.Element {
     );
 }
 
-export default course_display;
+export default display;
