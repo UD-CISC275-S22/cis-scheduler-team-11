@@ -1,4 +1,4 @@
-import { Course } from "./course";
+import { Course } from "./Course";
 export interface Semester {
     /** The id of the Semester i.e. Fall 2022 */
     id: string;

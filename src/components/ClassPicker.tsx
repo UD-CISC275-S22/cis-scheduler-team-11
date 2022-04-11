@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Row, Col } from "react-bootstrap";
-import { Course } from "../interfaces/course";
+import { Course } from "../interfaces/Course";
 import courses from "../data/courses.json";
 const COURSES = courses.map(
     (course): Course => ({
