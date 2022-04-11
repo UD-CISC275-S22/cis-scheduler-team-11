@@ -29,6 +29,38 @@
     color: #61dafb;
 }
 
+.row1 {
+    border: 1px solid grey;
+    justify-content: center;
+    padding: 4px;
+    width: 100%;
+    background-color: beige;
+}
+
+.MultSemHead {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 1100px;
+    height: 500px;
+    overflow: scroll;
+    background-color: rgb(160, 229, 250);
+    white-space: nowrap;
+    display: flex;
+}
+
+.col1 {
+    height: auto;
+    border: 1px solid grey;
+    padding-left: 25px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 400px;
+    min-height: 100%;
+    background-color: rgb(253, 191, 55);
+    display: inline-block;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
