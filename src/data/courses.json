@@ -1,0 +1,122 @@
+[
+    {
+        "id": "CISC106",
+        "title": "General Computer Science for Engineers",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC108",
+        "title": "Introduction to Computer Science I",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC210",
+        "title": "Introduction to Systems Programming",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC220",
+        "title": "Data Structures",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC355",
+        "title": "Computers, Ethics and Society",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC275",
+        "title": "Introduction to Software Engineering",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC303",
+        "title": "Automata Theory",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC304",
+        "title": "Logic for Programming",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC320",
+        "title": "Introduction to Algorithms",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC361",
+        "title": "Operating Systems",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "MATH205",
+        "title": "Statisitcal Methods",
+        "credits": 4,
+        "enrolled": false
+    },
+    {
+        "id": "MATH210",
+        "title": "Discrete Mathematics I",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "MATH241",
+        "title": "Analytic Geometry and Calculus A",
+        "credits": 4,
+        "enrolled": false
+    },
+    {
+        "id": "MATH242",
+        "title": "Analytic Geometry and Calculus B",
+        "credits": 4,
+        "enrolled": false
+    },
+    {
+        "id": "CISC498",
+        "title": "Computer Science Senior Design Project I",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "CISC499",
+        "title": "Computer Science Senior Design Project II",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "MATH205",
+        "title": "Statisitcal Methods",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "ENGL110",
+        "title": "Seminar in Composition",
+        "credits": 3,
+        "enrolled": false
+    },
+    {
+        "id": "BHAN135",
+        "title": "Freshman Seminar",
+        "credits": 2,
+        "enrolled": false
+    },
+    {
+        "id": "UNIV101",
+        "title": "First Year Experience I",
+        "credits": 1,
+        "enrolled": false
+    }
+]
