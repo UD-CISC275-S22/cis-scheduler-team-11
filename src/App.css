@@ -29,6 +29,16 @@
     color: #61dafb;
 }
 
+.row1 {
+    min-height: 40vh;
+    display: flex;
+    border: 1px solid red;
+    padding: 4px;
+    width: 30%;
+    height: 40vmin;
+    background-color: blue;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
