@@ -1,7 +1,7 @@
 import React from "react";
 import { Semester } from "../interfaces/Semester";
 import { Course } from "../interfaces/Course";
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import CourseDisplay from "./CourseDisplay";
 
 function SingleSemester({ id, courses }: Semester): JSX.Element {

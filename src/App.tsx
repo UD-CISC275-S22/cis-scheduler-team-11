@@ -6,7 +6,6 @@ import { ClassPicker } from "./components/ClassPicker";
 import { Course } from "./interfaces/Course";
 import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
-import { Col, Container, Row } from "react-bootstrap";
 const COURSES = courses.map(
     (course): Course => ({
         ...course
@@ -20,7 +19,7 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript By Shaun Gupta &
                 Andrew Long & Andrew Gkonos!
             </header>
-            {/*<ClassPicker></ClassPicker>*/}
+            <ClassPicker></ClassPicker>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
