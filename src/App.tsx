@@ -6,6 +6,7 @@ import { ClassPicker } from "./components/ClassPicker";
 import { Course } from "./interfaces/Course";
 import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
+import SingleSemester from "./components/SingleSemester";
 const COURSES = courses.map(
     (course): Course => ({
         ...course
@@ -24,12 +25,12 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            {/*}
-    <Single_Semester_Display
-        id={"Fall 2022"}
-        courses={[COURSES[0], COURSES[1], COURSES[2]]}
-    ></Single_Semester_Display>
-    {*/}
+
+            <SingleSemester
+                id={"Fall 2022"}
+                courses={[COURSES[0], COURSES[1], COURSES[2]]}
+            />
+
             <MultipleSemester
                 semesters={[
                     {
