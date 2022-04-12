@@ -11,7 +11,7 @@
         at div
         at ClassPicker (/home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/src/components/ClassPicker.tsx:12:23)
         at div
-        at App
+        at App (/home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/src/App.tsx:18:29)
 
       at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
       at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
@@ -22,7 +22,7 @@
       at updateHostComponent (node_modules/react-dom/cjs/react-dom.development.js:17632:3)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (125 ms)
+  ✕ renders the course name somewhere (143 ms)
 
   ● renders the course name somewhere
 
@@ -45,6 +45,38 @@ FAIL src/App.test.tsx
       [0mCISC275[0m
     [36m</button>[39m
 
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mIntroduction to Software Engineering[0m
+      [0m: [0m
+      [36m<br />[39m
+      [0mCISC275[0m
+      [0m [0m
+      [36m<br />[39m
+      [0m3[0m
+      [0m Credits[0m
+      [36m<br />[39m
+      [0mNot currently enrolled[0m
+      [0m [0m
+      [36m<br />[39m
+    [36m</div>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mIntroduction to Software Engineering[0m
+      [0m: [0m
+      [36m<br />[39m
+      [0mCISC275[0m
+      [0m [0m
+      [36m<br />[39m
+      [0m3[0m
+      [0m Credits[0m
+      [36m<br />[39m
+      [0mNot currently enrolled[0m
+      [0m [0m
+      [36m<br />[39m
+    [36m</div>[39m
+
     (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
 
     Ignored nodes: comments, <script />, <style />
@@ -58,6 +90,33 @@ FAIL src/App.test.tsx
           [36m>[39m
             [0mUD CISC275 with React Hooks and TypeScript By Shaun Gupta & Andrew Long & Andrew Gkonos![0m
           [36m</header>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"formName"[39m
+              [36m>[39m
+                [0mWhat is your Name?[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mid[39m=[32m"formName"[39m
+                [33mvalue[39m=[32m"UD Student"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<h1>[39m
+            [0mWelcome to your scheduler, [0m
+            [0mUD Student[0m
+            [0m![0m
+          [36m</h1>[39m
+          [36m<h2>[39m
+            [0mHere you will see all of your classes for your major![0m
+          [36m</h2>[39m
+          [36m<h3>[39m
+            [0mBelow you will see which courses you need to take during which semesters.[0m
+          [36m</h3>[39m
+          [36m<br />[39m
           [36m<div>[39m
             [36m<h3>[39m
               [0mAdd Course[0m
@@ -331,6 +390,316 @@ FAIL src/App.test.tsx
             [36m</code>[39m
             [0m and save. This page will automatically reload.[0m
           [36m</p>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"MultSemHead container"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col1 col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [0mFall 2022[0m
+                [0m [0m
+                [36m<br />[39m
+                [0mTotal Credits: [0m
+                [0m12[0m
+                [0m [0m
+                [36m<br />[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mGeneral Computer Science for Engineers[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC106[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mIntroduction to Computer Science I[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC108[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mIntroduction to Systems Programming[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC210[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mData Structures[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC220[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col1 col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [0mSpring 2022[0m
+                [0m [0m
+                [36m<br />[39m
+                [0mTotal Credits: [0m
+                [0m6[0m
+                [0m [0m
+                [36m<br />[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mIntroduction to Computer Science I[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC108[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mIntroduction to Systems Programming[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC210[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col1 col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [0mFall 2023[0m
+                [0m [0m
+                [36m<br />[39m
+                [0mTotal Credits: [0m
+                [0m3[0m
+                [0m [0m
+                [36m<br />[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mData Structures[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC220[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col1 col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [0mSpring 2023[0m
+                [0m [0m
+                [36m<br />[39m
+                [0mTotal Credits: [0m
+                [0m6[0m
+                [0m [0m
+                [36m<br />[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mComputers, Ethics and Society[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC355[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mIntroduction to Software Engineering[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC275[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col1 col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [0mFall 2024[0m
+                [0m [0m
+                [36m<br />[39m
+                [0mTotal Credits: [0m
+                [0m3[0m
+                [0m [0m
+                [36m<br />[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mData Structures[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC220[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col1 col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [0mSpring 2024[0m
+                [0m [0m
+                [36m<br />[39m
+                [0mTotal Credits: [0m
+                [0m6[0m
+                [0m [0m
+                [36m<br />[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mComputers, Ethics and Society[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC355[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row1 row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [0mIntroduction to Software Engineering[0m
+                  [0m: [0m
+                  [36m<br />[39m
+                  [0mCISC275[0m
+                  [0m [0m
+                  [36m<br />[39m
+                  [0m3[0m
+                  [0m Credits[0m
+                  [36m<br />[39m
+                  [0mNot currently enrolled[0m
+                  [0m [0m
+                  [36m<br />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -354,22 +723,24 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
--------------------|---------|----------|---------|---------|-------------------
-File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
--------------------|---------|----------|---------|---------|-------------------
-All files          |      35 |        0 |   30.76 |      35 |                   
- src               |     100 |      100 |     100 |     100 |                   
-  App.tsx          |     100 |      100 |     100 |     100 |                   
- src/components    |   31.57 |        0 |      25 |   31.57 |                   
-  ClassPicker.tsx  |      50 |        0 |   42.85 |      50 | 16-23,35-46       
-  EditSemester.tsx |       0 |      100 |       0 |       0 | 16-45             
- src/interfaces    |       0 |        0 |       0 |       0 |                   
-  course.ts        |       0 |        0 |       0 |       0 |                   
-  plan.ts          |       0 |        0 |       0 |       0 |                   
-  semester.ts      |       0 |        0 |       0 |       0 |                   
--------------------|---------|----------|---------|---------|-------------------
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   54.28 |       25 |   52.17 |   54.28 |                   
+ src                   |      80 |      100 |   66.66 |      80 |                   
+  App.tsx              |      80 |      100 |   66.66 |      80 | 20                
+ src/components        |      50 |       25 |      50 |      50 |                   
+  ClassPicker.tsx      |      50 |        0 |   42.85 |      50 | 16-23,35-46       
+  CourseDisplay.tsx    |     100 |       50 |     100 |     100 | 12                
+  EditSemester.tsx     |       0 |      100 |       0 |       0 | 16-45             
+  MultipleSemester.tsx |     100 |      100 |     100 |     100 |                   
+  SingleSemester.tsx   |     100 |      100 |     100 |     100 |                   
+  course_display.tsx   |       0 |      100 |       0 |       0 | 5-6               
+ src/interfaces        |       0 |        0 |       0 |       0 |                   
+  projectInterfaces.ts |       0 |        0 |       0 |       0 |                   
+-----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.062 s
+Time:        2.191 s
 Ran all test suites.
