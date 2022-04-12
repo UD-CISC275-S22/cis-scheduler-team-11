@@ -1,6 +1,6 @@
 import React from "react";
-import { Semester } from "../interfaces/Semester";
-import { MultSemester } from "../interfaces/MultSemester";
+import { Semester } from "../interfaces/projectInterfaces";
+import { MultSemester } from "../interfaces/projectInterfaces";
 import { Container } from "react-bootstrap";
 import SingleSemester from "./SingleSemester";
 
