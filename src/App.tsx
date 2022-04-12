@@ -1,5 +1,6 @@
 import React from "react";
-//import Single_Semester_Display from "./components/SingleSemester";
+//import SingleSemester from "./components/SingleSemester";
+
 import "./App.css";
 import { ClassPicker } from "./components/ClassPicker";
 
@@ -25,10 +26,10 @@ function App(): JSX.Element {
                 automatically reload.
             </p>
             {/*}
-    <Single_Semester_Display
+    <SingleSemester
         id={"Fall 2022"}
         courses={[COURSES[0], COURSES[1], COURSES[2]]}
-    ></Single_Semester_Display>
+    />
     {*/}
             <MultipleSemester
                 semesters={[
