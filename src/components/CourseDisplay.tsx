@@ -1,5 +1,5 @@
 import React from "react";
-import { Course } from "../interfaces/Course";
+import { Course } from "../interfaces/projectInterfaces";
 
 function CourseDisplay(course: Course): JSX.Element {
     const { id, title, credits, enrolled } = course;
