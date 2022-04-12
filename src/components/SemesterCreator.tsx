@@ -33,7 +33,7 @@ export function SemesterCreator(): JSX.Element {
 
     return (
         <div>
-            <h3>Add Course</h3>
+            <h3>Add Semester</h3>
             <Row>
                 <Col>
                     <div className="semesterAdd">
