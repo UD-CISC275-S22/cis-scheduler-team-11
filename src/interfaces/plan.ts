@@ -1,4 +1,4 @@
-import { Semester } from "./semester";
+import { Semester } from "./Semester";
 export interface Plan {
     /** The id of the plan */
     id: number;
