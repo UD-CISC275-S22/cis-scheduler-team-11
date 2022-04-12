@@ -1,7 +1,7 @@
 import React from "react";
 import Single_Semester_Display from "./components/single_semester";
+import { CoursePicker } from "./components/CoursePicker";
 import "./App.css";
-import { ClassPicker } from "./components/ClassPicker";
 
 function App(): JSX.Element {
     return (
@@ -10,15 +10,15 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript By Shaun Gupta &
                 Andrew Long & Andrew Gkonos!
             </header>
-            <ClassPicker></ClassPicker>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            <Single_Semester_Display
+            <CoursePicker></CoursePicker>
+            {/* <Single_Semester_Display
                 id={""}
                 courses={[]}
-            ></Single_Semester_Display>
+            ></Single_Semester_Display> */}
         </div>
     );
 }

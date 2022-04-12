@@ -10,12 +10,12 @@ function Single_Semester_Display({ id, courses }: Semester): JSX.Element {
             <div>
                 <Container>
                     <Col>
-                        {id}
+                        {/* {id}
                         {courses.map((course: Course) => (
                             <Row className="row1" key={course.id}>
-                                <course_display course={course} />
+                                <course_display course={course.id} />
                             </Row>
-                        ))}
+                        ))} */}
                     </Col>
                 </Container>
             </div>
