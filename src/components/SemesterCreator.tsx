@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Semester } from "../interfaces/projectInterfaces";
-// import courses from "../data/courses.json";
-// const COURSES = courses.map(
-//     (course): Course => ({
-//         ...course
-//     })
-// );
-const SEASONS = ["Fall", "Winter", "Spring", "Summer"];
-const DEFAULT_SEASON = SEASONS[0];
 
 export function SemesterCreator(): JSX.Element {
-    const [semesterSeason, setSemesterSeason] =
-        useState<string>(DEFAULT_SEASON);
+    const [semesterSeason, setSemesterSeason] = useState<string>("Fall");
     const [semesterYear, setSemesterYear] = useState<string>("2022");
     const [semesterList, setSemesterList] = useState<Semester[]>([]);
 
@@ -24,11 +15,13 @@ export function SemesterCreator(): JSX.Element {
             setSemesterList(newSemesterList);
         }
     }
+    function deleteSemester(semester: Semester) {
+        const newSemesterList = [...semesterList];
+        newSemesterList.splice(1, newSemesterList.indexOf(semester));
+        setSemesterList(newSemesterList);
+    }
     function updateSeason(event: React.ChangeEvent<HTMLSelectElement>) {
         setSemesterSeason(event.target.value);
-    }
-    function deleteSemester() {
-        setSemesterList([]);
     }
 
     return (
@@ -67,11 +60,18 @@ export function SemesterCreator(): JSX.Element {
                     </div>
                 </Col>
                 <Col>
-                    <strong>Semester:</strong>
+                    <strong>Semesters:</strong>
                     {semesterList.map((semester: Semester) => (
-                        <li key={semester.id}>{semester.id}</li>
+                        <div key={semester.id} style={{ marginBottom: "4px" }}>
+                            {semester.id}{" "}
+                            <Button
+                                size="sm"
+                                onClick={() => deleteSemester(semester)}
+                            >
+                                Delete Semester
+                            </Button>
+                        </div>
                     ))}
-                    <Button onClick={deleteSemester}>Delete Semester</Button>
                 </Col>
             </Row>
         </div>
