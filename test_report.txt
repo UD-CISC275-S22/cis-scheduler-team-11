@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (96 ms)
+  ✕ renders the course name somewhere (88 ms)
 
   ● renders the course name somewhere
 
@@ -99,70 +99,71 @@ FAIL src/App.test.tsx
           [36m</p>[39m
           [36m<div>[39m
             [36m<h3>[39m
-              [0mAdd Course[0m
+              [0mAdd Semester[0m
             [36m</h3>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"row"[39m
+              [33mclass[39m=[32m"semesterAdd row"[39m
             [36m>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"col"[39m
               [36m>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"semesterAdd"[39m
+                  [33mclass[39m=[32m"semesterAddForm"[39m
                 [36m>[39m
-                  [36m<div>[39m
-                    [36m<label[39m
-                      [33mclass[39m=[32m"form-label"[39m
-                      [33mfor[39m=[32m"Semester"[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"Semester"[39m
+                  [36m>[39m
+                    [0mAdd Semester[0m
+                  [36m</label>[39m
+                  [36m<select[39m
+                    [33mclass[39m=[32m"form-select"[39m
+                    [33mid[39m=[32m"Semester"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Fall"[39m
                     [36m>[39m
-                      [0mAdd Semester[0m
-                    [36m</label>[39m
-                    [36m<select[39m
-                      [33mclass[39m=[32m"form-select"[39m
-                      [33mid[39m=[32m"Semester"[39m
+                      [0mFall[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Winter"[39m
                     [36m>[39m
-                      [36m<option[39m
-                        [33mvalue[39m=[32m"Fall"[39m
-                      [36m>[39m
-                        [0mFall[0m
-                      [36m</option>[39m
-                      [36m<option[39m
-                        [33mvalue[39m=[32m"Winter"[39m
-                      [36m>[39m
-                        [0mWinter[0m
-                      [36m</option>[39m
-                      [36m<option[39m
-                        [33mvalue[39m=[32m"Spring"[39m
-                      [36m>[39m
-                        [0mSpring[0m
-                      [36m</option>[39m
-                      [36m<option[39m
-                        [33mvalue[39m=[32m"Summer"[39m
-                      [36m>[39m
-                        [0mSummer[0m
-                      [36m</option>[39m
-                    [36m</select>[39m
-                    [36m<input[39m
-                      [33mclass[39m=[32m"form-control"[39m
-                      [33mid[39m=[32m"Semester"[39m
-                      [33mtype[39m=[32m"number"[39m
-                      [33mvalue[39m=[32m"2022"[39m
-                    [36m/>[39m
-                    [36m<button[39m
-                      [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
-                      [33mtype[39m=[32m"button"[39m
+                      [0mWinter[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Spring"[39m
                     [36m>[39m
-                      [0mAdd[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
+                      [0mSpring[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"Summer"[39m
+                    [36m>[39m
+                      [0mSummer[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"Semester"[39m
+                    [33mtype[39m=[32m"number"[39m
+                    [33mvalue[39m=[32m"2022"[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mAdd[0m
+                  [36m</button>[39m
                 [36m</div>[39m
               [36m</div>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
+                [33mclass[39m=[32m"semesterAddListDelete col"[39m
               [36m>[39m
                 [36m<strong>[39m
                   [0mSemester:[0m
                 [36m</strong>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"semesterAddList"[39m
+                [36m/>[39m
                 [36m<button[39m
                   [33mclass[39m=[32m"btn btn-primary"[39m
                   [33mtype[39m=[32m"button"[39m
@@ -516,7 +517,7 @@ All files              |   38.77 |    16.66 |   34.48 |   38.77 |
   CourseDisplay.tsx    |     100 |       50 |     100 |     100 | 12                
   EditSemester.tsx     |       0 |      100 |       0 |       0 | 16-45             
   MultipleSemester.tsx |     100 |      100 |     100 |     100 |                   
-  SemesterCreator.tsx  |    37.5 |        0 |   14.28 |    37.5 | 20-31,56-72       
+  SemesterCreator.tsx  |    37.5 |        0 |   14.28 |    37.5 | 20-31,58-74       
   SingleSemester.tsx   |     100 |      100 |     100 |     100 |                   
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   projectInterfaces.ts |       0 |        0 |       0 |       0 |                   
@@ -524,5 +525,5 @@ All files              |   38.77 |    16.66 |   34.48 |   38.77 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.411 s
+Time:        2.177 s
 Ran all test suites.
