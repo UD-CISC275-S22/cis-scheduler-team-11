@@ -33,44 +33,47 @@ export function SemesterCreator(): JSX.Element {
 
     return (
         <div>
-            <h3>Add Course</h3>
-            <Row>
+            <h3>Add Semester</h3>
+            <Row className="semesterAdd">
                 <Col>
-                    <div className="semesterAdd">
-                        <Form.Group controlId="Semester">
-                            <Form.Label>Add Semester</Form.Label>
-                            <Form.Select
-                                value={semesterSeason}
-                                onChange={updateSeason}
-                            >
-                                <option value="Fall">Fall</option>
-                                <option value="Winter">Winter</option>
-                                <option value="Spring">Spring</option>
-                                <option value="Summer">Summer</option>
-                            </Form.Select>
-                            <Form.Control
-                                type="number"
-                                value={semesterYear}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => setSemesterYear(event.target.value)}
-                            />
-                            <Button
-                                size="sm"
-                                onClick={() =>
-                                    addSemester(semesterSeason, semesterYear)
-                                }
-                            >
-                                Add
-                            </Button>
-                        </Form.Group>
-                    </div>
+                    <Form.Group
+                        controlId="Semester"
+                        className="semesterAddForm"
+                    >
+                        <Form.Label>Add Semester</Form.Label>
+                        <Form.Select
+                            value={semesterSeason}
+                            onChange={updateSeason}
+                        >
+                            <option value="Fall">Fall</option>
+                            <option value="Winter">Winter</option>
+                            <option value="Spring">Spring</option>
+                            <option value="Summer">Summer</option>
+                        </Form.Select>
+                        <Form.Control
+                            type="number"
+                            value={semesterYear}
+                            onChange={(
+                                event: React.ChangeEvent<HTMLInputElement>
+                            ) => setSemesterYear(event.target.value)}
+                        />
+                        <Button
+                            size="sm"
+                            onClick={() =>
+                                addSemester(semesterSeason, semesterYear)
+                            }
+                        >
+                            Add
+                        </Button>
+                    </Form.Group>
                 </Col>
-                <Col>
+                <Col className="semesterAddListDelete">
                     <strong>Semester:</strong>
-                    {semesterList.map((semester: Semester) => (
-                        <li key={semester.id}>{semester.id}</li>
-                    ))}
+                    <div className="semesterAddList">
+                        {semesterList.map((semester: Semester) => (
+                            <li key={semester.id}>{semester.id}</li>
+                        ))}
+                    </div>
                     <Button onClick={deleteSemester}>Delete Semester</Button>
                 </Col>
             </Row>
