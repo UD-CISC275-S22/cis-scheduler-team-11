@@ -27,9 +27,10 @@ export interface Plan {
     /** An array of the Semesters and their courses */
     semesters: Semester[];
 }
+
+/*
 export interface ButtonData {
     hook: [
-        () => void,
         (
             | number
             | string
@@ -42,7 +43,22 @@ export interface ButtonData {
             | boolean[]
             | object[]
             | JSX.Element[]
-        )
+        ),
+        (
+            arg:
+                | void
+                | number
+                | string
+                | string
+                | boolean
+                | object
+                | JSX.Element
+                | number[]
+                | string[]
+                | boolean[]
+                | object[]
+                | JSX.Element[]
+        ) => void
     ];
     text: string;
-}
+}*/

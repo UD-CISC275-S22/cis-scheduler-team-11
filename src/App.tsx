@@ -4,7 +4,8 @@ import { Course } from "./interfaces/projectInterfaces";
 import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
 import { SemesterCreator } from "./components/SemesterCreator";
-import { Form } from "react-bootstrap";
+import { DropdownMenu } from "./components/DropdownMenu";
+import { Form, Button } from "react-bootstrap";
 const COURSES = courses.map(
     (course): Course => ({
         ...course
@@ -49,6 +50,7 @@ function App(): JSX.Element {
     {*/
                 <SemesterCreator></SemesterCreator>
             }
+            <DropdownMenu buttons={[<Button key={1}>hi</Button>]} />
             <MultipleSemester
                 semesters={[
                     {
