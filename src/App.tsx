@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-//import SingleSemester from "./components/SingleSemester";
-
 import "./App.css";
 import { ClassPicker } from "./components/ClassPicker";
 import { Course } from "./interfaces/projectInterfaces";
@@ -8,7 +6,10 @@ import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
 import SingleSemester from "./components/SingleSemester";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
+import { SemesterCreator } from "./components/SemesterCreator";
+import { DropdownMenu } from "./components/DropdownMenu";
+
 const COURSES = courses.map(
     (course): Course => ({
         ...course
@@ -40,17 +41,45 @@ function App(): JSX.Element {
                 semesters.
             </h3>
             <br />
-            <ClassPicker></ClassPicker>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            {/*}
+            {
+                /*}
     <SingleSemester
         id={"Fall 2022"}
         courses={[COURSES[0], COURSES[1], COURSES[2]]}
     />
-    {*/}
+    {*/
+                <SemesterCreator></SemesterCreator>
+            }
+            <DropdownMenu
+                horizontal={false}
+                buttons={[
+                    <Button size="sm" key={1}>
+                        edit
+                    </Button>,
+                    <Button size="sm" key={2}>
+                        delete
+                    </Button>,
+                    <Button size="sm" key={3}>
+                        move
+                    </Button>,
+                    <Button size="sm" key={4}>
+                        option1
+                    </Button>,
+                    <Button size="sm" key={5}>
+                        option2
+                    </Button>,
+                    <Button size="sm" key={6}>
+                        option3
+                    </Button>,
+                    <Button size="sm" key={7}>
+                        option4
+                    </Button>
+                ]}
+            />
             <MultipleSemester
                 semesters={[
                     {

@@ -131,6 +131,79 @@
 }
 */
 
+.semesterAdd {
+    width: 80%;
+    justify-content: center;
+    background-color: rgb(112, 24, 228);
+    border: 5px solid grey;
+    margin: auto;
+    height: 275px;
+}
+.semesterAddForm {
+    background-color: rgb(44, 24, 228);
+    border: 1px solid grey;
+}
+.semesterAddListDelete {
+    background-color: rgb(106, 92, 238);
+    border: 1px solid grey;
+}
+.semesterAddList {
+    background-color: rgb(21, 4, 177);
+    border: 1px solid grey;
+    overflow: scroll;
+    max-height: 195px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.semesterAddList::-webkit-scrollbar {
+    display: none;
+}
+
+.dropdownVertical {
+    overflow: visible;
+    height: 32px;
+    width: 71px;
+    border: 0px solid grey;
+    position: relative;
+    font-size: 34px;
+    display: flex;
+}
+
+.dropdownHorizontal {
+    overflow: visible;
+    height: 32px;
+    width: 71px;
+    border: 0px solid grey;
+    position: relative;
+    font-size: 34px;
+    white-space: nowrap;
+    display: flex;
+}
+
+.dropdownDots {
+    position: relative;
+    padding-left: 17px;
+    padding-right: 12px;
+}
+
+.dropdownMenuVertical {
+    position: relative;
+    width: 70px;
+    border: 0px solid rgb(112, 51, 51);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.dropdownMenuHorizontal {
+    position: relative;
+    top: -14px;
+    height: 32px;
+    border: 0px solid rgb(52, 122, 95);
+    padding-left: 0px;
+    padding-right: 8px;
+    white-space: nowrap;
+    display: flex;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

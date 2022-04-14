@@ -27,3 +27,42 @@ export interface Plan {
     /** An array of the Semesters and their courses */
     years: Semester[][];
 }
+
+export interface Buttons {
+    buttons: JSX.Element[];
+    horizontal: boolean;
+}
+/*
+export interface ButtonData {
+    hook: [
+        (
+            | number
+            | string
+            | string
+            | boolean
+            | object
+            | JSX.Element
+            | number[]
+            | string[]
+            | boolean[]
+            | object[]
+            | JSX.Element[]
+        ),
+        (
+            arg:
+                | void
+                | number
+                | string
+                | string
+                | boolean
+                | object
+                | JSX.Element
+                | number[]
+                | string[]
+                | boolean[]
+                | object[]
+                | JSX.Element[]
+        ) => void
+    ];
+    text: string;
+}*/
