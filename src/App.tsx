@@ -7,6 +7,7 @@ import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
 //import SingleSemester from "./components/SingleSemester";
 import { Form, Button } from "react-bootstrap";
+import { ClassPicker } from "./components/ClassPicker";
 import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
 
@@ -45,15 +46,8 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            {
-                /*}
-    <SingleSemester
-        id={"Fall 2022"}
-        courses={[COURSES[0], COURSES[1], COURSES[2]]}
-    />
-    {*/
-                <SemesterCreator></SemesterCreator>
-            }
+            <ClassPicker></ClassPicker>
+            <SemesterCreator></SemesterCreator>
             <DropdownMenu
                 horizontal={false}
                 buttons={[
