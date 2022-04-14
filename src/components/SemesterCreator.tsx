@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Semester } from "../interfaces/projectInterfaces";
+import { DropdownMenu } from "./DropdownMenu";
 // import courses from "../data/courses.json";
 // const COURSES = courses.map(
 //     (course): Course => ({
@@ -71,7 +72,72 @@ export function SemesterCreator(): JSX.Element {
                     <strong>Semester:</strong>
                     <div className="semesterAddList">
                         {semesterList.map((semester: Semester) => (
-                            <li key={semester.id}>{semester.id}</li>
+                            <li
+                                key={semester.id}
+                                style={{
+                                    display: "flex",
+                                    height: "33px",
+                                    border: "1px solid black"
+                                }}
+                            >
+                                <Col>{semester.id} </Col>
+                                <Col>
+                                    <DropdownMenu
+                                        horizontal={true}
+                                        buttons={[
+                                            <Button
+                                                variant="secondary"
+                                                size="sm"
+                                                key={1}
+                                            >
+                                                edit
+                                            </Button>,
+                                            <Button
+                                                variant="danger"
+                                                size="sm"
+                                                key={2}
+                                            >
+                                                delete
+                                            </Button> /*,
+                                            <Button
+                                                variant="secondary"
+                                                size="sm"
+                                                key={3}
+                                            >
+                                                move
+                                            </Button>,
+                                            <Button
+                                                variant="secondary"
+                                                size="sm"
+                                                key={4}
+                                            >
+                                                option1
+                                            </Button>,
+                                            <Button
+                                                variant="secondary"
+                                                size="sm"
+                                                key={5}
+                                            >
+                                                option2
+                                            </Button>,
+                                            <Button
+                                                variant="secondary"
+                                                size="sm"
+                                                key={6}
+                                            >
+                                                option3
+                                            </Button>,
+                                            <Button
+                                                variant="secondary"
+                                                size="sm"
+                                                key={7}
+                                            >
+                                                option4
+                                            </Button>*/
+                                        ]}
+                                    />
+                                </Col>
+                            </li>
                         ))}
                     </div>
                     <Button onClick={deleteSemester}>Delete Semester</Button>
