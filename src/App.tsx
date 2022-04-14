@@ -51,7 +51,7 @@ function App(): JSX.Element {
                 <SemesterCreator></SemesterCreator>
             }
             <DropdownMenu
-                horizontal={true}
+                horizontal={false}
                 buttons={[
                     <Button size="sm" key={1}>
                         edit
@@ -67,6 +67,12 @@ function App(): JSX.Element {
                     </Button>,
                     <Button size="sm" key={5}>
                         option2
+                    </Button>,
+                    <Button size="sm" key={6}>
+                        option3
+                    </Button>,
+                    <Button size="sm" key={7}>
+                        option4
                     </Button>
                 ]}
             />

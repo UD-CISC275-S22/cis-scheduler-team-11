@@ -83,7 +83,7 @@ export function SemesterCreator(): JSX.Element {
                                 <Col>{semester.id} </Col>
                                 <Col>
                                     <DropdownMenu
-                                        horizontal={false}
+                                        horizontal={true}
                                         buttons={[
                                             <Button
                                                 variant="secondary"

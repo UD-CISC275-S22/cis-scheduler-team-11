@@ -5,6 +5,9 @@ import { Buttons } from "../interfaces/projectInterfaces";
 export function DropdownMenu(Buttons: Buttons): JSX.Element {
     const [display, setDisplay] = useState<boolean>(false);
     let key = 0;
+    const topStyleV = {
+        top: "" + (-1 + -31 * (Buttons.buttons.length / 2 - 0.5)) + "px"
+    };
     return (
         <div
             className={
@@ -26,25 +29,22 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                         "dropdownMenu" +
                         (Buttons.horizontal ? "Horizontal" : "Vertical")
                     }
-                    style={{
-                        /* +*/
-                        top:
-                            "" +
-                            (-21 +
-                                (-31.25 * (Buttons.buttons.length + 1)) / 2) +
-                            "px"
-                    }}
+                    style={
+                        Buttons.horizontal
+                            ? { position: "relative" }
+                            : topStyleV
+                    }
                 >
                     {Buttons.horizontal &&
                         Buttons.buttons.map(
                             (button: JSX.Element): JSX.Element => (
-                                <Col key={key++}>h{button}</Col>
+                                <Col key={key++}>{button}</Col>
                             )
                         )}
                     {!Buttons.horizontal &&
                         Buttons.buttons.map(
                             (button: JSX.Element): JSX.Element => (
-                                <Row key={key++}>v{button}</Row>
+                                <Row key={key++}>{button}</Row>
                             )
                         )}
                 </Container>
