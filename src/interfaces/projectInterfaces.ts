@@ -30,6 +30,7 @@ export interface Plan {
 
 export interface Buttons {
     buttons: JSX.Element[];
+    horizontal: boolean;
 }
 /*
 export interface ButtonData {

@@ -51,6 +51,7 @@ function App(): JSX.Element {
                 <SemesterCreator></SemesterCreator>
             }
             <DropdownMenu
+                horizontal={true}
                 buttons={[
                     <Button size="sm" key={1}>
                         edit

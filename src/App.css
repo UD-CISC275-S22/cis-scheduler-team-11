@@ -115,12 +115,20 @@
     display: none;
 }
 
-.dropdown {
+.dropdownVertical {
     overflow: visible;
     height: 32px;
     width: 71px;
     border: 1px solid grey;
-    position: absolute;
+    position: relative;
+    font-size: 34px;
+}
+
+.dropdownHorizontal {
+    overflow: visible;
+    height: 32px;
+    border: 1px solid grey;
+    position: relative;
     font-size: 34px;
 }
 
@@ -131,11 +139,20 @@
     padding-right: 12px;
 }
 
-.dropdownMenu {
+.dropdownMenuVertical {
     position: relative;
     left: 62px;
     width: 70px;
     border: 1px solid rgb(112, 51, 51);
+    z-index: 100;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.dropdownMenuHorizontal {
+    position: relative;
+    left: 70px;
+    height: 48px;
+    border: 1px solid rgb(52, 122, 95);
     z-index: 100;
     padding-left: 12px;
     padding-right: 12px;

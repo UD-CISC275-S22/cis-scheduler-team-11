@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import { Buttons } from "../interfaces/projectInterfaces";
 
 export function DropdownMenu(Buttons: Buttons): JSX.Element {
     const [display, setDisplay] = useState<boolean>(false);
     let key = 0;
     return (
-        <div className="dropdown">
+        <div
+            className={
+                "dropdown" + (Buttons.horizontal ? "Horizontal" : "Vertical")
+            }
+        >
             <Button
                 variant="secondary"
                 className="dropdownDots"
@@ -18,7 +22,10 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
             </Button>
             {display && (
                 <Container
-                    className="dropdownMenu"
+                    className={
+                        "dropdownMenu" +
+                        (Buttons.horizontal ? "Horizontal" : "Vertical")
+                    }
                     style={{
                         /* +*/
                         top:
@@ -28,11 +35,18 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                             "px"
                     }}
                 >
-                    {Buttons.buttons.map(
-                        (button: JSX.Element): JSX.Element => (
-                            <Row key={key++}>{button}</Row>
-                        )
-                    )}
+                    {Buttons.horizontal &&
+                        Buttons.buttons.map(
+                            (button: JSX.Element): JSX.Element => (
+                                <Col key={key++}>h{button}</Col>
+                            )
+                        )}
+                    {!Buttons.horizontal &&
+                        Buttons.buttons.map(
+                            (button: JSX.Element): JSX.Element => (
+                                <Row key={key++}>v{button}</Row>
+                            )
+                        )}
                 </Container>
             )}
         </div>

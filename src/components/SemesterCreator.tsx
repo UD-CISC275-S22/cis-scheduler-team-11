@@ -83,6 +83,7 @@ export function SemesterCreator(): JSX.Element {
                                 <Col>{semester.id} </Col>
                                 <Col>
                                     <DropdownMenu
+                                        horizontal={false}
                                         buttons={[
                                             <Button
                                                 variant="secondary"
@@ -92,12 +93,12 @@ export function SemesterCreator(): JSX.Element {
                                                 edit
                                             </Button>,
                                             <Button
-                                                variant="secondary"
+                                                variant="danger"
                                                 size="sm"
                                                 key={2}
                                             >
                                                 delete
-                                            </Button>,
+                                            </Button> /*,
                                             <Button
                                                 variant="secondary"
                                                 size="sm"
@@ -132,7 +133,7 @@ export function SemesterCreator(): JSX.Element {
                                                 key={7}
                                             >
                                                 option4
-                                            </Button>
+                                            </Button>*/
                                         ]}
                                     />
                                 </Col>
