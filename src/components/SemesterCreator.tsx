@@ -17,7 +17,8 @@ export function SemesterCreator(): JSX.Element {
         const semesterId = season + " " + year;
         const newSemester = { id: semesterId, courses: [] };
         const newSemesterList = [...semesterList, newSemester];
-        if (semesterList.find(({ id }) => (id === semesterId) !== null)) {
+        const check = semesterList.filter(({ id }) => id === semesterId);
+        if (check.length === 0) {
             setSemesterList(newSemesterList);
         }
     }
