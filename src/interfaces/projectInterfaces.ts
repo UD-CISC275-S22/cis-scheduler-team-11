@@ -25,5 +25,44 @@ export interface Plan {
     /** The id of the plan */
     id: number;
     /** An array of the Semesters and their courses */
-    semesters: Semester[];
+    years: Semester[][];
 }
+
+export interface Buttons {
+    buttons: JSX.Element[];
+    horizontal: boolean;
+}
+/*
+export interface ButtonData {
+    hook: [
+        (
+            | number
+            | string
+            | string
+            | boolean
+            | object
+            | JSX.Element
+            | number[]
+            | string[]
+            | boolean[]
+            | object[]
+            | JSX.Element[]
+        ),
+        (
+            arg:
+                | void
+                | number
+                | string
+                | string
+                | boolean
+                | object
+                | JSX.Element
+                | number[]
+                | string[]
+                | boolean[]
+                | object[]
+                | JSX.Element[]
+        ) => void
+    ];
+    text: string;
+}*/

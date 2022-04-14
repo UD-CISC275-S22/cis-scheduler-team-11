@@ -54,13 +54,32 @@
     display: none;
 }
 
+.MultSemHead2 {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 95%;
+    height: 90%;
+    overflow: scroll;
+    background-color: rgb(160, 229, 250);
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+    top: 30px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.MultSemHead2::-webkit-scrollbar {
+    display: none;
+}
+
 .col1 {
     border: 1px solid grey;
     padding-left: 25px;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    min-width: 400px;
+    min-width: 350px;
     min-height: 100%;
     background-color: rgb(253, 191, 55);
     display: inline-block;
@@ -74,6 +93,31 @@
     display: none;
 }
 
+.yearHead {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 1100px;
+    background-color: rgb(241, 120, 64);
+}
+
+.yearSubHead {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 97.5%;
+    height: 500px;
+    background-color: rgb(64, 241, 153);
+    white-space: nowrap;
+    display: flex;
+}
+.yearName {
+    border: 1px solid grey;
+    padding: 5px;
+    position: relative;
+    left: 10px;
+    top: 0px;
+    height: 40px;
+    font-weight: bold;
+}
 /*
  Hide scrollbar for Chrome, Safari and Opera
 .example::-webkit-scrollbar {
@@ -113,6 +157,51 @@
 }
 .semesterAddList::-webkit-scrollbar {
     display: none;
+}
+
+.dropdownVertical {
+    overflow: visible;
+    height: 32px;
+    width: 71px;
+    border: 0px solid grey;
+    position: relative;
+    font-size: 34px;
+    display: flex;
+}
+
+.dropdownHorizontal {
+    overflow: visible;
+    height: 32px;
+    width: 71px;
+    border: 0px solid grey;
+    position: relative;
+    font-size: 34px;
+    white-space: nowrap;
+    display: flex;
+}
+
+.dropdownDots {
+    position: relative;
+    padding-left: 17px;
+    padding-right: 12px;
+}
+
+.dropdownMenuVertical {
+    position: relative;
+    width: 70px;
+    border: 0px solid rgb(112, 51, 51);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.dropdownMenuHorizontal {
+    position: relative;
+    top: -14px;
+    height: 32px;
+    border: 0px solid rgb(52, 122, 95);
+    padding-left: 0px;
+    padding-right: 8px;
+    white-space: nowrap;
+    display: flex;
 }
 
 @keyframes App-logo-spin {
