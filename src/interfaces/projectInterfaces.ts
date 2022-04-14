@@ -28,6 +28,9 @@ export interface Plan {
     semesters: Semester[];
 }
 
+export interface Buttons {
+    buttons: JSX.Element[];
+}
 /*
 export interface ButtonData {
     hook: [

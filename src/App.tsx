@@ -50,7 +50,25 @@ function App(): JSX.Element {
     {*/
                 <SemesterCreator></SemesterCreator>
             }
-            <DropdownMenu buttons={[<Button key={1}>hi</Button>]} />
+            <DropdownMenu
+                buttons={[
+                    <Button size="sm" key={1}>
+                        edit
+                    </Button>,
+                    <Button size="sm" key={2}>
+                        delete
+                    </Button>,
+                    <Button size="sm" key={3}>
+                        move
+                    </Button>,
+                    <Button size="sm" key={4}>
+                        option1
+                    </Button>,
+                    <Button size="sm" key={5}>
+                        option2
+                    </Button>
+                ]}
+            />
             <MultipleSemester
                 semesters={[
                     {

@@ -115,6 +115,32 @@
     display: none;
 }
 
+.dropdown {
+    overflow: visible;
+    height: 32px;
+    width: 71px;
+    border: 1px solid grey;
+    position: absolute;
+    font-size: 34px;
+}
+
+.dropdownDots {
+    position: relative;
+    top: -14px;
+    padding-left: 17px;
+    padding-right: 12px;
+}
+
+.dropdownMenu {
+    position: relative;
+    left: 62px;
+    width: 70px;
+    border: 1px solid rgb(112, 51, 51);
+    z-index: 100;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
