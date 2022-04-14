@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import { ClassPicker } from "./components/ClassPicker";
+//import { ClassPicker } from "./components/ClassPicker";
 import { Course } from "./interfaces/projectInterfaces";
 import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
-import SingleSemester from "./components/SingleSemester";
+//import SingleSemester from "./components/SingleSemester";
 import { Form, Button } from "react-bootstrap";
 import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
