@@ -25,6 +25,9 @@ export function ClassPicker(): JSX.Element {
     function clearSchedule() {
         setSchedule([]);
     }
+    function deleteSpecificCourse(id: string) {
+        setSchedule(schedule.filter((string) => string != id));
+    }
 
     return (
         <div>
@@ -73,6 +76,9 @@ export function ClassPicker(): JSX.Element {
                                             variant="danger"
                                             size="sm"
                                             key={2}
+                                            onClick={() =>
+                                                deleteSpecificCourse(course)
+                                            }
                                         >
                                             delete
                                         </Button>

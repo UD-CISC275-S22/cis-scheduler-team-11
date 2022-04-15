@@ -29,6 +29,10 @@ export function SemesterCreator(): JSX.Element {
         setSemesterList([]);
     }
 
+    function deleteSpecificSemester(id: string) {
+        setSemesterList(semesterList.filter((semester) => semester.id != id));
+    }
+
     return (
         <div>
             <h3>Add Semester</h3>
@@ -93,44 +97,14 @@ export function SemesterCreator(): JSX.Element {
                                                 variant="danger"
                                                 size="sm"
                                                 key={2}
+                                                onClick={() =>
+                                                    deleteSpecificSemester(
+                                                        semester.id
+                                                    )
+                                                }
                                             >
                                                 delete
-                                            </Button> /*,
-                                            <Button
-                                                variant="secondary"
-                                                size="sm"
-                                                key={3}
-                                            >
-                                                move
-                                            </Button>,
-                                            <Button
-                                                variant="secondary"
-                                                size="sm"
-                                                key={4}
-                                            >
-                                                option1
-                                            </Button>,
-                                            <Button
-                                                variant="secondary"
-                                                size="sm"
-                                                key={5}
-                                            >
-                                                option2
-                                            </Button>,
-                                            <Button
-                                                variant="secondary"
-                                                size="sm"
-                                                key={6}
-                                            >
-                                                option3
-                                            </Button>,
-                                            <Button
-                                                variant="secondary"
-                                                size="sm"
-                                                key={7}
-                                            >
-                                                option4
-                                            </Button>*/
+                                            </Button>
                                         ]}
                                     />
                                 </Col>
