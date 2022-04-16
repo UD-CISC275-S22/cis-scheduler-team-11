@@ -27,6 +27,7 @@ export function ClassPicker(): JSX.Element {
     }
     function deleteSpecificCourse(id: string) {
         setSchedule(schedule.filter((string) => string != id));
+        console.log("deleteSpecificCourse");
     }
 
     return (
@@ -38,7 +39,10 @@ export function ClassPicker(): JSX.Element {
                         <Form.Label>Select Course</Form.Label>
                         <Form.Select onChange={updateCourse}>
                             {COURSES.map((course: Course) => (
-                                <option key={course.id} value={course.id}>
+                                <option
+                                    key={course.id + course.credits}
+                                    value={course.id}
+                                >
                                     {course.id}
                                 </option>
                             ))}

@@ -17,8 +17,10 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
             <Button
                 variant="secondary"
                 className="dropdownDots"
-                onClick={() => setDisplay(!display)}
-                onBlur={() => setDisplay(false)}
+                onClick={() => {
+                    setDisplay(!display);
+                    console.log("dots");
+                }}
                 size="sm"
             >
                 ●●●
@@ -38,13 +40,19 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                     {Buttons.horizontal &&
                         Buttons.buttons.map(
                             (button: JSX.Element): JSX.Element => (
-                                <Col key={key++}>{button}</Col>
+                                <Col key={key++}>
+                                    {button}
+                                    onBlur={() => setDisplay(false)}
+                                </Col>
                             )
                         )}
                     {!Buttons.horizontal &&
                         Buttons.buttons.map(
                             (button: JSX.Element): JSX.Element => (
-                                <Row key={key++}>{button}</Row>
+                                <Row key={key++}>
+                                    {button}
+                                    onBlur={() => setDisplay(false)}
+                                </Row>
                             )
                         )}
                 </Container>

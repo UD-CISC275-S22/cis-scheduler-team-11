@@ -32,7 +32,6 @@ function App(): JSX.Element {
                     <Form.Control value={name} onChange={updateName} />
                 </Form.Group>
             </div>
-
             <h1>Welcome to your scheduler, {name}!</h1>
             <h2>Here you will see all of your classes for your major!</h2>
             <h3>

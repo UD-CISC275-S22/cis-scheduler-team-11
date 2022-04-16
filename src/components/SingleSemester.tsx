@@ -1,6 +1,5 @@
 import React from "react";
-import { Semester } from "../interfaces/projectInterfaces";
-import { Course } from "../interfaces/projectInterfaces";
+import { Semester, Course } from "../interfaces/projectInterfaces";
 import { Col, Row } from "react-bootstrap";
 import CourseDisplay from "./CourseDisplay";
 
