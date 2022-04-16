@@ -40,19 +40,13 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                     {Buttons.horizontal &&
                         Buttons.buttons.map(
                             (button: JSX.Element): JSX.Element => (
-                                <Col key={key++}>
-                                    {button}
-                                    onBlur={() => setDisplay(false)}
-                                </Col>
+                                <Col key={key++}>{button}</Col>
                             )
                         )}
                     {!Buttons.horizontal &&
                         Buttons.buttons.map(
                             (button: JSX.Element): JSX.Element => (
-                                <Row key={key++}>
-                                    {button}
-                                    onBlur={() => setDisplay(false)}
-                                </Row>
+                                <Row key={key++}>{button}</Row>
                             )
                         )}
                 </Container>
