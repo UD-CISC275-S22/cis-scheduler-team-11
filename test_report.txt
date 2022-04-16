@@ -26,7 +26,7 @@
       at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19470:17)
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (186 ms)
+  ✕ renders the course name somewhere (255 ms)
 
   ● renders the course name somewhere
 
@@ -338,13 +338,13 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    45.2 |    16.66 |   36.95 |   47.14 |                   
+All files              |   46.47 |    16.66 |   38.63 |   48.52 |                   
  src                   |      80 |      100 |   66.66 |      80 |                   
   App.tsx              |      80 |      100 |   66.66 |      80 | 21                
- src/components        |   42.64 |    16.66 |   34.88 |   44.61 |                   
+ src/components        |   43.93 |    16.66 |   36.58 |   46.03 |                   
   ClassPicker.tsx      |   35.29 |        0 |   27.27 |    37.5 | 17-30,50-84       
   CourseDisplay.tsx    |     100 |       50 |     100 |     100 | 12                
-  DropdownMenu.tsx     |      40 |    16.66 |   16.66 |      40 | 21-54             
+  DropdownMenu.tsx     |      50 |    16.66 |      25 |      50 | 21-49             
   EditSemester.tsx     |       0 |      100 |       0 |       0 | 16-45             
   MultipleSemester.tsx |     100 |      100 |     100 |     100 |                   
   SemesterCreator.tsx  |   21.05 |        0 |    9.09 |   23.52 | 17-33,60-101      
@@ -356,5 +356,5 @@ All files              |    45.2 |    16.66 |   36.95 |   47.14 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.406 s
+Time:        3.386 s
 Ran all test suites.
