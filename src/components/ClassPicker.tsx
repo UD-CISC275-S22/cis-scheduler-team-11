@@ -36,6 +36,9 @@ export function ClassPicker(): JSX.Element {
     function clearSchedule() {
         setSchedule([]);
     }
+    function changeEditing() {
+        setEditing(!editing);
+    }
     function deleteSpecificCourse(course: Course) {
         setSchedule(schedule.filter(({ id }) => id !== course.id));
         console.log("deleteSpecificCourse");
@@ -103,7 +106,7 @@ export function ClassPicker(): JSX.Element {
                                             variant="secondary"
                                             size="sm"
                                             key={1}
-                                            onClick={() => setEditing(!editing)}
+                                            onClick={() => changeEditing()}
                                         >
                                             edit
                                         </Button>,
@@ -125,6 +128,14 @@ export function ClassPicker(): JSX.Element {
                     <Button onClick={clearSchedule}>Clear Courses</Button>
                 </Col>
             </Row>
+            <div>
+                <HandleEditing
+                    editing={editing}
+                    changeEditing={changeEditing}
+                    course={course}
+                    editCourse={editCourse}
+                ></HandleEditing>
+            </div>
         </div>
     );
 }
