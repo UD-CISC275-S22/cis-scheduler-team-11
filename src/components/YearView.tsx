@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import SingleSemester from "./SingleSemester";
 
 function YearView(plan: Plan): JSX.Element {
-    const years = plan.years;
+    const years = plan.semesters;
     let year = 1;
     const yearSuffix = [
         "th",
