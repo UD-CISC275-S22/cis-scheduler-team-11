@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import Autocomplete from "@mui/material/Autocomplete";
+import { CourseEditor } from "./CourseEditor";
 import TextField from "@mui/material/TextField";
-import { HandleEditing } from "./HandleEditing";
 import { Course } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import courses from "../data/courses.json";
@@ -15,7 +15,9 @@ const COURSES = courses.map(
 export function ClassPicker(): JSX.Element {
     const [course, setCourse] = useState<Course>(COURSES[0]);
     const [schedule, setSchedule] = useState<Course[]>([]);
-    const [editing, setEditing] = useState<boolean>(false);
+    const [showAddModal, setShowAddModal] = useState(false);
+    const [editing, setEditing] = useState(false);
+    const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
         const newSchedule = { ...course };
@@ -25,19 +27,20 @@ export function ClassPicker(): JSX.Element {
             setSchedule(newScheduleList);
         }
     }
-    function editCourse(id: string, newCourse: Course) {
-        setSchedule(
-            schedule.map(
-                (course: Course): Course =>
-                    course.id === id ? newCourse : course
-            )
+    function editCourse(index: number, courses: Course[]): Course[] {
+        const newCourses = courses.map(
+            (course: Course): Course => ({ ...course })
         );
+        newCourses[index] = [...newCourses];
+        return newCourses;
     }
     function clearSchedule() {
         setSchedule([]);
     }
-    function changeEditing() {
-        setEditing(!editing);
+    function handleCourseEditor(course: Course) {
+        setShowAddModal(!showAddModal);
+        const index = schedule.findIndex(({ id }) => id === course.id);
+        setSchedule(editCourse(index, schedule));
     }
     function deleteSpecificCourse(course: Course) {
         setSchedule(schedule.filter(({ id }) => id !== course.id));
@@ -106,7 +109,9 @@ export function ClassPicker(): JSX.Element {
                                             variant="secondary"
                                             size="sm"
                                             key={1}
-                                            onClick={() => changeEditing()}
+                                            onClick={() =>
+                                                handleCourseEditor(course)
+                                            }
                                         >
                                             edit
                                         </Button>,
@@ -129,12 +134,12 @@ export function ClassPicker(): JSX.Element {
                 </Col>
             </Row>
             <div>
-                <HandleEditing
-                    editing={editing}
-                    changeEditing={changeEditing}
+                <CourseEditor
+                    show={showAddModal}
+                    handleClose={handleCloseAddModal}
                     course={course}
-                    editCourse={editCourse}
-                ></HandleEditing>
+                    editCourse={() => editCourse()}
+                ></CourseEditor>
             </div>
         </div>
     );
