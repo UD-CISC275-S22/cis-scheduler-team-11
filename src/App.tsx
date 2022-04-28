@@ -5,6 +5,7 @@ import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
 import { Form, Button } from "react-bootstrap";
+import { PlanCreator } from "./components/PlanCreator";
 import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { ClassPicker } from "./components/ClassPicker";
@@ -43,6 +44,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
+            <PlanCreator></PlanCreator>
             <ClassPicker></ClassPicker>
             <SemesterCreator></SemesterCreator>
             <DropdownMenu
@@ -106,7 +108,7 @@ function App(): JSX.Element {
             />
             <YearView
                 id={1}
-                years={[
+                semesters={[
                     [
                         {
                             id: "Fall 2022",
