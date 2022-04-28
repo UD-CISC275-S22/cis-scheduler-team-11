@@ -20,6 +20,9 @@ export function CourseEditor({
     const [enrolled, setEnrolled] = useState<boolean>(false);
 
     function updateCredits(credits: string) {
+        if (credits.length <= 0) {
+            credits = "0";
+        }
         setCredits(parseInt(credits));
     }
     function saveChanges(index: number) {
@@ -57,8 +60,8 @@ export function CourseEditor({
             </Modal.Header>
             <Modal.Body>
                 {/* Title */}
-                <Form.Group controlId="formMovieId" as={Row}>
-                    <Form.Label>Course:</Form.Label>
+                <Form.Group controlId="Edit Id" as={Row}>
+                    <Form.Label column="sm">Course ID:</Form.Label>
                     <Col>
                         <Form.Control
                             value={id}
@@ -67,6 +70,9 @@ export function CourseEditor({
                             ) => setId(event.target.value)}
                         />
                     </Col>
+                </Form.Group>
+                <Form.Group controlId="Edit Title" as={Row}>
+                    <Form.Label column="sm">Course Title:</Form.Label>
                     <Col>
                         <Form.Control
                             value={title}
@@ -75,6 +81,9 @@ export function CourseEditor({
                             ) => setTitle(event.target.value)}
                         />
                     </Col>
+                </Form.Group>
+                <Form.Group controlId="Edit Credits" as={Row}>
+                    <Form.Label column="sm">Course Credits:</Form.Label>
                     <Col>
                         <Form.Control
                             value={credits.toString()}
@@ -83,6 +92,9 @@ export function CourseEditor({
                             ) => updateCredits(event.target.value)}
                         />
                     </Col>
+                </Form.Group>
+                <Form.Group controlId="edit Enrolled" as={Row}>
+                    <Form.Label column="sm">Course Enrolled?:</Form.Label>
                     <Col>
                         <Form.Check
                             type="switch"
