@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Semester } from "../interfaces/projectInterfaces";
+import { SemesterEditor } from "./SemesterEditor";
 import { DropdownMenu } from "./DropdownMenu";
 // import courses from "../data/courses.json";
 // const COURSES = courses.map(
@@ -13,9 +14,13 @@ export function SemesterCreator(): JSX.Element {
     const [semesterSeason, setSemesterSeason] = useState<string>("Fall");
     const [semesterYear, setSemesterYear] = useState<string>("2022");
     const [semesterList, setSemesterList] = useState<Semester[]>([]);
+    const [semester, setSemester] = useState<Semester>(semesterList[0]);
+    const [showAddModal, setShowAddModal] = useState(false);
+    const handleCloseAddModal = () => setShowAddModal(false);
     function addSemester(season: string, year: string) {
         const semesterId = season + " " + year;
         const newSemester = { id: semesterId, courses: [] };
+        setSemester(newSemester);
         const newSemesterList = [...semesterList, newSemester];
         const check = semesterList.filter(({ id }) => id === semesterId);
         if (check.length === 0) {
@@ -90,6 +95,11 @@ export function SemesterCreator(): JSX.Element {
                                                 variant="secondary"
                                                 size="sm"
                                                 key={1}
+                                                onClick={() =>
+                                                    setShowAddModal(
+                                                        !showAddModal
+                                                    )
+                                                }
                                             >
                                                 edit
                                             </Button>,
@@ -114,6 +124,15 @@ export function SemesterCreator(): JSX.Element {
                     <Button onClick={deleteSemester}>Delete Semester</Button>
                 </Col>
             </Row>
+            <div>
+                <SemesterEditor
+                    show={showAddModal}
+                    handleClose={handleCloseAddModal}
+                    semester={semester}
+                    semesters={semesterList}
+                    setSemesters={setSemesterList}
+                ></SemesterEditor>
+            </div>
         </div>
     );
 }
