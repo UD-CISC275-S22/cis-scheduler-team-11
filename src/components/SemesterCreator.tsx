@@ -3,12 +3,6 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { Semester } from "../interfaces/projectInterfaces";
 import { SemesterEditor } from "./SemesterEditor";
 import { DropdownMenu } from "./DropdownMenu";
-// import courses from "../data/courses.json";
-// const COURSES = courses.map(
-//     (course): Course => ({
-//         ...course
-//     })
-// );
 
 export function SemesterCreator(): JSX.Element {
     const [semesterSeason, setSemesterSeason] = useState<string>("Fall");

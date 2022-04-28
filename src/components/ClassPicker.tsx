@@ -16,7 +16,6 @@ export function ClassPicker(): JSX.Element {
     const [course, setCourse] = useState<Course>(COURSES[0]);
     const [schedule, setSchedule] = useState<Course[]>([]);
     const [showAddModal, setShowAddModal] = useState(false);
-    //const [editing, setEditing] = useState(false);
     const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
@@ -26,14 +25,6 @@ export function ClassPicker(): JSX.Element {
         if (check.length === 0) {
             setSchedule(newScheduleList);
         }
-    }
-    function editCourse(id: string, newCourse: Course) {
-        setSchedule(
-            schedule.map(
-                (course: Course): Course =>
-                    course.id === id ? newCourse : course
-            )
-        );
     }
     function clearSchedule() {
         setSchedule([]);
