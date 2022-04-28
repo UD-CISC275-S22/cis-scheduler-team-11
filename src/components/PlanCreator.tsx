@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
-import { SemesterCreator } from "./SemesterCreator";
-import { Course, Semester, Plan } from "../interfaces/projectInterfaces";
-import { DropdownMenu } from "./DropdownMenu";
+// import { SemesterCreator } from "./SemesterCreator";
+import { Plan } from "../interfaces/projectInterfaces";
+// import { DropdownMenu } from "./DropdownMenu";
 
 export function PlanCreator(): JSX.Element {
     const [planId, setPlanId] = useState<string>("0");
@@ -15,16 +15,16 @@ export function PlanCreator(): JSX.Element {
             setPlanList(newPlanList);
         }
     }
-    function updateId(event: React.ChangeEvent<HTMLSelectElement>) {
-        setPlanId(event.target.value);
-    }
+    // function updateId(event: React.ChangeEvent<HTMLSelectElement>) {
+    //     setPlanId(event.target.value);
+    // }
     function deletePlans() {
         setPlanList([]);
     }
 
-    function deleteSpecificPlan(id: string) {
-        setPlanList(planList.filter((plan) => plan.id.toString() != id));
-    }
+    // function deleteSpecificPlan(id: string) {
+    //     setPlanList(planList.filter((plan) => plan.id.toString() != id));
+    // }
 
     return (
         <div>
