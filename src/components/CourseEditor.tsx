@@ -7,36 +7,53 @@ export function CourseEditor({
     show,
     handleClose,
     course,
-    editCourse
+    schedule,
+    setSchedule
 }: {
     show: boolean;
     handleClose: () => void;
     course: Course;
-    editCourse: (id: string, newCourse: Course) => void;
+    schedule: Course[];
+    setSchedule: (courses: Course[]) => void;
 }) {
-    const [id, setId] = useState<string>(course.id);
-    const [title, setTitle] = useState<string>(course.title);
-    const [credits, setCredits] = useState<number>(course.credits);
-    const [enrolled, setEnrolled] = useState<boolean>(course.enrolled);
+    const [id, setId] = useState<string>("");
+    const [title, setTitle] = useState<string>("");
+    const [credits, setCredits] = useState<number>(0);
+    const [enrolled, setEnrolled] = useState<boolean>(false);
 
-    function saveChanges() {
-        editCourse(course.id, {
-            ...course,
+    function updateCredits(credits: string) {
+        setCredits(parseInt(credits));
+    }
+    function saveChanges(index: number) {
+        const newCourses = schedule.map(
+            (course: Course): Course => ({ ...course })
+        );
+        newCourses[index] = {
+            id: id,
             title: title,
             credits: credits,
             enrolled: enrolled
-        });
+        };
+        setSchedule(newCourses);
         handleClose();
     }
-    function updateCredits(credits: string) {
-        setCredits(parseInt(credits));
+    function refresh() {
+        setId(course.id);
+        setTitle(course.title);
+        setCredits(course.credits);
+        setEnrolled(course.enrolled);
     }
     function updateEnrolled() {
         setEnrolled(!enrolled);
     }
 
     return (
-        <Modal show={show} onHide={handleClose} animation={false}>
+        <Modal
+            show={show}
+            onHide={handleClose}
+            onShow={refresh}
+            animation={false}
+        >
             <Modal.Header closeButton>
                 <Modal.Title>Edit Course</Modal.Title>
             </Modal.Header>
@@ -83,7 +100,16 @@ export function CourseEditor({
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={saveChanges}>
+                <Button
+                    variant="primary"
+                    onClick={() =>
+                        saveChanges(
+                            schedule.findIndex(
+                                (aCourse: Course) => aCourse.id === course.id
+                            )
+                        )
+                    }
+                >
                     Save Changes
                 </Button>
             </Modal.Footer>

@@ -16,7 +16,7 @@ export function ClassPicker(): JSX.Element {
     const [course, setCourse] = useState<Course>(COURSES[0]);
     const [schedule, setSchedule] = useState<Course[]>([]);
     const [showAddModal, setShowAddModal] = useState(false);
-    const [editing, setEditing] = useState(false);
+    //const [editing, setEditing] = useState(false);
     const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
@@ -27,20 +27,16 @@ export function ClassPicker(): JSX.Element {
             setSchedule(newScheduleList);
         }
     }
-    function editCourse(index: number, courses: Course[]): Course[] {
-        const newCourses = courses.map(
-            (course: Course): Course => ({ ...course })
+    function editCourse(id: string, newCourse: Course) {
+        setSchedule(
+            schedule.map(
+                (course: Course): Course =>
+                    course.id === id ? newCourse : course
+            )
         );
-        newCourses[index] = [...newCourses];
-        return newCourses;
     }
     function clearSchedule() {
         setSchedule([]);
-    }
-    function handleCourseEditor(course: Course) {
-        setShowAddModal(!showAddModal);
-        const index = schedule.findIndex(({ id }) => id === course.id);
-        setSchedule(editCourse(index, schedule));
     }
     function deleteSpecificCourse(course: Course) {
         setSchedule(schedule.filter(({ id }) => id !== course.id));
@@ -110,7 +106,7 @@ export function ClassPicker(): JSX.Element {
                                             size="sm"
                                             key={1}
                                             onClick={() =>
-                                                handleCourseEditor(course)
+                                                setShowAddModal(!showAddModal)
                                             }
                                         >
                                             edit
@@ -138,7 +134,8 @@ export function ClassPicker(): JSX.Element {
                     show={showAddModal}
                     handleClose={handleCloseAddModal}
                     course={course}
-                    editCourse={() => editCourse()}
+                    schedule={schedule}
+                    setSchedule={setSchedule}
                 ></CourseEditor>
             </div>
         </div>
