@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (248 ms)
+  ✕ renders the course name somewhere (254 ms)
 
   ● renders the course name somewhere
 
@@ -131,6 +131,57 @@ FAIL src/App.test.tsx
           [36m</p>[39m
           [36m<div>[39m
             [36m<h3>[39m
+              [0mAdd Plan[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"PlanAdd row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"PlanAddForm"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"Plan"[39m
+                  [36m>[39m
+                    [0mAdd Plan[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"Plan"[39m
+                    [33mtype[39m=[32m"number"[39m
+                    [33mvalue[39m=[32m"0"[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mAdd[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"PlanAddListDelete col"[39m
+              [36m>[39m
+                [36m<strong>[39m
+                  [0mPlans:[0m
+                [36m</strong>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"PlanAddList"[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mDelete Plans[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
               [0mAdd Course[0m
             [36m</h3>[39m
             [36m<div[39m
@@ -189,34 +240,7 @@ FAIL src/App.test.tsx
                               [33maria-hidden[39m=[32m"true"[39m
                               [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"[39m
                               [33mdata-testid[39m=[32m"CloseIcon"[39m
-                              [33mfocusable[39m=[32m"false"[39m
-                              [33mviewBox[39m=[32m"0 0 24 24"[39m
-                            [36m>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"[39m
-                              [36m/>[39m
-                            [36m</svg>[39m
-                            [36m<span[39m
-                              [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
-                            [36m/>[39m
-                          [36m</button>[39m
-                          [36m<button[39m
-                            [33maria-label[39m=[32m"Open"[39m
-                            [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
-                            [33mtabindex[39m=[32m"-1"[39m
-                            [33mtitle[39m=[32m"Open"[39m
-                            [33mtype[39m=[32m"button"[39m
-                          [36m>[39m
-                            [36m<svg[39m
-                              [33maria-hidden[39m=[32m"true"[39m
-                              [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
-                              [33mdata-testid[39m=[32m"ArrowDropDownIcon"[39m
-                              [33mfocusable[39m=[32m"false"[39m
-                              [33mviewBox[39m=[32m"0 0 24 24"[39m
-                            [36m>[39m
-                              [36m<path[39m
-                                [33md[39m=[32m"M7 10l5 5 5-5z"[39m
-     ...
+                 ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -240,17 +264,19 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   42.85 |    16.66 |   33.33 |   44.82 |                   
+All files              |   37.59 |    13.63 |   27.27 |   39.68 |                   
  src                   |      80 |      100 |   66.66 |      80 |                   
-  App.tsx              |      80 |      100 |   66.66 |      80 | 21                
- src/components        |   40.69 |    16.66 |   31.48 |   42.68 |                   
-  ClassPicker.tsx      |   29.62 |        0 |   22.22 |      32 | 21-44,59,76-118   
+  App.tsx              |      80 |      100 |   66.66 |      80 | 22                
+ src/components        |   35.93 |    13.63 |   25.67 |   38.01 |                   
+  ClassPicker.tsx      |   34.61 |        0 |      25 |   39.13 | 22-34,49,66-110   
   CourseDisplay.tsx    |     100 |       50 |     100 |     100 | 12                
+  CourseEditor.tsx     |    23.8 |      100 |    9.09 |    23.8 | 23-45,67-106      
   DropdownMenu.tsx     |      50 |    16.66 |      25 |      50 | 21-49             
   EditSemester.tsx     |       0 |      100 |       0 |       0 | 16-45             
-  HandleEditing.tsx    |      40 |       50 |   16.66 |      40 | 22-30,42-58       
   MultipleSemester.tsx |     100 |      100 |     100 |     100 |                   
-  SemesterCreator.tsx  |   21.05 |        0 |    9.09 |   23.52 | 17-33,60-101      
+  PlanCreator.tsx      |   21.42 |        0 |    12.5 |   23.07 | 11-22,41-64       
+  SemesterCreator.tsx  |      28 |        0 |    7.69 |   31.81 | 15-32,59-105      
+  SemesterEditor.tsx   |      25 |      100 |   14.28 |      25 | 22-33,55-70       
   SingleSemester.tsx   |     100 |      100 |     100 |     100 |                   
   YearView.tsx         |     100 |      100 |     100 |     100 |                   
  src/interfaces        |       0 |        0 |       0 |       0 |                   
@@ -259,5 +285,5 @@ All files              |   42.85 |    16.66 |   33.33 |   44.82 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.267 s
+Time:        3.31 s
 Ran all test suites.
