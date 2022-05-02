@@ -60,8 +60,10 @@ export function CourseEditor({
             </Modal.Header>
             <Modal.Body>
                 {/* Title */}
-                <Form.Group controlId="Edit Id" as={Row}>
-                    <Form.Label column="sm">Course ID:</Form.Label>
+                <Form.Group controlId="Edit Id" as={Row} spacing={2}>
+                    <Form.Label column sm={2}>
+                        ID:
+                    </Form.Label>
                     <Col>
                         <Form.Control
                             value={id}
@@ -71,8 +73,10 @@ export function CourseEditor({
                         />
                     </Col>
                 </Form.Group>
-                <Form.Group controlId="Edit Title" as={Row}>
-                    <Form.Label column="sm">Course Title:</Form.Label>
+                <Form.Group controlId="Edit Title" as={Row} spacing={2}>
+                    <Form.Label column sm={2}>
+                        Title:
+                    </Form.Label>
                     <Col>
                         <Form.Control
                             value={title}
@@ -82,8 +86,10 @@ export function CourseEditor({
                         />
                     </Col>
                 </Form.Group>
-                <Form.Group controlId="Edit Credits" as={Row}>
-                    <Form.Label column="sm">Course Credits:</Form.Label>
+                <Form.Group controlId="Edit Credits" as={Row} spacing={2}>
+                    <Form.Label column sm={2}>
+                        Credits:
+                    </Form.Label>
                     <Col>
                         <Form.Control
                             value={credits.toString()}
@@ -93,17 +99,17 @@ export function CourseEditor({
                         />
                     </Col>
                 </Form.Group>
-                <Form.Group controlId="edit Enrolled" as={Row}>
-                    <Form.Label column="sm">Course Enrolled?:</Form.Label>
+                <Form.Group controlId="edit Enrolled" as={Row} spacing={2}>
+                    {"Not-Enrolled"}
                     <Col>
                         <Form.Check
                             type="switch"
                             id="isEnrolles"
-                            label="Enrolled?"
                             checked={enrolled}
                             onChange={updateEnrolled}
                         />
                     </Col>
+                    {"Enrolled"}
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>

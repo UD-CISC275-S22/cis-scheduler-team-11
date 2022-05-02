@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Course } from "./interfaces/projectInterfaces";
+import { Course, Plan } from "./interfaces/projectInterfaces";
 import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
@@ -9,6 +9,7 @@ import { PlanCreator } from "./components/PlanCreator";
 import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { ClassPicker } from "./components/ClassPicker";
+import { PlanHide } from "./components/PlanHide";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -17,6 +18,7 @@ const COURSES = courses.map(
 );
 
 function App(): JSX.Element {
+    const [plans, setPlans] = useState<Plan[]>([]);
     const [name, setName] = useState<string>("UD Student");
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -44,6 +46,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
+            <PlanHide Plans={plans} setPlan={setPlans}></PlanHide>
             <PlanCreator></PlanCreator>
             <ClassPicker></ClassPicker>
             <SemesterCreator></SemesterCreator>

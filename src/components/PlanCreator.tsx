@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
-// import { SemesterCreator } from "./SemesterCreator";
+import { SemesterCreator } from "./SemesterCreator";
 import { Plan } from "../interfaces/projectInterfaces";
 // import { DropdownMenu } from "./DropdownMenu";
 
@@ -61,6 +61,7 @@ export function PlanCreator(): JSX.Element {
                             </li>
                         ))}
                     </div>
+                    {/* <SemesterCreator></SemesterCreator> */}
                     <Button onClick={() => deletePlans()}>Delete Plans</Button>
                 </Col>
             </Row>
