@@ -2,13 +2,11 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Plan, Semester } from "../interfaces/projectInterfaces";
 import { SemesterCreator } from "./SemesterCreator";
+import { DropdownMenu } from "./DropdownMenu";
 
 export function PlanView({
     plan,
-    plans,
-    deletePlan,
-    semesters,
-    setPlan
+    deletePlan
 }: {
     plan: Plan;
     plans: Plan[];
@@ -21,6 +19,14 @@ export function PlanView({
             <Row>
                 <Col>
                     <h3>{plan.id}</h3>
+                    <DropdownMenu
+                        horizontal={true}
+                        buttons={[
+                            <Button variant="secondary" size="sm" key={1}>
+                                edit
+                            </Button>
+                        ]}
+                    />
                     <Button
                         onClick={() => deletePlan(plan.id)}
                         variant="danger"

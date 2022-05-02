@@ -35,6 +35,7 @@ export function PlanHide({
             >
                 <span>New Plan</span>
             </Button>
+
             <PlanAdder
                 show={showAddModal}
                 handleClose={handleCloseAddModal}

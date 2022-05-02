@@ -48,8 +48,6 @@ function App(): JSX.Element {
             </p>
             <PlanHide Plans={plans} setPlan={setPlans}></PlanHide>
             <PlanCreator></PlanCreator>
-            <ClassPicker></ClassPicker>
-            <SemesterCreator></SemesterCreator>
             <DropdownMenu
                 horizontal={false}
                 buttons={[
