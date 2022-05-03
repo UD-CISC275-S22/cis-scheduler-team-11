@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Semester } from "../interfaces/projectInterfaces";
-import { ClassPicker } from "../components/ClassPicker";
 import { SemesterEditor } from "./SemesterEditor";
 import { DropdownMenu } from "./DropdownMenu";
 

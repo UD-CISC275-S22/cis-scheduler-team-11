@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
+
 import "./App.css";
-import { Course, Plan, Plans } from "./interfaces/projectInterfaces";
+import { Course, Plan /*, Plans*/ } from "./interfaces/projectInterfaces";
 import courses from "./data/courses.json";
+
+import { MainView } from "./components/MainView";
+/*
 import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
-import { Form, Button } from "react-bootstrap";
 import { PlanCreator } from "./components/PlanCreator";
 import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { ClassPicker } from "./components/ClassPicker";
-import { MainView } from "./components/MainView";
-import { PlanHide } from "./components/PlanHide";
+import { PlanHide } from "./components/PlanHide";*/
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -49,8 +52,10 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
+            {/*
             <PlanHide Plans={plans} setPlan={setPlans}></PlanHide>
             <PlanCreator></PlanCreator>
+            
             <DropdownMenu
                 horizontal={false}
                 buttons={[
@@ -150,6 +155,7 @@ function App(): JSX.Element {
                     ]
                 ]}
             />
+            */}
         </div>
     );
 }

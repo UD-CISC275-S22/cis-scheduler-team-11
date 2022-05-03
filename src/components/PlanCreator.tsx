@@ -4,10 +4,31 @@ import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
 
-export function PlanCreator(): JSX.Element {
+export function PlanCreator({
+    selectedPlan,
+    selectPlan,
+    planList,
+    setPlanList
+}: {
+    selectedPlan: Plan | undefined;
+    selectPlan: (plan: Plan) => void;
+    planList: Plan[];
+    setPlanList: (planList: Plan[]) => void;
+}): JSX.Element {
     const [planId, setPlanId] = useState<string>("");
-    const [planList, setPlanList] = useState<Plan[]>([]);
-    const [plan, setPlan] = useState<Plan>(planList[0]);
+    const [plan, setPlan] = useState<Plan>({
+        id: 1,
+        semesters: [
+            [
+                {
+                    id: "",
+                    courses: [
+                        { id: "", title: "", credits: 0, enrolled: false }
+                    ]
+                }
+            ]
+        ]
+    });
     const [showAddModal, setShowAddModal] = useState(false);
     // function addPlan(id: string) {
     //     const newPlan = { id: parseInt(id), semesters: [] };
@@ -34,7 +55,6 @@ export function PlanCreator(): JSX.Element {
     const handleShowAddModal = () => setShowAddModal(true);
     return (
         <div>
-            <h3>Add Semester</h3>
             <Row className="semesterAdd">
                 <Col>
                     <Form.Group
