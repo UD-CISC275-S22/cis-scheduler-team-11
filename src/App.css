@@ -41,7 +41,7 @@
     border: 1px solid grey;
     padding: 5px;
     width: 1100px;
-    height: 500px;
+    max-height: 500px;
     overflow: scroll;
     background-color: rgb(160, 229, 250);
     white-space: nowrap;
@@ -131,23 +131,42 @@
 }
 */
 
-.semesterAdd {
-    width: 80%;
-    justify-content: center;
-    background-color: rgb(112, 24, 228);
-    border: 5px solid grey;
-    margin: auto;
-    height: 275px;
-}
 .Courses {
     width: 80%;
     justify-content: center;
     background-color: rgb(112, 24, 228);
     border: 5px solid grey;
     margin: auto;
-    height: 275px;
+    min-height: 275px;
 }
-
+.CoursesLeft {
+    background-color: rgb(44, 24, 228);
+    border: 1px solid grey;
+}
+.CoursesRight {
+    background-color: rgb(106, 92, 238);
+    border: 1px solid grey;
+}
+.CoursesList {
+    background-color: rgb(21, 4, 177);
+    border: 1px solid grey;
+    overflow: scroll;
+    max-height: 195px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.CoursesList::-webkit-scrollbar {
+    display: none;
+}
+.semesterAdd {
+    width: 80%;
+    justify-content: center;
+    background-color: rgb(112, 24, 228);
+    border: 5px solid grey;
+    margin: auto;
+    max-height: 275px;
+    min-height: 137.5px;
+}
 .semesterAddForm {
     background-color: rgb(44, 24, 228);
     border: 1px solid grey;
@@ -165,6 +184,35 @@
     scrollbar-width: none;
 }
 .semesterAddList::-webkit-scrollbar {
+    display: none;
+}
+
+.planAdd {
+    width: 80%;
+    justify-content: center;
+    background-color: rgb(112, 24, 228);
+    border: 5px solid rgb(60, 18, 18);
+    margin: auto;
+    min-height: 137.5px;
+    max-height: 275px;
+}
+.planAddForm {
+    background-color: rgb(44, 24, 228);
+    border: 1px solid grey;
+}
+.planAddListDelete {
+    background-color: rgb(106, 92, 238);
+    border: 1px solid grey;
+}
+.planAddList {
+    background-color: rgb(21, 4, 177);
+    border: 1px solid grey;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    max-height: 85px;
+}
+.planAddList::-webkit-scrollbar {
     display: none;
 }
 
@@ -210,6 +258,12 @@
     padding-left: 0px;
     padding-right: 8px;
     white-space: nowrap;
+    display: flex;
+}
+
+.Dropdown {
+    position: relative;
+    border: solid 1px black;
     display: flex;
 }
 

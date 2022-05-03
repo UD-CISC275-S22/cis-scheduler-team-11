@@ -19,7 +19,7 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                 className="dropdownDots"
                 onClick={() => {
                     setDisplay(!display);
-                    console.log("dots");
+                    //console.log("dots");
                 }}
                 size="sm"
             >
@@ -36,6 +36,7 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                             ? { position: "relative" }
                             : topStyleV
                     }
+                    //onBlur={() => setDisplay(false)}
                 >
                     {Buttons.horizontal &&
                         Buttons.buttons.map(

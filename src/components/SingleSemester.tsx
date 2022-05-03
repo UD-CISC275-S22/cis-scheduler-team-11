@@ -12,6 +12,11 @@ function SingleSemester({ id, courses }: Semester): JSX.Element {
             <Row className="row1">
                 {id} <br />
                 Total Credits: {totalCredits} <br />
+                {courses.length === 0
+                    ? "This Semester currently has no courses! Select it from the semester menu and open the courses menu to add some!"
+                    : courses.length +
+                      " Course" +
+                      (courses.length != 1 ? "s" : "")}
             </Row>
             {courses.map(({ id, title, credits, enrolled }: Course) => (
                 <Row className="row1" key={id}>
