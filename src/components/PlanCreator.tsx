@@ -1,69 +1,118 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
-// import { SemesterCreator } from "./SemesterCreator";
 import { Plan } from "../interfaces/projectInterfaces";
-// import { DropdownMenu } from "./DropdownMenu";
+import { DropdownMenu } from "./DropdownMenu";
+import { PlanAdder } from "./PlanAdder";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css";
 
-export function PlanCreator(): JSX.Element {
-    const [planId, setPlanId] = useState<string>("0");
-    const [planList, setPlanList] = useState<Plan[]>([]);
-    function addPlan(id: string) {
-        const newPlan = { id: parseInt(id), semesters: [] };
-        const newPlanList = [...planList, newPlan];
-        const check = planList.filter(({ id }) => id === id);
-        if (check.length === 0) {
-            setPlanList(newPlanList);
+export function PlanCreator({
+    selectedPlan,
+    selectPlan,
+    planList,
+    setPlanList
+}: {
+    selectedPlan: Plan | undefined;
+    selectPlan: (plan: Plan) => void;
+    planList: Plan[];
+    setPlanList: (planList: Plan[]) => void;
+}): JSX.Element {
+    const [showAddModal, setShowAddModal] = useState(false);
+    function addPlan(newPlan: Plan) {
+        if (!planList.some((plan) => plan.id === newPlan.id)) {
+            setPlanList([...planList, newPlan]);
+            handleCloseAddModal();
+        } else {
+            alert("A plan with that ID already exists!");
         }
     }
-    // function updateId(event: React.ChangeEvent<HTMLSelectElement>) {
-    //     setPlanId(event.target.value);
-    // }
     function deletePlans() {
         setPlanList([]);
     }
 
-    // function deleteSpecificPlan(id: string) {
-    //     setPlanList(planList.filter((plan) => plan.id.toString() != id));
-    // }
-
+    function deleteSpecificPlan(id: number) {
+        confirmAlert({
+            title: "Plan Deletion Confirmation",
+            message: "Are you sure you want to delete this plan?",
+            buttons: [
+                {
+                    label: "Yes",
+                    onClick: () =>
+                        setPlanList(planList.filter((plan) => plan.id != id))
+                },
+                {
+                    label: "No",
+                    onClick: () => console.log("deletion cancelled")
+                }
+            ]
+        });
+    }
+    const handleCloseAddModal = () => setShowAddModal(false);
+    const handleShowAddModal = () => setShowAddModal(true);
     return (
         <div>
-            <h3>Add Plan</h3>
-            <Row className="PlanAdd">
+            <Row className="planAdd">
                 <Col>
-                    <Form.Group controlId="Plan" className="PlanAddForm">
-                        <Form.Label>Add Plan</Form.Label>
-                        <Form.Control
-                            type="number"
-                            value={planId}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) => setPlanId(event.target.value)}
-                        />
-                        <Button size="sm" onClick={() => addPlan(planId)}>
-                            Add
+                    <Form.Group controlId="Plan" className="planAddForm">
+                        <Button size="sm" onClick={handleShowAddModal}>
+                            Add New Plan
                         </Button>
                     </Form.Group>
                 </Col>
-                <Col className="PlanAddListDelete">
+                <Col className="planAddListDelete">
                     <strong>Plans:</strong>
-                    <div className="PlanAddList">
+                    <div className="planAddList">
                         {planList.map((plan: Plan) => (
                             <li
                                 key={plan.id}
                                 style={{
                                     display: "flex",
                                     height: "33px",
-                                    border: "1px solid black"
+                                    border: "1px solid black",
+                                    backgroundColor:
+                                        selectedPlan == plan
+                                            ? "lime"
+                                            : "lightgray"
                                 }}
                             >
-                                <Col>{plan.id}</Col>
+                                <Col>{plan.id} </Col>
+                                <Col>
+                                    <DropdownMenu
+                                        horizontal={true}
+                                        buttons={[
+                                            <Button
+                                                size="sm"
+                                                key={1}
+                                                onClick={() => selectPlan(plan)}
+                                            >
+                                                Select
+                                            </Button>,
+                                            <Button
+                                                variant="danger"
+                                                size="sm"
+                                                key={2}
+                                                onClick={() =>
+                                                    deleteSpecificPlan(plan.id)
+                                                }
+                                            >
+                                                Delete
+                                            </Button>
+                                        ]}
+                                    />
+                                </Col>
                             </li>
                         ))}
                     </div>
-                    <Button onClick={() => deletePlans()}>Delete Plans</Button>
+                    <Button onClick={deletePlans}>Delete Plans</Button>
                 </Col>
             </Row>
+            <div>
+                <PlanAdder
+                    show={showAddModal}
+                    handleClose={handleCloseAddModal}
+                    addPlan={addPlan}
+                ></PlanAdder>
+            </div>
         </div>
     );
 }

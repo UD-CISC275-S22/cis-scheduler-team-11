@@ -3,7 +3,7 @@ import { Semester, Plan } from "../interfaces/projectInterfaces";
 import { Container, Row } from "react-bootstrap";
 import SingleSemester from "./SingleSemester";
 
-function YearView(plan: Plan): JSX.Element {
+function YearView({ plan }: { plan: Plan }): JSX.Element {
     const years = plan.semesters;
     let year = 1;
     const yearSuffix = [
@@ -20,6 +20,7 @@ function YearView(plan: Plan): JSX.Element {
     ];
     return (
         <Container className="yearHead">
+            {"Currently displaying plan: " + plan.id}
             {years.map(
                 (semesters: Semester[]): JSX.Element => (
                     <Container key={year} className="yearSubHead">
