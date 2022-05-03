@@ -1,41 +1,32 @@
-import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { Plan, Semester } from "../interfaces/projectInterfaces";
-import { SemesterCreator } from "./SemesterCreator";
-import { DropdownMenu } from "./DropdownMenu";
+import React, { useState } from "react";
+import { Plan } from "../interfaces/projectInterfaces";
+import { Form } from "react-bootstrap";
+import MultipleSemester from "./MultipleSemester";
+import YearView from "./YearView";
 
 export function PlanView({
-    plan,
-    deletePlan
+    selectedPlan
 }: {
-    plan: Plan;
-    plans: Plan[];
-    deletePlan: (id: number) => void;
-    semesters: Semester[][];
-    setPlan: (plans: Plan[]) => void;
+    selectedPlan: Plan;
 }): JSX.Element {
+    const [yearView, setYearView] = useState<boolean>(true);
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <h3>{plan.id}</h3>
-                    <DropdownMenu
-                        horizontal={true}
-                        buttons={[
-                            <Button variant="secondary" size="sm" key={1}>
-                                edit
-                            </Button>
-                        ]}
-                    />
-                    <Button
-                        onClick={() => deletePlan(plan.id)}
-                        variant="danger"
-                        className="me-8"
-                    >
-                        Delete Plan
-                    </Button>
-                </Col>
-            </Row>
-        </Container>
+        <div>
+            <Form.Check
+                type="switch"
+                id="edit-year-view"
+                label="Year View"
+                checked={yearView}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    setYearView(event.target.checked)
+                }
+                style={{ display: "flex", justifyContent: "center" }}
+            />
+            {yearView ? (
+                <YearView plan={selectedPlan} />
+            ) : (
+                <MultipleSemester plan={selectedPlan} />
+            )}
+        </div>
     );
 }

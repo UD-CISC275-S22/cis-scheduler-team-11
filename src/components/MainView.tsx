@@ -1,26 +1,30 @@
 import React, { useState } from "react";
-import { Plan, Plans } from "../interfaces/projectInterfaces";
+import { Plan } from "../interfaces/projectInterfaces";
 import { PlanCreator } from "../components/PlanCreator";
+import { PlanView } from "../components/PlanView";
 
 export function MainView(): JSX.Element {
-    const [selectedPlan, selectPlan] = useState<Plan>();
-    const [plans, setPlans] = useState<Plans>();
-    const a = 0;
+    const [selectedPlan, selectPlan] = useState<Plan>({ id: 1, semesters: [] });
+    const [plans, setPlans] = useState<Plan[]>([]);
     return (
         <div>
-            {a == 0 ? (
+            {plans.length == 0 ? (
                 <div>
                     {
                         "You currently do not have any plans, click the button below to add one!"
-                    }{" "}
-                    <PlanCreator
-                        selectedPlan={selectedPlan}
-                        selectPlan={selectPlan}
-                    />
+                    }
                 </div>
             ) : (
-                <div>E</div>
+                <div>
+                    <PlanView selectedPlan={selectedPlan} />
+                </div>
             )}
+            <PlanCreator
+                selectedPlan={selectedPlan}
+                selectPlan={selectPlan}
+                planList={plans}
+                setPlanList={setPlans}
+            />
         </div>
     );
 }

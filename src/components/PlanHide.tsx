@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row, Container } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
 import { PlanAdder } from "./PlanAdder";
-import { PlanList } from "./PlanList";
+import { DropdownMenu } from "./DropdownMenu";
+//import { PlanList } from "./PlanList";
 
 export function PlanHide({
     Plans,
@@ -41,11 +42,36 @@ export function PlanHide({
                 handleClose={handleCloseAddModal}
                 addPlan={addPlan}
             ></PlanAdder>
-            <PlanList
-                plans={Plans}
-                deletePlan={deletePlan}
-                setPlan={setPlan}
-            ></PlanList>
+            {Plans.map((plan: Plan) => (
+                <div key={plan.id} className="planlist">
+                    <Container>
+                        <Row>
+                            <Col>
+                                <h3>{plan.id}</h3>
+                                <DropdownMenu
+                                    horizontal={true}
+                                    buttons={[
+                                        <Button
+                                            variant="secondary"
+                                            size="sm"
+                                            key={1}
+                                        >
+                                            edit
+                                        </Button>
+                                    ]}
+                                />
+                                <Button
+                                    onClick={() => deletePlan(plan.id)}
+                                    variant="danger"
+                                    className="me-8"
+                                >
+                                    Delete Plan
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            ))}
         </div>
     );
 }

@@ -55,27 +55,28 @@ export function PlanCreator({
     const handleShowAddModal = () => setShowAddModal(true);
     return (
         <div>
-            <Row className="semesterAdd">
+            <Row className="planAdd">
                 <Col>
-                    <Form.Group
-                        controlId="Semester"
-                        className="semesterAddForm"
-                    >
+                    <Form.Group controlId="Plan" className="planAddForm">
                         <Button size="sm" onClick={handleShowAddModal}>
                             Add New Plan
                         </Button>
                     </Form.Group>
                 </Col>
-                <Col className="semesterAddListDelete">
+                <Col className="planAddListDelete">
                     <strong>Plans:</strong>
-                    <div className="semesterAddList">
+                    <div className="planAddList">
                         {planList.map((plan: Plan) => (
                             <li
                                 key={plan.id}
                                 style={{
                                     display: "flex",
                                     height: "33px",
-                                    border: "1px solid black"
+                                    border: "1px solid black",
+                                    backgroundColor:
+                                        selectedPlan == plan
+                                            ? "lime"
+                                            : "lightgray"
                                 }}
                             >
                                 <Col>{plan.id} </Col>
@@ -84,11 +85,11 @@ export function PlanCreator({
                                         horizontal={true}
                                         buttons={[
                                             <Button
-                                                variant="secondary"
                                                 size="sm"
                                                 key={1}
+                                                onClick={() => selectPlan(plan)}
                                             >
-                                                edit
+                                                Select
                                             </Button>,
                                             <Button
                                                 variant="danger"
@@ -98,7 +99,7 @@ export function PlanCreator({
                                                     deleteSpecificPlan(plan.id)
                                                 }
                                             >
-                                                delete
+                                                Delete
                                             </Button>
                                         ]}
                                     />
