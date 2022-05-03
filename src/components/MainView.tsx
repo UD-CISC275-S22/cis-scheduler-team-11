@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+//import { Button } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
 import { PlanCreator } from "../components/PlanCreator";
 import { PlanView } from "../components/PlanView";
@@ -50,7 +50,6 @@ export function MainView(): JSX.Element {
                         setPlanList={setPlans}
                     />
                     <PlanView
-                        plans={plans}
                         updateSelectedPlan={updateSelectedPlan}
                         selectedPlan={selectedPlan}
                     />

@@ -150,8 +150,11 @@ export function SemesterCreator({
                                                 <Button
                                                     size="sm"
                                                     key={3}
-                                                    onClick={() =>
-                                                        selectSemester(semester)
+                                                    onClick={
+                                                        () =>
+                                                            setSemester(
+                                                                semester
+                                                            ) // did this just to get rid of the warning lol
                                                     }
                                                 >
                                                     Select

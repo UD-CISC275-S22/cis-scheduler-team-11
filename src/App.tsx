@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form /*, Button */ } from "react-bootstrap";
 
 import "./App.css";
-import { Course, Plan /*, Plans*/ } from "./interfaces/projectInterfaces";
-import courses from "./data/courses.json";
+/*
+import { Course, Plan } from "./interfaces/projectInterfaces";
+import courses from "./data/courses.json";*/
 
 import { MainView } from "./components/MainView";
 /*
@@ -14,15 +15,15 @@ import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { ClassPicker } from "./components/ClassPicker";
 import { PlanHide } from "./components/PlanHide";*/
-
+/*
 const COURSES = courses.map(
     (course): Course => ({
         ...course
     })
-);
+);*/
 
 function App(): JSX.Element {
-    const [plans, setPlans] = useState<Plan[]>([]);
+    //const [plans, setPlans] = useState<Plan[]>([]);
     const [name, setName] = useState<string>("UD Student");
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);

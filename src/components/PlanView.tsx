@@ -7,11 +7,9 @@ import YearView from "./YearView";
 
 export function PlanView({
     selectedPlan,
-    plans,
     updateSelectedPlan
 }: {
     selectedPlan: Plan;
-    plans: Plan[];
     updateSelectedPlan: (plan: Plan) => void;
 }): JSX.Element {
     const [yearView, setYearView] = useState<boolean>(true);
