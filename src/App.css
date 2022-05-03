@@ -145,7 +145,8 @@
     background-color: rgb(112, 24, 228);
     border: 5px solid grey;
     margin: auto;
-    height: 275px;
+    max-height: 275px;
+    min-height: 137.5px;
 }
 .semesterAddForm {
     background-color: rgb(44, 24, 228);

@@ -3,6 +3,8 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 export function PlanCreator({
     selectedPlan,
@@ -15,30 +17,7 @@ export function PlanCreator({
     planList: Plan[];
     setPlanList: (planList: Plan[]) => void;
 }): JSX.Element {
-    const [planId, setPlanId] = useState<string>("");
-    const [plan, setPlan] = useState<Plan>({
-        id: 1,
-        semesters: [
-            [
-                {
-                    id: "",
-                    courses: [
-                        { id: "", title: "", credits: 0, enrolled: false }
-                    ]
-                }
-            ]
-        ]
-    });
     const [showAddModal, setShowAddModal] = useState(false);
-    // function addPlan(id: string) {
-    //     const newPlan = { id: parseInt(id), semesters: [] };
-    //     setPlan(newPlan);
-    //     const newPlanList = [...planList, newPlan];
-    //     const check = planList.filter(({ id }) => id === id);
-    //     if (check.length === 0) {
-    //         setPlanList(newPlanList);
-    //     }
-    // }
     function addPlan(newPlan: Plan) {
         if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
@@ -49,7 +28,21 @@ export function PlanCreator({
     }
 
     function deleteSpecificPlan(id: number) {
-        setPlanList(planList.filter((plan) => plan.id != id));
+        confirmAlert({
+            title: "Plan Deletion Confirmation",
+            message: "Are you sure you want to delete this plan?",
+            buttons: [
+                {
+                    label: "Yes",
+                    onClick: () =>
+                        setPlanList(planList.filter((plan) => plan.id != id))
+                },
+                {
+                    label: "No",
+                    onClick: () => console.log("deletion cancelled")
+                }
+            ]
+        });
     }
     const handleCloseAddModal = () => setShowAddModal(false);
     const handleShowAddModal = () => setShowAddModal(true);
