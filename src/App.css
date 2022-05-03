@@ -213,6 +213,12 @@
     display: flex;
 }
 
+.Dropdown {
+    position: relative;
+    border: solid 1px black;
+    display: flex;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

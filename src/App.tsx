@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Course } from "./interfaces/projectInterfaces";
+import { Course, Plans } from "./interfaces/projectInterfaces";
 import courses from "./data/courses.json";
 import MultipleSemester from "./components/MultipleSemester";
 import YearView from "./components/YearView";
@@ -9,6 +9,7 @@ import { PlanCreator } from "./components/PlanCreator";
 import { SemesterCreator } from "./components/SemesterCreator";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { ClassPicker } from "./components/ClassPicker";
+import { MainView } from "./components/MainView";
 
 const COURSES = courses.map(
     (course): Course => ({
@@ -40,6 +41,8 @@ function App(): JSX.Element {
                 semesters.
             </h3>
             <br />
+            <MainView />
+            ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.

@@ -32,6 +32,10 @@ export interface Buttons {
     buttons: JSX.Element[];
     horizontal: boolean;
 }
+
+export interface Plans {
+    plans: Plan[];
+}
 /*
 export interface ButtonData {
     hook: [
