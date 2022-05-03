@@ -26,6 +26,7 @@ export function SemesterEditor({
             id: id,
             courses: courses
         };
+        console.log(newSemesters);
         setSemesters(newSemesters);
         handleClose();
     }
