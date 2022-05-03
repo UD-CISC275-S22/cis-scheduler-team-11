@@ -2,25 +2,66 @@ import React, { useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import { Semester, Plan } from "../interfaces/projectInterfaces";
 import { SemesterEditor } from "./SemesterEditor";
+import { ClassPicker } from "./ClassPicker";
 import { DropdownMenu } from "./DropdownMenu";
 
 export function SemesterCreator({
-    plans,
-    setPlans,
+    updateSelectedPlan,
     selectedPlan,
     setSemMenuView
 }: {
-    plans: Plan[];
-    setPlans: (plans: Plan[]) => void;
+    updateSelectedPlan: (plan: Plan) => void;
     selectedPlan: Plan;
     setSemMenuView: (semMenuView: boolean) => void;
 }): JSX.Element {
+    const defaultSem: Semester = { id: "X 0", courses: [] };
     const semesterList = selectedPlan.semesters.flat();
-    function setSemesterList(semesterList: Semester[]) {}
+    function CalcIdx(semester: Semester, semesterList: Semester[]): number {
+        return (
+            parseInt(semester.id.split(" ")[1]) -
+            parseInt(semesterList[0].id.split(" ")[1])
+        );
+    }
+    function setSemesterList(semList: Semester[]) {
+        const newSems: Semester[][] = [[]];
+        //console.log(semList);
+        semList.map(
+            (semester: Semester) =>
+                (newSems[CalcIdx(semester, semList)] =
+                    newSems[CalcIdx(semester, semList)] != null
+                        ? newSems[CalcIdx(semester, semList)].concat(semester)
+                        : [semester])
+        );
+        updateSelectedPlan({
+            ...selectedPlan,
+            semesters: newSems.filter((year: Semester[]) => year.length > 0)
+        });
+        //console.log(newSems);
+        //console.log(selectedPlan);
+    }
+    const [courseMenuView, setCourseMenuView] = useState<boolean>(false);
+    const [selectedSemester, selectSemester] = useState<Semester>(defaultSem);
+    if (semesterList.length > 0 && selectedSemester.id == "X 0") {
+        selectSemester(selectedPlan.semesters[0][0]);
+    }
+    if (semesterList.length == 0 && selectedSemester.id != "X 0") {
+        selectSemester(defaultSem);
+    }
+
+    function updateSelectedSemester(semester: Semester) {
+        setSemesterList(
+            selectedPlan.semesters
+                .flat()
+                .map((sem: Semester) =>
+                    sem.id === selectedSemester.id ? semester : sem
+                )
+        );
+        selectSemester(semester);
+    }
 
     const [semesterSeason, setSemesterSeason] = useState<string>("Fall");
     const [semesterYear, setSemesterYear] = useState<string>("2022");
-    const [semester, setSemester] = useState<Semester>(semesterList[0]);
+    const [semester, setSemester] = [selectedSemester, selectSemester];
 
     const [showAddModal, setShowAddModal] = useState(false);
     const handleCloseAddModal = () => setShowAddModal(false);
@@ -29,11 +70,13 @@ export function SemesterCreator({
     function addSemester(season: string, year: string) {
         const semesterId = season + " " + year;
         const newSemester = { id: semesterId, courses: [] };
-        setSemester(newSemester);
+        //setSemester(newSemester);
         const newSemesterList = [...semesterList, newSemester];
         const check = semesterList.filter(({ id }) => id === semesterId);
         if (check.length === 0) {
             setSemesterList(newSemesterList);
+        } else {
+            alert("That semester already exists!");
         }
     }
     function updateSeason(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -92,7 +135,11 @@ export function SemesterCreator({
                                     style={{
                                         display: "flex",
                                         height: "33px",
-                                        border: "1px solid black"
+                                        border: "1px solid black",
+                                        backgroundColor:
+                                            semester.id === selectedSemester.id
+                                                ? "green"
+                                                : "grey"
                                     }}
                                 >
                                     <Col>{semester.id} </Col>
@@ -100,6 +147,15 @@ export function SemesterCreator({
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
+                                                <Button
+                                                    size="sm"
+                                                    key={3}
+                                                    onClick={() =>
+                                                        selectSemester(semester)
+                                                    }
+                                                >
+                                                    Select
+                                                </Button>,
                                                 <Button
                                                     variant="secondary"
                                                     size="sm"
@@ -110,7 +166,7 @@ export function SemesterCreator({
                                                         )
                                                     }
                                                 >
-                                                    edit
+                                                    Edit
                                                 </Button>,
                                                 <Button
                                                     variant="danger"
@@ -122,7 +178,7 @@ export function SemesterCreator({
                                                         )
                                                     }
                                                 >
-                                                    delete
+                                                    Delete
                                                 </Button>
                                             ]}
                                         />
@@ -140,7 +196,23 @@ export function SemesterCreator({
                         Hide Semester Menu
                     </Button>
                 </div>
+                {!courseMenuView && selectedSemester.id != defaultSem.id ? (
+                    <div>
+                        <Button onClick={() => setCourseMenuView(true)}>
+                            Show Course Menu
+                        </Button>
+                    </div>
+                ) : (
+                    <></>
+                )}
             </Container>
+            {courseMenuView && selectedSemester.id != defaultSem.id && (
+                <ClassPicker
+                    setCourseMenuView={setCourseMenuView}
+                    selectedSemester={selectedSemester}
+                    updateSelectedSemester={updateSelectedSemester}
+                />
+            )}
             <div>
                 <SemesterEditor
                     show={showAddModal}

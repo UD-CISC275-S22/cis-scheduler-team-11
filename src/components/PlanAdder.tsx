@@ -18,7 +18,6 @@ export function PlanAdder({
             id: id,
             semesters: []
         });
-        handleClose();
     }
 
     return (

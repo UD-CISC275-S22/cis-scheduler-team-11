@@ -21,6 +21,9 @@ export function PlanCreator({
     function addPlan(newPlan: Plan) {
         if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
+            handleCloseAddModal();
+        } else {
+            alert("A plan with that ID already exists!");
         }
     }
     function deletePlans() {

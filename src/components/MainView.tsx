@@ -5,14 +5,11 @@ import { PlanCreator } from "../components/PlanCreator";
 import { PlanView } from "../components/PlanView";
 
 export function MainView(): JSX.Element {
-    const defaultPlan = {
+    const defaultPlan: Plan = {
         id: -1,
         semesters: []
     };
-    const [selectedPlan, selectPlan] = useState<Plan>({
-        id: -1,
-        semesters: []
-    });
+    const [selectedPlan, selectPlan] = useState<Plan>(defaultPlan);
     const [plans, setPlans] = useState<Plan[]>([]);
     if (plans.length > 0 && selectedPlan.id == -1) {
         selectPlan(plans[0]);
@@ -27,20 +24,11 @@ export function MainView(): JSX.Element {
             )
         );
         selectPlan(editedPlan);
+        //console.log(selectedPlan);
     }
 
     return (
         <div>
-            <Button
-                onClick={() => {
-                    updateSelectedPlan({
-                        ...selectedPlan,
-                        id: selectedPlan.id + 1
-                    });
-                }}
-            >
-                click
-            </Button>
             {plans.length == 0 ? (
                 <div>
                     {
@@ -63,7 +51,7 @@ export function MainView(): JSX.Element {
                     />
                     <PlanView
                         plans={plans}
-                        setPlans={setPlans}
+                        updateSelectedPlan={updateSelectedPlan}
                         selectedPlan={selectedPlan}
                     />
                 </div>

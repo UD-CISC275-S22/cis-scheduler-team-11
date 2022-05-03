@@ -8,11 +8,11 @@ import YearView from "./YearView";
 export function PlanView({
     selectedPlan,
     plans,
-    setPlans
+    updateSelectedPlan
 }: {
     selectedPlan: Plan;
     plans: Plan[];
-    setPlans: (plans: Plan[]) => void;
+    updateSelectedPlan: (plan: Plan) => void;
 }): JSX.Element {
     const [yearView, setYearView] = useState<boolean>(true);
     const [semMenuView, setSemMenuView] = useState<boolean>(false);
@@ -37,8 +37,7 @@ export function PlanView({
             </p>
             {semMenuView ? (
                 <SemesterCreator
-                    plans={plans}
-                    setPlans={setPlans}
+                    updateSelectedPlan={updateSelectedPlan}
                     selectedPlan={selectedPlan}
                     setSemMenuView={setSemMenuView}
                 />
