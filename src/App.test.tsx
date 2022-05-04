@@ -14,6 +14,12 @@ test("Welcome message is shown", () => {
     expect(linkElement).toBeInTheDocument();
 });
 
+test("Directions are shown", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/Below you will see which courses/i);
+    expect(linkElement).toBeInTheDocument();
+});
+
 test("Name form is shown", () => {
     render(<App />);
     const linkElement = screen.getByPlaceholderText(/insert your name/i);
