@@ -37,7 +37,11 @@ function App(): JSX.Element {
             <div>
                 <Form.Group controlId="formName">
                     <Form.Label>What is your Name?</Form.Label>
-                    <Form.Control value={name} onChange={updateName} />
+                    <Form.Control
+                        placeholder="insert your name"
+                        value={name}
+                        onChange={updateName}
+                    />
                 </Form.Group>
             </div>
             <h1>Welcome to your scheduler, {name}!</h1>
