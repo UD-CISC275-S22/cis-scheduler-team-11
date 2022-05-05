@@ -24,7 +24,7 @@ const COURSES = courses.map(
 
 function App(): JSX.Element {
     //const [plans, setPlans] = useState<Plan[]>([]);
-    const [name, setName] = useState<string>("UD Student");
+    const [name, setName] = useState<string>("");
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
