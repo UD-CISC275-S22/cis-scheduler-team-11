@@ -51,31 +51,45 @@ export function PlanCreator({
     const handleShowAddModal = () => setShowAddModal(true);
     return (
         <div>
+            <h1>Plans</h1>
             <Row className="planAdd">
-                <Col>
-                    <Form.Group controlId="Plan" className="planAddForm">
-                        <Button size="sm" onClick={handleShowAddModal}>
-                            Add New Plan
-                        </Button>
-                    </Form.Group>
-                </Col>
                 <Col className="planAddListDelete">
-                    <strong>Plans:</strong>
+                    <Form.Label>
+                        <Button
+                            style={{
+                                backgroundColor: "blue",
+                                color: "white",
+                                fontWeight: "bold"
+                            }}
+                            size="sm"
+                            onClick={handleShowAddModal}
+                        >
+                            New Plan
+                        </Button>
+                    </Form.Label>
                     <div className="planAddList">
                         {planList.map((plan: Plan) => (
                             <li
+                                className="planList"
                                 key={plan.id}
                                 style={{
                                     display: "flex",
-                                    height: "33px",
-                                    border: "1px solid black",
-                                    backgroundColor:
+                                    height: "40px",
+                                    width: "200",
+                                    border:
                                         selectedPlan == plan
-                                            ? "lime"
-                                            : "lightgray"
+                                            ? "3px solid yellow"
+                                            : "2px solid gray",
+                                    backgroundColor: "blue"
                                 }}
                             >
-                                <Col>{plan.id} </Col>
+                                <Col
+                                    style={{
+                                        color: "white"
+                                    }}
+                                >
+                                    {"Plan"} {plan.id}
+                                </Col>
                                 <Col>
                                     <DropdownMenu
                                         horizontal={true}
@@ -95,7 +109,7 @@ export function PlanCreator({
                                                     deleteSpecificPlan(plan.id)
                                                 }
                                             >
-                                                Delete
+                                                ⦻
                                             </Button>
                                         ]}
                                     />
@@ -103,7 +117,18 @@ export function PlanCreator({
                             </li>
                         ))}
                     </div>
-                    <Button onClick={deletePlans}>Delete Plans</Button>
+                    <div>
+                        <Button
+                            onClick={deletePlans}
+                            style={{
+                                backgroundColor: "red",
+                                color: "white",
+                                fontWeight: "bold"
+                            }}
+                        >
+                            Delete Plans
+                        </Button>
+                    </div>
                 </Col>
             </Row>
             <div>

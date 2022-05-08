@@ -50,12 +50,19 @@ export function ClassPicker({
 
     return (
         <div>
+            <h1>Courses</h1>
             <Container className="Courses">
                 <Col>
                     <Row>
                         <Col className="CoursesLeft">
                             <Form.Group>
-                                <Form.Label>Select Course</Form.Label>
+                                <Form.Label
+                                    style={{
+                                        color: "white"
+                                    }}
+                                >
+                                    Select Course
+                                </Form.Label>
                                 <Autocomplete
                                     disablePortal
                                     id="combo-box-demo"
@@ -74,7 +81,12 @@ export function ClassPicker({
                                         (course: Course): string => course.id
                                     )}
                                     //map the options
-                                    sx={{ width: 300, background: "white" }}
+                                    sx={{
+                                        width: 200,
+                                        textAlign: "center",
+                                        align: "center",
+                                        backgroundColor: "white"
+                                    }}
                                     renderInput={(params) => (
                                         <TextField
                                             value={course.id}
@@ -95,7 +107,13 @@ export function ClassPicker({
                             </Form.Group>
                         </Col>
                         <Col className="CoursesRight">
-                            <strong>Courses:</strong>
+                            <Form.Label
+                                style={{
+                                    color: "white"
+                                }}
+                            >
+                                Courses:
+                            </Form.Label>
                             {schedule.flat().map((course: Course) => (
                                 <li
                                     className="CoursesList"
@@ -106,8 +124,19 @@ export function ClassPicker({
                                         border: "1px solid black"
                                     }}
                                 >
-                                    <Col>{course.id} </Col>
-                                    <Col>
+                                    <Col
+                                        style={{
+                                            color: "white",
+                                            backgroundColor: "blue"
+                                        }}
+                                    >
+                                        {course.id}{" "}
+                                    </Col>
+                                    <Col
+                                        style={{
+                                            backgroundColor: "blue"
+                                        }}
+                                    >
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
@@ -133,7 +162,7 @@ export function ClassPicker({
                                                         )
                                                     }
                                                 >
-                                                    delete
+                                                    ⦻
                                                 </Button>
                                             ]}
                                         />

@@ -132,20 +132,29 @@
 */
 
 .Courses {
-    width: 80%;
+    width: 50%;
     justify-content: center;
-    background-color: rgb(112, 24, 228);
-    border: 5px solid grey;
+    background-color: rgb(190, 190, 190);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 20px;
     margin: auto;
-    min-height: 275px;
+    min-height: 137.5px;
+    max-height: 275px;
 }
 .CoursesLeft {
-    background-color: rgb(44, 24, 228);
+    background-color: rgb(106, 92, 238);
     border: 1px solid grey;
+    border-radius: 25px;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
 }
 .CoursesRight {
     background-color: rgb(106, 92, 238);
     border: 1px solid grey;
+    border-radius: 25px;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
 }
 .CoursesList {
     background-color: rgb(21, 4, 177);
@@ -159,21 +168,28 @@
     display: none;
 }
 .semesterAdd {
-    width: 80%;
+    width: 58%;
     justify-content: center;
-    background-color: rgb(112, 24, 228);
-    border: 5px solid grey;
+    background-color: rgb(190, 190, 190);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 20px;
     margin: auto;
-    max-height: 275px;
     min-height: 137.5px;
+    max-height: 275px;
+    text-shadow: 2px 2px "black";
 }
 .semesterAddForm {
-    background-color: rgb(44, 24, 228);
-    border: 1px solid grey;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(106, 92, 238);
+    border: 2px solid rgb(255, 255, 255);
 }
 .semesterAddListDelete {
+    border-radius: 25px;
+    padding: 20px;
     background-color: rgb(106, 92, 238);
-    border: 1px solid grey;
+    border: 2px solid rgb(255, 255, 255);
 }
 .semesterAddList {
     background-color: rgb(21, 4, 177);
@@ -188,25 +204,22 @@
 }
 
 .planAdd {
-    width: 80%;
+    width: 28%;
     justify-content: center;
-    background-color: rgb(112, 24, 228);
-    border: 5px solid rgb(60, 18, 18);
+    background-color: rgb(190, 190, 190);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 20px;
     margin: auto;
     min-height: 137.5px;
     max-height: 275px;
 }
-.planAddForm {
-    background-color: rgb(44, 24, 228);
-    border: 1px solid grey;
-}
 .planAddListDelete {
-    background-color: rgb(106, 92, 238);
-    border: 1px solid grey;
+    background-color: rgba(199, 45, 255, 0);
+    border-radius: 25px;
+    padding: 20px;
 }
 .planAddList {
-    background-color: rgb(21, 4, 177);
-    border: 1px solid grey;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
