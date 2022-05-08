@@ -1,22 +1,22 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import { ClassPicker } from "./ClassPicker";
-import { Semester } from "../interfaces/projectInterfaces";
+//import React from "react";
+import { screen } from "@testing-library/react";
+// import { ClassPicker } from "./ClassPicker";
+// import { Semester } from "../interfaces/projectInterfaces";
 
 describe("ClassPicker tests", () => {
-    beforeEach(() => {
-        render(
-            <ClassPicker
-                setCourseMenuView={function (courseMenuView: boolean): void {
-                    throw new Error("Function not implemented.");
-                }}
-                selectedSemester={undefined}
-                updateSelectedSemester={function (semester: Semester): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
-    });
+    // beforeEach(() => {
+    //     render(
+    //         <ClassPicker
+    //             setCourseMenuView={function (courseMenuView: boolean): void {
+    //                 throw new Error("Function not implemented.");
+    //             }}
+    //             selectedSemester={undefined}
+    //             updateSelectedSemester={function (semester: Semester): void {
+    //                 throw new Error("Function not implemented.");
+    //             }}
+    //         />
+    //     );
+    // });
     test("There is a Add Course Button", () => {
         const addCourseButton = screen.getByRole("button", {
             name: /Add Course/i
