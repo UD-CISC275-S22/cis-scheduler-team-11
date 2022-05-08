@@ -92,6 +92,7 @@ export function SemesterCreator({
 
     return (
         <div>
+            <h1>Semesters</h1>
             <Container className="semesterAdd">
                 <Row>
                     <Col>
@@ -99,7 +100,13 @@ export function SemesterCreator({
                             controlId="Semester"
                             className="semesterAddForm"
                         >
-                            <Form.Label>Add Semester</Form.Label>
+                            <Form.Label
+                                style={{
+                                    color: "white"
+                                }}
+                            >
+                                Add Semester
+                            </Form.Label>
                             <Form.Select
                                 value={semesterSeason}
                                 onChange={updateSeason}
@@ -118,6 +125,11 @@ export function SemesterCreator({
                             />
                             <Button
                                 size="sm"
+                                style={{
+                                    backgroundColor: "yellow",
+                                    color: "black",
+                                    fontWeight: "bold"
+                                }}
                                 onClick={() =>
                                     addSemester(semesterSeason, semesterYear)
                                 }
@@ -127,7 +139,13 @@ export function SemesterCreator({
                         </Form.Group>
                     </Col>
                     <Col className="semesterAddListDelete">
-                        <strong>Semester:</strong>
+                        <Form.Label
+                            style={{
+                                color: "white"
+                            }}
+                        >
+                            Add Semester
+                        </Form.Label>
                         <div className="semesterAddList">
                             {semesterList.map((semester: Semester) => (
                                 <li
@@ -136,10 +154,11 @@ export function SemesterCreator({
                                         display: "flex",
                                         height: "33px",
                                         border: "1px solid black",
+                                        color: "white",
                                         backgroundColor:
                                             semester.id === selectedSemester.id
-                                                ? "green"
-                                                : "grey"
+                                                ? "blue"
+                                                : "blue"
                                     }}
                                 >
                                     <Col>{semester.id} </Col>
@@ -181,7 +200,7 @@ export function SemesterCreator({
                                                         )
                                                     }
                                                 >
-                                                    Delete
+                                                    ⦻
                                                 </Button>
                                             ]}
                                         />
@@ -189,20 +208,30 @@ export function SemesterCreator({
                                 </li>
                             ))}
                         </div>
-                        <Button onClick={deleteSemester}>
-                            Delete Semester
+                        <Button
+                            onClick={deleteSemester}
+                            style={{
+                                backgroundColor: "red",
+                                color: "white",
+                                fontWeight: "bold"
+                            }}
+                        >
+                            Delete Semesters
                         </Button>
                     </Col>
                 </Row>
                 <div>
-                    <Button onClick={() => setSemMenuView(false)}>
+                    <Button onClick={() => setSemMenuView(false)} size="sm">
                         Hide Semester Menu
                     </Button>
                 </div>
                 {!courseMenuView && selectedSemester.id != defaultSem.id ? (
                     <div>
-                        <Button onClick={() => setCourseMenuView(true)}>
-                            Show Course Menu
+                        <Button
+                            onClick={() => setCourseMenuView(true)}
+                            size="sm"
+                        >
+                            ▼ Add Course Menu ▼
                         </Button>
                     </div>
                 ) : (
