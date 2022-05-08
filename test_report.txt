@@ -2,17 +2,425 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (65 ms)
+FAIL src/components/SemesterCreator.test.tsx
+  ● SingleSemester tests › Add Semester option is shown
 
+    TestingLibraryElementError: Unable to find an element with the text: /add semester/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      19 |     // });
+      20 |     test("Add Semester option is shown", () => {
+    > 21 |         const linkElement = screen.getByText(/add semester/i);
+         |                                    ^
+      22 |         expect(linkElement).toBeInTheDocument();
+      23 |     });
+      24 |     test("Fall Semester option is shown", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:21:36)
+
+  ● SingleSemester tests › Fall Semester option is shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /fall/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      23 |     });
+      24 |     test("Fall Semester option is shown", () => {
+    > 25 |         const linkElement = screen.getByText(/fall/i);
+         |                                    ^
+      26 |         expect(linkElement).toBeInTheDocument();
+      27 |     });
+      28 |     test("Spring Semester option is shown", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:25:36)
+
+  ● SingleSemester tests › Spring Semester option is shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /spring/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      27 |     });
+      28 |     test("Spring Semester option is shown", () => {
+    > 29 |         const linkElement = screen.getByText(/spring/i);
+         |                                    ^
+      30 |         expect(linkElement).toBeInTheDocument();
+      31 |     });
+      32 |     test("Summer Semester option is shown", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:29:36)
+
+  ● SingleSemester tests › Summer Semester option is shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /summer/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      31 |     });
+      32 |     test("Summer Semester option is shown", () => {
+    > 33 |         const linkElement = screen.getByText(/summer/i);
+         |                                    ^
+      34 |         expect(linkElement).toBeInTheDocument();
+      35 |     });
+      36 |     test("Winter Semester option is shown", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:33:36)
+
+  ● SingleSemester tests › Winter Semester option is shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /winter/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      35 |     });
+      36 |     test("Winter Semester option is shown", () => {
+    > 37 |         const linkElement = screen.getByText(/winter/i);
+         |                                    ^
+      38 |         expect(linkElement).toBeInTheDocument();
+      39 |     });
+      40 |     test("There is a Add Button", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:37:36)
+
+  ● SingleSemester tests › There is a Add Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/add/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      39 |     });
+      40 |     test("There is a Add Button", () => {
+    > 41 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      42 |             name: /add/i
+      43 |         });
+      44 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:41:35)
+
+  ● SingleSemester tests › There is a Select Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/select/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      45 |     });
+      46 |     test("There is a Select Button", () => {
+    > 47 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      48 |             name: /select/i
+      49 |         });
+      50 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:47:35)
+
+  ● SingleSemester tests › There is a Edit Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/edit/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      51 |     });
+      52 |     test("There is a Edit Button", () => {
+    > 53 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      54 |             name: /edit/i
+      55 |         });
+      56 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:53:35)
+
+  ● SingleSemester tests › There is a Delete Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/delete/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      57 |     });
+      58 |     test("There is a Delete Button", () => {
+    > 59 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      60 |             name: /delete/i
+      61 |         });
+      62 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:59:35)
+
+  ● SingleSemester tests › There is a Delete Semester Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/delete semester/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      63 |     });
+      64 |     test("There is a Delete Semester Button", () => {
+    > 65 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      66 |             name: /delete semester/i
+      67 |         });
+      68 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:65:35)
+
+  ● SingleSemester tests › There is a Hide Semester Menu Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/hide semester menu/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      69 |     });
+      70 |     test("There is a Hide Semester Menu Button", () => {
+    > 71 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      72 |             name: /hide semester menu/i
+      73 |         });
+      74 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:71:35)
+
+  ● SingleSemester tests › There is a Show Course Menu Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/show course menu/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      75 |     });
+      76 |     test("There is a Show Course Menu Button", () => {
+    > 77 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      78 |             name: /show course menu/i
+      79 |         });
+      80 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/SemesterCreator.test.tsx:77:35)
+
+FAIL src/components/ClassPicker.test.tsx
+  ● ClassPicker tests › There is a Add Course Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Add Course/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      19 |     // });
+      20 |     test("There is a Add Course Button", () => {
+    > 21 |         const addCourseButton = screen.getByRole("button", {
+         |                                        ^
+      22 |             name: /Add Course/i
+      23 |         });
+      24 |         expect(addCourseButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:21:40)
+
+  ● ClassPicker tests › There is an Clear Courses Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/clear courses/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      31 |     }); */
+      32 |     test("There is an Clear Courses Button", () => {
+    > 33 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      34 |             name: /clear courses/i
+      35 |         });
+      36 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:33:35)
+
+  ● ClassPicker tests › Add Courses Title is Present
+
+    TestingLibraryElementError: Unable to find an element with the text: /Add Course/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      43 |     }); */
+      44 |     test("Add Courses Title is Present", () => {
+    > 45 |         const linkElement = screen.getByText(/Add Course/i);
+         |                                    ^
+      46 |         expect(linkElement).toBeInTheDocument();
+      47 |     });
+      48 |     test("Select Course is Present", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:45:36)
+
+  ● ClassPicker tests › Select Course is Present
+
+    TestingLibraryElementError: Unable to find an element with the text: /Select Course/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      47 |     });
+      48 |     test("Select Course is Present", () => {
+    > 49 |         const linkElement = screen.getByText(/Select Course/i);
+         |                                    ^
+      50 |         expect(linkElement).toBeInTheDocument();
+      51 |     });
+      52 |     test("Course list area is Present", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:49:36)
+
+  ● ClassPicker tests › Course list area is Present
+
+    TestingLibraryElementError: Unable to find an element with the text: /Courses:/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      51 |     });
+      52 |     test("Course list area is Present", () => {
+    > 53 |         const linkElement = screen.getByText(/Courses:/i);
+         |                                    ^
+      54 |         expect(linkElement).toBeInTheDocument();
+      55 |     });
+      56 |     test("Course form label is present", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:53:36)
+
+  ● ClassPicker tests › Course form label is present
+
+    TestingLibraryElementError: Unable to find a label with the text of: /course/i
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body />[39m
+
+      55 |     });
+      56 |     test("Course form label is present", () => {
+    > 57 |         const linkElement = screen.getByLabelText(/course/i);
+         |                                    ^
+      58 |         expect(linkElement).toBeInTheDocument();
+      59 |     });
+      60 | });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getAllByLabelText (node_modules/@testing-library/dom/dist/queries/label-text.js:116:38)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByLabelText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:57:36)
+
+PASS src/App.test.tsx
+FAIL src/components/MultipleSemester.test.tsx
+  ● Test suite failed to run
+
+    Your test suite must contain at least one test.
+
+      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
+      at node_modules/@jest/core/build/TestScheduler.js:316:17
+      at node_modules/emittery/index.js:260:13
+          at Array.map (<anonymous>)
+      at Emittery.emit (node_modules/emittery/index.js:258:23)
+
+PASS src/components/SingleSemester.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |     8.2 |     8.21 |    4.46 |    8.83 |                   
+All files              |    9.23 |     9.58 |    5.35 |    9.94 |                   
  src                   |   66.66 |      100 |      50 |   66.66 |                   
   App.tsx              |   66.66 |      100 |      50 |   66.66 | 29                
- src/components        |    7.29 |     8.21 |    3.63 |    7.86 |                   
-  ClassPicker.tsx      |    6.66 |        0 |    5.26 |     7.4 | 25-163            
+ src/components        |    8.33 |     9.58 |    4.54 |    8.98 |                   
+  ClassPicker.tsx      |    6.66 |        0 |    5.26 |     7.4 | 25-192            
   CourseDisplay.tsx    |       0 |        0 |       0 |       0 | 5-6               
   CourseEditor.tsx     |       0 |        0 |       0 |       0 | 17-124            
   DropdownMenu.tsx     |       0 |        0 |       0 |       0 | 6-50              
@@ -20,18 +428,19 @@ All files              |     8.2 |     8.21 |    4.46 |    8.83 |
   MainView.tsx         |   54.54 |       50 |   33.33 |   54.54 | 15,18-26          
   MultipleSemester.tsx |       0 |      100 |       0 |       0 | 7-12              
   PlanAdder.tsx        |      50 |      100 |   33.33 |      50 | 17,39             
-  PlanCreator.tsx      |   21.05 |        0 |    7.69 |   26.66 | 22-45,66-95       
+  PlanCreator.tsx      |   21.05 |        0 |    7.69 |   26.66 | 22-45,72-109      
   PlanHide.tsx         |       0 |        0 |       0 |       0 | 15-64             
   PlanView.tsx         |       0 |        0 |       0 |       0 | 15-43             
-  SemesterCreator.tsx  |       0 |        0 |       0 |       0 | 17-204            
+  SemesterCreator.tsx  |       0 |        0 |       0 |       0 | 17-231            
   SemesterEditor.tsx   |       0 |      100 |       0 |       0 | 18-71             
-  SingleSemester.tsx   |       0 |        0 |       0 |       0 | 7-22              
+  SingleSemester.tsx   |      40 |       25 |      25 |      40 | 8-9,22            
   YearView.tsx         |       0 |      100 |       0 |       0 | 7-33              
  src/interfaces        |       0 |        0 |       0 |       0 |                   
   projectInterfaces.ts |       0 |        0 |       0 |       0 |                   
 -----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+
+Test Suites: 3 failed, 2 passed, 5 total
+Tests:       18 failed, 7 passed, 25 total
 Snapshots:   0 total
-Time:        4.191 s
+Time:        4.805 s
 Ran all test suites.
