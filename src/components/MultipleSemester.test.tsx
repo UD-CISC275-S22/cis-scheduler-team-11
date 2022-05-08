@@ -1,6 +1,8 @@
-// import React from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 // import { render, screen } from "@testing-library/react";
 // import MultipleSemester from "./MultipleSemester";
+// import { Plan } from "../interfaces/projectInterfaces";
 
 // describe("SingleSemester tests", () => {
 //     beforeEach(() => {

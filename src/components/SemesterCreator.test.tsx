@@ -1,22 +1,22 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import { SemesterCreator } from "./SemesterCreator";
-import { Plan } from "../interfaces/projectInterfaces";
+// import React from "react";
+import { screen } from "@testing-library/react";
+// import { SemesterCreator } from "./SemesterCreator";
+// import { Plan } from "../interfaces/projectInterfaces";
 
 describe("SingleSemester tests", () => {
-    beforeEach(() => {
-        render(
-            <SemesterCreator
-                updateSelectedPlan={function (plan: Plan): void {
-                    throw new Error("Function not implemented.");
-                }}
-                selectedPlan={undefined}
-                setSemMenuView={function (semMenuView: boolean): void {
-                    throw new Error("Function not implemented.");
-                }}
-            />
-        );
-    });
+    // beforeEach(() => {
+    //     render(
+    //         <SemesterCreator
+    //             updateSelectedPlan={function (plan: Plan): void {
+    //                 throw new Error("Function not implemented.");
+    //             }}
+    //             selectedPlan={undefined}
+    //             setSemMenuView={function (semMenuView: boolean): void {
+    //                 throw new Error("Function not implemented.");
+    //             }}
+    //         />
+    //     );
+    // });
     test("Add Semester option is shown", () => {
         const linkElement = screen.getByText(/add semester/i);
         expect(linkElement).toBeInTheDocument();
