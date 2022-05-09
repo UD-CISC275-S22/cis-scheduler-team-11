@@ -18,19 +18,24 @@ export function PlanCreator({
     setPlanList: (planList: Plan[]) => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
-    function addPlan(newPlan: Plan) {
-        if (!planList.some((plan) => plan.id === newPlan.id)) {
+    function addPlan(newPlan: Plan): number {
+        if (newPlan.id === "Plan Name") {
+            alert("Enter a new name for this plan!");
+            return 0;
+        } else if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
             handleCloseAddModal();
+            return 1;
         } else {
             alert("A plan with that ID already exists!");
+            return 0;
         }
     }
     function deletePlans() {
         setPlanList([]);
     }
 
-    function deleteSpecificPlan(id: number) {
+    function deleteSpecificPlan(id: string) {
         confirmAlert({
             title: "Plan Deletion Confirmation",
             message: "Are you sure you want to delete this plan?",

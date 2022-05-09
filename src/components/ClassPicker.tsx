@@ -6,12 +6,18 @@ import TextField from "@mui/material/TextField";
 import { Course, Semester } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import courses from "../data/courses.json";
+import catalog from "../data/catalog.json";
 import SingleSemester from "./SingleSemester";
 const COURSES = courses.map(
     (course): Course => ({
         ...course
     })
 );
+const COURSES2 = Object.values(catalog)
+    .flat()
+    .map((category) => Object.values(category).flat())
+    .flat();
+console.log(COURSES2);
 
 export function ClassPicker({
     setCourseMenuView,

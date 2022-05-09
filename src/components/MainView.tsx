@@ -6,15 +6,20 @@ import { PlanView } from "../components/PlanView";
 
 export function MainView(): JSX.Element {
     const defaultPlan: Plan = {
-        id: -1,
+        start: 2000,
+        id: "Plan Name",
         semesters: []
     };
     const [selectedPlan, selectPlan] = useState<Plan>(defaultPlan);
     const [plans, setPlans] = useState<Plan[]>([]);
-    if (plans.length > 0 && selectedPlan.id == -1) {
+    if (
+        plans.length > 0 &&
+        (selectedPlan.id == "Plan Name" ||
+            !plans.find((plan: Plan) => plan.id === selectedPlan.id))
+    ) {
         selectPlan(plans[0]);
     }
-    if (plans.length == 0 && selectedPlan.id != -1) {
+    if (plans.length == 0 && selectedPlan.id != "Plan Name") {
         selectPlan(defaultPlan);
     }
     function updateSelectedPlan(editedPlan: Plan) {

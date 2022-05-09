@@ -9,6 +9,21 @@ export interface Course {
     enrolled: boolean;
 }
 
+export interface Course2 {
+    /** A unique identifier for the course */
+    code: string;
+    /** The human-friendly title of the course */
+    name: string;
+    /** Number of credits for the course */
+    descr: string;
+    /** The current status of the course */
+    credits: string;
+    preReq: string;
+    restrict: string;
+    breadth: string;
+    typ: string;
+}
+
 export interface Semester {
     /** The id of the Semester i.e. Fall 2022 */
     id: string;
@@ -17,8 +32,9 @@ export interface Semester {
 }
 
 export interface Plan {
+    start: number;
     /** The id of the plan */
-    id: number;
+    id: string;
     /** An array of the Semesters and their courses */
     semesters: Semester[][];
 }

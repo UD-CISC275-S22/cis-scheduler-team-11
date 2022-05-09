@@ -9,15 +9,22 @@ export function PlanAdder({
 }: {
     show: boolean;
     handleClose: () => void;
-    addPlan: (newPlan: Plan) => void;
+    addPlan: (newPlan: Plan) => number;
 }) {
-    const [id, setId] = useState<number>(0);
+    const [id, setId] = useState<string>("Plan Name");
+    const [start, setStart] = useState<number>(2000);
 
     function saveChanges() {
-        addPlan({
-            id: id,
-            semesters: []
-        });
+        if (
+            addPlan({
+                start: start,
+                id: id,
+                semesters: []
+            }) === 1
+        ) {
+            setId("Plan Name");
+            setStart(2000);
+        }
     }
 
     return (
@@ -28,15 +35,28 @@ export function PlanAdder({
             <Modal.Body>
                 <Form.Group controlId="planId" as={Row}>
                     <Form.Label column sm={3}>
-                        Plan Number
+                        Plan ID
+                    </Form.Label>
+                    <Col>
+                        <Form.Control
+                            value={id}
+                            onChange={(
+                                event: React.ChangeEvent<HTMLInputElement>
+                            ) => setId(event.target.value)}
+                        />
+                    </Col>
+                </Form.Group>
+                <Form.Group controlId="planStart" as={Row}>
+                    <Form.Label column sm={3}>
+                        Start Year
                     </Form.Label>
                     <Col>
                         <Form.Control
                             type="number"
-                            value={id}
+                            value={start}
                             onChange={(
                                 event: React.ChangeEvent<HTMLInputElement>
-                            ) => setId(parseInt(event.target.value))}
+                            ) => setStart(parseInt(event.target.value))}
                         />
                     </Col>
                 </Form.Group>
