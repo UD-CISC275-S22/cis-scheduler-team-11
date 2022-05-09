@@ -29,7 +29,6 @@ export function PlanCreator({
     function deletePlans() {
         setPlanList([]);
     }
-
     function deleteSpecificPlan(id: number) {
         confirmAlert({
             title: "Plan Deletion Confirmation",
@@ -61,7 +60,6 @@ export function PlanCreator({
                                 color: "white",
                                 fontWeight: "bold"
                             }}
-                            size="sm"
                             onClick={handleShowAddModal}
                         >
                             New Plan
@@ -117,18 +115,29 @@ export function PlanCreator({
                             </li>
                         ))}
                     </div>
-                    <div>
-                        <Button
-                            onClick={deletePlans}
+                    {planList.length > 0 ? (
+                        <div>
+                            <Button
+                                onClick={deletePlans}
+                                style={{
+                                    backgroundColor: "red",
+                                    color: "white",
+                                    fontWeight: "bold"
+                                }}
+                            >
+                                Delete Plans
+                            </Button>
+                        </div>
+                    ) : (
+                        <div
                             style={{
-                                backgroundColor: "red",
-                                color: "white",
+                                color: "black",
                                 fontWeight: "bold"
                             }}
                         >
-                            Delete Plans
-                        </Button>
-                    </div>
+                            To start, Press New Plan!
+                        </div>
+                    )}
                 </Col>
             </Row>
             <div>

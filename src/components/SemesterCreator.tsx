@@ -153,12 +153,12 @@ export function SemesterCreator({
                                     style={{
                                         display: "flex",
                                         height: "33px",
-                                        border: "1px solid black",
-                                        color: "white",
-                                        backgroundColor:
+                                        border:
                                             semester.id === selectedSemester.id
-                                                ? "blue"
-                                                : "blue"
+                                                ? "3px solid yellow"
+                                                : "2px solid gray",
+                                        color: "white",
+                                        backgroundColor: "blue"
                                     }}
                                 >
                                     <Col>{semester.id} </Col>
@@ -208,16 +208,29 @@ export function SemesterCreator({
                                 </li>
                             ))}
                         </div>
-                        <Button
-                            onClick={deleteSemester}
-                            style={{
-                                backgroundColor: "red",
-                                color: "white",
-                                fontWeight: "bold"
-                            }}
-                        >
-                            Delete Semesters
-                        </Button>
+                        {semesterList.length > 0 ? (
+                            <div>
+                                <Button
+                                    onClick={deleteSemester}
+                                    style={{
+                                        backgroundColor: "red",
+                                        color: "white",
+                                        fontWeight: "bold"
+                                    }}
+                                >
+                                    Delete Semesters
+                                </Button>
+                            </div>
+                        ) : (
+                            <div
+                                style={{
+                                    color: "white",
+                                    fontWeight: "bold"
+                                }}
+                            >
+                                You Currently Have No Semesters!
+                            </div>
+                        )}
                     </Col>
                 </Row>
                 <div>
