@@ -153,10 +153,10 @@ function setShowAddModal(): void {
     throw new Error("Function not implemented.");
 }
 
-function deleteSpecificCourse(course: any): void {
+function deleteSpecificCourse(): void {
     throw new Error("Function not implemented.");
 }
 
-function course(course: any): void {
+function course(): void {
     throw new Error("Function not implemented.");
 }
