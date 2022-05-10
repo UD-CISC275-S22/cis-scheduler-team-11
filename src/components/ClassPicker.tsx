@@ -5,19 +5,32 @@ import { CourseEditor } from "./CourseEditor";
 import TextField from "@mui/material/TextField";
 import { Course, Semester } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
-import courses from "../data/courses.json";
+//import courses from "../data/courses.json";
 import catalog from "../data/catalog.json";
 import SingleSemester from "./SingleSemester";
-const COURSES = courses.map(
+
+/*const COURSES = courses.map(
     (course): Course => ({
         ...course
     })
-);
-const COURSES2 = Object.values(catalog)
+);*/
+const COURSES = Object.values(catalog)
     .flat()
     .map((category) => Object.values(category).flat())
-    .flat();
-console.log(COURSES2);
+    .flat()
+    .map((crs) => ({ ...crs, uid: -1 }));
+//console.log(COURSES);
+const defaultCourse = {
+    code: " ",
+    name: " ",
+    descr: " ",
+    credits: " ",
+    preReq: " ",
+    restrict: " ",
+    breadth: " ",
+    typ: " ",
+    uid: -1
+};
 
 export function ClassPicker({
     setCourseMenuView,
@@ -29,6 +42,41 @@ export function ClassPicker({
     updateSelectedSemester: (semester: Semester) => void;
 }): JSX.Element {
     const [course, setCourse] = useState<Course>(COURSES[0]);
+    const [selectedCourse, selectCourse] = useState<Course>(
+        selectedSemester.courses[0]
+            ? selectedSemester.courses[0]
+            : defaultCourse
+    );
+    if (selectedSemester.courses.length > 0 && selectedCourse.code === " ") {
+        selectCourse(selectedSemester.courses[0]);
+    }
+    if (selectedSemester.courses.length == 0 && selectedCourse.code != " ") {
+        selectCourse(defaultCourse);
+    }
+    /*
+    function setCourseList(crsList: Course[]) {
+        //console.log(semList);
+        const crsListC = [...crsList];
+        crsListC.sort();
+        updateSelectedSemester({
+            ...selectedSemester,
+            courses: crsListC
+        });
+        //console.log(newSems);
+        //console.log(selectedPlan);
+    }
+    function updateSelectedCourse(course: Course) {
+        const newCrsList = selectedSemester.courses.map((crs: Course) =>
+            crs.code + crs.name.toLowerCase() ===
+            selectedCourse.code + selectedCourse.name.toLowerCase()
+                ? course
+                : crs
+        );
+
+        setCourseList(newCrsList);
+        selectCourse(course);
+    }*/
+    const [UID, setUID] = useState<number>(0);
     const schedule = selectedSemester.courses;
     function setSchedule(courses: Course[]) {
         updateSelectedSemester({ ...selectedSemester, courses: courses });
@@ -37,9 +85,14 @@ export function ClassPicker({
     const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
-        const newSchedule = { ...course };
+        const newSchedule = { ...course, uid: UID };
+        setUID(UID + 1);
         const newScheduleList = [...schedule, newSchedule];
-        const check = schedule.filter(({ id }) => id === course.id);
+        const check = schedule.filter(
+            ({ code, name }) =>
+                code + name.toLowerCase ===
+                course.code + course.name.toLowerCase()
+        );
         if (check.length === 0) {
             setSchedule(newScheduleList);
         } else {
@@ -50,7 +103,7 @@ export function ClassPicker({
         setSchedule([]);
     }
     function deleteSpecificCourse(course: Course) {
-        setSchedule(schedule.filter(({ id }) => id !== course.id));
+        setSchedule(schedule.filter(({ code }) => code !== course.code));
     }
     const [selSemView, setSelSemView] = useState<boolean>(false);
 
@@ -65,31 +118,31 @@ export function ClassPicker({
                                 <Autocomplete
                                     disablePortal
                                     id="combo-box-demo"
-                                    inputValue={course.id}
+                                    inputValue={course.code}
                                     onChange={(e, v) =>
                                         setCourse({
                                             ...course,
-                                            id:
+                                            code:
                                                 v === null
                                                     ? " "
                                                     : v.toUpperCase()
                                         })
                                     }
-                                    value={course.id}
+                                    value={course.code}
                                     options={COURSES.map(
-                                        (course: Course): string => course.id
+                                        (course: Course): string => course.code
                                     )}
                                     //map the options
                                     sx={{ width: 300, background: "white" }}
                                     renderInput={(params) => (
                                         <TextField
-                                            value={course.id}
+                                            value={course.code}
                                             {...params}
                                             label="Course"
                                             onChange={({ target }) =>
                                                 setCourse({
                                                     ...course,
-                                                    id: target.value.toUpperCase()
+                                                    code: target.value.toUpperCase()
                                                 })
                                             }
                                         />
@@ -105,14 +158,14 @@ export function ClassPicker({
                             {schedule.flat().map((course: Course) => (
                                 <li
                                     className="CoursesList"
-                                    key={course.id + course.credits}
+                                    key={course.code + course.credits}
                                     style={{
                                         display: "flex",
                                         height: "33px",
                                         border: "1px solid black"
                                     }}
                                 >
-                                    <Col>{course.id} </Col>
+                                    <Col>{course.code} </Col>
                                     <Col>
                                         <DropdownMenu
                                             horizontal={true}

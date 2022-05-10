@@ -275,3 +275,7 @@
         transform: rotate(360deg);
     }
 }
+
+.overlay-modal-class-name {
+    z-index: 9;
+}

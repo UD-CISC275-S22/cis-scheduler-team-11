@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
-import { Semester, Course } from "../interfaces/projectInterfaces";
+import { Semester /*, Course*/ } from "../interfaces/projectInterfaces";
 
 export function SemesterEditor({
     show,
@@ -8,9 +8,7 @@ export function SemesterEditor({
     semester,
     semesters,
     setSemesters,
-    selectSemester,
-    setSemesterYear,
-    setSemesterSeason
+    selectSemester
 }: {
     show: boolean;
     handleClose: () => void;
@@ -18,8 +16,6 @@ export function SemesterEditor({
     semesters: Semester[];
     setSemesters: (semester: Semester[]) => void;
     selectSemester: (semester: Semester) => void;
-    setSemesterYear: (year: string) => void;
-    setSemesterSeason: (season: string) => void;
 }) {
     const [ID, setID] = useState<string>(semester.id);
 

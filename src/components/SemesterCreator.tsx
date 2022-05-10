@@ -57,27 +57,19 @@ export function SemesterCreator({
     }
 
     function updateSelectedSemester(semester: Semester) {
-        if (
+        setSemesterList(
             selectedPlan.semesters
                 .flat()
-                .find((sem: Semester) => sem.id === semester.id)
-        ) {
-            setSemesterList(
-                selectedPlan.semesters
-                    .flat()
-                    .map((sem: Semester) =>
-                        sem.id === selectedSemester.id ? semester : sem
-                    )
-            );
-            selectSemester(semester);
-        } else {
-            alert("That semester already exists");
-            console.log("That semester already exists");
-        }
+                .map((sem: Semester) =>
+                    sem.id === selectedSemester.id ? semester : sem
+                )
+        );
+        selectSemester(semester);
     }
     const [formSemesterSeason, setFormSemesterSeason] =
         useState<string>("Fall");
     const [formSemesterYear, setFormSemesterYear] = useState<string>("2000");
+    /*
     function setSemesterSeason(season: string) {
         updateSelectedSemester({
             ...selectedSemester,
@@ -89,7 +81,7 @@ export function SemesterCreator({
             ...selectedSemester,
             id: selectedSemester.id.split(" ")[0] + " " + year
         });
-    }
+    }*/
     const [semester, setSemester] = [selectedSemester, selectSemester];
 
     const [showAddModal, setShowAddModal] = useState(false);
@@ -111,7 +103,7 @@ export function SemesterCreator({
                 if (check.length === 0) {
                     setSemesterList(newSemesterList);
                 } else {
-                    alert("That semester already exists! 2");
+                    alert("That semester already exists!");
                 }
             } else {
                 alert("Semester year must be after plan start year");
@@ -271,9 +263,7 @@ export function SemesterCreator({
                     semesters={semesterList}
                     selectSemester={selectSemester}
                     setSemesters={setSemesterList}
-                    setSemesterYear={setSemesterYear}
-                    setSemesterSeason={setSemesterSeason}
-                ></SemesterEditor>
+                />
             </div>
         </div>
     );

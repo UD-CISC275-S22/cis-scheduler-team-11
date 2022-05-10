@@ -1,15 +1,15 @@
-export interface Course {
-    /** A unique identifier for the course */
+/*export interface CourseOLD {
+    /** A unique identifier for the course */ /*
     id: string;
-    /** The human-friendly title of the course */
+    /** The human-friendly title of the course */ /*
     title: string;
-    /** Number of credits for the course */
+    /** Number of credits for the course */ /*
     credits: number;
-    /** The current status of the course */
+    /** The current status of the course */ /*
     enrolled: boolean;
-}
+}*/
 
-export interface Course2 {
+export interface Course {
     /** A unique identifier for the course */
     code: string;
     /** The human-friendly title of the course */
@@ -22,6 +22,7 @@ export interface Course2 {
     restrict: string;
     breadth: string;
     typ: string;
+    uid: number;
 }
 
 export interface Semester {
@@ -29,6 +30,14 @@ export interface Semester {
     id: string;
     /** An array of the courses and their identifiers */
     courses: Course[];
+}
+
+export interface Plan {
+    start: number;
+    /** The id of the plan */
+    id: string;
+    /** An array of the Semesters and their courses */
+    semesters: Semester[][];
 }
 
 export interface Plan {
