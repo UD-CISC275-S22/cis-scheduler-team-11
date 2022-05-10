@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .App-link {
@@ -34,7 +34,7 @@
     justify-content: center;
     padding: 4px;
     width: 100%;
-    background-color: beige;
+    background-color: rgb(255, 255, 255);
 }
 
 .MultSemHead {
@@ -81,7 +81,7 @@
     padding-bottom: 5px;
     min-width: 350px;
     min-height: 100%;
-    background-color: rgb(253, 191, 55);
+    background-color: rgb(255, 255, 255);
     display: inline-block;
     overflow-y: scroll;
 
@@ -97,7 +97,9 @@
     border: 1px solid grey;
     padding: 5px;
     width: 1100px;
-    background-color: rgb(241, 120, 64);
+    background-color: rgb(255, 255, 0);
+    border-radius: 25px;
+    padding: 20px;
 }
 
 .yearSubHead {
@@ -105,7 +107,9 @@
     padding: 5px;
     width: 97.5%;
     height: 500px;
-    background-color: rgb(64, 241, 153);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(0, 102, 255);
     white-space: nowrap;
     display: flex;
 }

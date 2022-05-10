@@ -3,6 +3,7 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
+import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
 
@@ -18,6 +19,7 @@ export function PlanCreator({
     setPlanList: (planList: Plan[]) => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
+    //Adds a new plan if that plan does not already exit
     function addPlan(newPlan: Plan) {
         if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
@@ -26,9 +28,7 @@ export function PlanCreator({
             alert("A plan with that ID already exists!");
         }
     }
-    function deletePlans() {
-        setPlanList([]);
-    }
+    //deleting the selected plan from the plan list
     function deleteSpecificPlan(id: number) {
         confirmAlert({
             title: "Plan Deletion Confirmation",
@@ -115,29 +115,11 @@ export function PlanCreator({
                             </li>
                         ))}
                     </div>
-                    {planList.length > 0 ? (
-                        <div>
-                            <Button
-                                onClick={deletePlans}
-                                style={{
-                                    backgroundColor: "red",
-                                    color: "white",
-                                    fontWeight: "bold"
-                                }}
-                            >
-                                Delete Plans
-                            </Button>
-                        </div>
-                    ) : (
-                        <div
-                            style={{
-                                color: "black",
-                                fontWeight: "bold"
-                            }}
-                        >
-                            To start, Press New Plan!
-                        </div>
-                    )}
+                    {/* If there are no plans currently, we do not need a delete all button */}
+                    <DeleteAllPlans
+                        planList={planList}
+                        setPlanList={setPlanList}
+                    ></DeleteAllPlans>
                 </Col>
             </Row>
             <div>

@@ -3,6 +3,7 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import { Semester, Plan } from "../interfaces/projectInterfaces";
 import { SemesterEditor } from "./SemesterEditor";
 import { ClassPicker } from "./ClassPicker";
+import { DeleteAllSemesters } from "../deleteAllComponents/DeleteAllSemesters";
 import { DropdownMenu } from "./DropdownMenu";
 
 export function SemesterCreator({
@@ -82,10 +83,6 @@ export function SemesterCreator({
     function updateSeason(event: React.ChangeEvent<HTMLSelectElement>) {
         setSemesterSeason(event.target.value);
     }
-    function deleteSemester() {
-        setSemesterList([]);
-    }
-
     function deleteSpecificSemester(id: string) {
         setSemesterList(semesterList.filter((semester) => semester.id != id));
     }
@@ -208,29 +205,10 @@ export function SemesterCreator({
                                 </li>
                             ))}
                         </div>
-                        {semesterList.length > 0 ? (
-                            <div>
-                                <Button
-                                    onClick={deleteSemester}
-                                    style={{
-                                        backgroundColor: "red",
-                                        color: "white",
-                                        fontWeight: "bold"
-                                    }}
-                                >
-                                    Delete Semesters
-                                </Button>
-                            </div>
-                        ) : (
-                            <div
-                                style={{
-                                    color: "white",
-                                    fontWeight: "bold"
-                                }}
-                            >
-                                You Currently Have No Semesters!
-                            </div>
-                        )}
+                        <DeleteAllSemesters
+                            semesterList={semesterList}
+                            setSemesterList={setSemesterList}
+                        ></DeleteAllSemesters>
                     </Col>
                 </Row>
                 <div>

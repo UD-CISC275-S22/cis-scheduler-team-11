@@ -5,6 +5,7 @@ import { CourseEditor } from "./CourseEditor";
 import TextField from "@mui/material/TextField";
 import { Course, Semester } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
+import { DeleteAllCourses } from "../deleteAllComponents/DeleteAllCourses";
 import courses from "../data/courses.json";
 import SingleSemester from "./SingleSemester";
 const COURSES = courses.map(
@@ -39,9 +40,6 @@ export function ClassPicker({
         } else {
             alert("You are already enrolled in that course in this semester");
         }
-    }
-    function clearSchedule() {
-        setSchedule([]);
     }
     function deleteSpecificCourse(course: Course) {
         setSchedule(schedule.filter(({ id }) => id !== course.id));
@@ -169,9 +167,10 @@ export function ClassPicker({
                                     </Col>
                                 </li>
                             ))}
-                            <Button onClick={clearSchedule}>
-                                Clear Courses
-                            </Button>
+                            <DeleteAllCourses
+                                courseList={schedule}
+                                setCourseList={setSchedule}
+                            ></DeleteAllCourses>
                         </Col>
                     </Row>
                     <Row>
