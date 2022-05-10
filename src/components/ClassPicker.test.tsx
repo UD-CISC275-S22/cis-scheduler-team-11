@@ -59,7 +59,7 @@ describe("ClassPicker tests", () => {
                         variant="danger"
                         size="sm"
                         key={2}
-                        onClick={() => deleteSpecificCourse(course)}
+                        onClick={() => deleteSpecificCourse()}
                     >
                         ⦻
                     </Button>
@@ -104,7 +104,7 @@ describe("ClassPicker tests", () => {
                         variant="danger"
                         size="sm"
                         key={2}
-                        onClick={() => deleteSpecificCourse(course)}
+                        onClick={() => deleteSpecificCourse()}
                     >
                         ⦻
                     </Button>
@@ -154,9 +154,5 @@ function setShowAddModal(): void {
 }
 
 function deleteSpecificCourse(): void {
-    throw new Error("Function not implemented.");
-}
-
-function course(): void {
     throw new Error("Function not implemented.");
 }
