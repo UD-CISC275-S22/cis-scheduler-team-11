@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { Course } from "../interfaces/projectInterfaces";
 import catalog from "../data/catalog.json";
-import { confirmAlert } from "react-confirm-alert"; // Import
 
 const categories = Object.keys(catalog);
 
@@ -33,6 +32,7 @@ export function CourseEditor({
     const [typ, setTyp] = useState<string>("");
     const uid = course.uid;
     const [check, setCheck] = useState<boolean>(false);
+    const [checked, setChecked] = useState<boolean>(false);
 
     function updateCredits(credits: string) {
         if (credits.length <= 0) {
@@ -40,6 +40,7 @@ export function CourseEditor({
         }
         setCredits(credits);
     }
+
     function saveChanges(index: number) {
         const newCourses = schedule.map(
             (course: Course): Course => ({ ...course })
@@ -72,55 +73,32 @@ export function CourseEditor({
                 "You cannot have multiple courses with the same code and title"
             );
         } else {
-            let check = false;
             if (codeList.length > 1) {
-                confirmAlert({
-                    overlayClassName: "confirmAlert",
-                    title: "Course Change Confirmation",
-                    message:
-                        "Are you sure you want to have to courses with the same code?",
-                    buttons: [
-                        {
-                            label: "Yes",
-                            onClick: () => {
-                                check = true;
-                            }
-                        },
-                        {
-                            label: "No",
-                            onClick: () =>
-                                console.log("Course change cancelled 1")
-                        }
-                    ]
-                });
+                setCheck(true);
             }
             if (nameList.length > 1) {
-                confirmAlert({
-                    title: "Course Change Confirmation",
-                    message:
-                        "Are you sure you want to have to courses with the same title?3333",
-                    buttons: [
-                        {
-                            label: "Yes",
-                            onClick: () => {
-                                check = true;
-                            }
-                        },
-                        {
-                            label: "No",
-                            onClick: () =>
-                                console.log("Course change cancelled 2")
-                        }
-                    ]
-                });
+                setCheck(true);
             }
-
-            if (check) {
-                setSchedule(newCourses);
-                handleClose();
+            console.log("check" + check);
+            console.log("checked" + checked);
+            if (check && !checked) {
+                alert("Some courses have the same code or title!");
+                setChecked(true);
+            } else {
+                if (!check) {
+                    setSchedule(newCourses);
+                    handleClose();
+                    setChecked(false);
+                }
+                if (checked) {
+                    setSchedule(newCourses);
+                    handleClose();
+                    setChecked(false);
+                }
             }
         }
     }
+
     function refresh() {
         setCode(course.code);
         setCodeCat(course.code.split(" ")[0]);
@@ -132,6 +110,7 @@ export function CourseEditor({
         setRestrict(course.restrict);
         setBreadth(course.breadth);
         setTyp(course.typ);
+        console.log(course);
     }
 
     return (
@@ -149,7 +128,7 @@ export function CourseEditor({
             <Modal.Body>
                 {/* Title */}
                 <Form.Group controlId="Edit Code" as={Row} spacing={2}>
-                    <Form.Label column sm={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
                         Edit Code:
                     </Form.Label>
                     <Col>
@@ -187,7 +166,7 @@ export function CourseEditor({
                     </Col>
                 </Form.Group>
                 <Form.Group controlId="Edit Name" as={Row} spacing={2}>
-                    <Form.Label column sm={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
                         Title:
                     </Form.Label>
                     <Col>
@@ -200,7 +179,7 @@ export function CourseEditor({
                     </Col>
                 </Form.Group>
                 <Form.Group controlId="Edit Credits" as={Row} spacing={2}>
-                    <Form.Label column sm={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
                         Credits:
                     </Form.Label>
                     <Col>
@@ -213,7 +192,7 @@ export function CourseEditor({
                     </Col>
                 </Form.Group>
                 <Form.Group controlId="Edit Prerequisites" as={Row} spacing={2}>
-                    <Form.Label column sm={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
                         Prerequisites:
                     </Form.Label>
                     <Col>
@@ -225,8 +204,50 @@ export function CourseEditor({
                         />
                     </Col>
                 </Form.Group>
+
+                <Form.Group controlId="Edit Restrictions" as={Row} spacing={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
+                        Restrictions:
+                    </Form.Label>
+                    <Col>
+                        <Form.Control
+                            value={restrict}
+                            onChange={(
+                                event: React.ChangeEvent<HTMLInputElement>
+                            ) => setRestrict(event.target.value)}
+                        />
+                    </Col>
+                </Form.Group>
+
+                <Form.Group controlId="Edit Breadth" as={Row} spacing={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
+                        Breadth:
+                    </Form.Label>
+                    <Col>
+                        <Form.Control
+                            value={breadth}
+                            onChange={(
+                                event: React.ChangeEvent<HTMLInputElement>
+                            ) => setBreadth(event.target.value)}
+                        />
+                    </Col>
+                </Form.Group>
+
+                <Form.Group controlId="Edit Type" as={Row} spacing={2}>
+                    <Form.Label className="modalTextCol" column sm={2}>
+                        Type:
+                    </Form.Label>
+                    <Col>
+                        <Form.Control
+                            value={typ}
+                            onChange={(
+                                event: React.ChangeEvent<HTMLInputElement>
+                            ) => setTyp(event.target.value)}
+                        />
+                    </Col>
+                </Form.Group>
             </Modal.Body>
-            {!check ? (
+            {!check || !checked ? (
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
@@ -247,6 +268,9 @@ export function CourseEditor({
                 </Modal.Footer>
             ) : (
                 <Modal.Footer>
+                    {
+                        "Are you sure you want to have to courses with the same code or title?"
+                    }
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>

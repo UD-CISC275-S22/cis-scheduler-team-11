@@ -276,6 +276,10 @@
     }
 }
 
-.overlay-modal-class-name {
-    z-index: 9;
+.modal {
+    display: flex;
+}
+
+.modalTextCol {
+    width: 100px;
 }

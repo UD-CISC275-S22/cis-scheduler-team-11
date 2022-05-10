@@ -47,35 +47,14 @@ export function ClassPicker({
             ? selectedSemester.courses[0]
             : defaultCourse
     );
+    console.log("test2");
+    console.log(selectedSemester);
     if (selectedSemester.courses.length > 0 && selectedCourse.code === " ") {
         selectCourse(selectedSemester.courses[0]);
     }
     if (selectedSemester.courses.length == 0 && selectedCourse.code != " ") {
         selectCourse(defaultCourse);
     }
-    /*
-    function setCourseList(crsList: Course[]) {
-        //console.log(semList);
-        const crsListC = [...crsList];
-        crsListC.sort();
-        updateSelectedSemester({
-            ...selectedSemester,
-            courses: crsListC
-        });
-        //console.log(newSems);
-        //console.log(selectedPlan);
-    }
-    function updateSelectedCourse(course: Course) {
-        const newCrsList = selectedSemester.courses.map((crs: Course) =>
-            crs.code + crs.name.toLowerCase() ===
-            selectedCourse.code + selectedCourse.name.toLowerCase()
-                ? course
-                : crs
-        );
-
-        setCourseList(newCrsList);
-        selectCourse(course);
-    }*/
     const [UID, setUID] = useState<number>(0);
     const schedule = selectedSemester.courses;
     function setSchedule(courses: Course[]) {
@@ -85,6 +64,7 @@ export function ClassPicker({
     const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
+        setCourse(COURSES.filter((crs: Course) => crs.code === course.code)[0]);
         const newSchedule = { ...course, uid: UID };
         setUID(UID + 1);
         const newScheduleList = [...schedule, newSchedule];
@@ -174,13 +154,24 @@ export function ClassPicker({
                                                     variant="secondary"
                                                     size="sm"
                                                     key={1}
-                                                    onClick={() =>
+                                                    onClick={() => {
+                                                        selectCourse(course);
+                                                    }}
+                                                >
+                                                    Select
+                                                </Button>,
+                                                <Button
+                                                    variant="secondary"
+                                                    size="sm"
+                                                    key={1}
+                                                    onClick={() => {
+                                                        selectCourse(course);
                                                         setShowAddModal(
                                                             !showAddModal
-                                                        )
-                                                    }
+                                                        );
+                                                    }}
                                                 >
-                                                    edit
+                                                    Edit
                                                 </Button>,
                                                 <Button
                                                     variant="danger"
@@ -192,7 +183,7 @@ export function ClassPicker({
                                                         )
                                                     }
                                                 >
-                                                    delete
+                                                    Delete
                                                 </Button>
                                             ]}
                                         />
@@ -237,10 +228,12 @@ export function ClassPicker({
                 </Col>
             </Container>
             <div>
+                {console.log("test1")}
+                {console.log(selectedCourse)}
                 <CourseEditor
                     show={showAddModal}
                     handleClose={handleCloseAddModal}
-                    course={course}
+                    course={selectedCourse}
                     schedule={schedule}
                     setSchedule={setSchedule}
                 ></CourseEditor>

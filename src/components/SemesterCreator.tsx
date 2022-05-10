@@ -20,7 +20,7 @@ export function SemesterCreator({
         return parseInt(semester.id.split(" ")[1]) - selectedPlan.start;
     }
     function CalcIdx2(semester: Semester): number {
-        const seasons = ["Summer", "Fall", "Winter", "Spring"];
+        const seasons = ["Fall", "Winter", "Spring", "Summer"];
         return seasons.indexOf(semester.id.split(" ")[0]);
     }
     function setSemesterList(semList: Semester[]) {
