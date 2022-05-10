@@ -3,39 +3,577 @@
 > react-scripts test "--coverage"
 
 PASS src/components/SemesterCreator.test.tsx
-PASS src/components/ClassPicker.test.tsx
+FAIL src/components/ClassPicker.test.tsx
+  ● ClassPicker tests › There is an Clear Courses Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/clear courses/i`
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Courses":
+      [36m<h1 />[39m
+
+      --------------------------------------------------
+      combobox:
+
+      Name "Course":
+      [36m<input[39m
+        [33maria-autocomplete[39m=[32m"list"[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-invalid[39m=[32m"false"[39m
+        [33mautocapitalize[39m=[32m"none"[39m
+        [33mautocomplete[39m=[32m"off"[39m
+        [33mclass[39m=[32m"MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"[39m
+        [33mid[39m=[32m"combo-box-demo"[39m
+        [33mrole[39m=[32m"combobox"[39m
+        [33mspellcheck[39m=[32m"false"[39m
+        [33mtype[39m=[32m"text"[39m
+        [33mvalue[39m=[32m"CISC106"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Open":
+      [36m<button[39m
+        [33maria-label[39m=[32m"Open"[39m
+        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtitle[39m=[32m"Open"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Hide Course Menu":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      checkbox:
+
+      Name "Selected Semester View":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mid[39m=[32m"edit-Semester-view"[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h1>[39m
+            [0mCourses[0m
+          [36m</h1>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Courses container"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"CoursesLeft col"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-label"[39m
+                      [33mstyle[39m=[32m"color: white;"[39m
+                    [36m>[39m
+                      [0mSelect Course[0m
+                    [36m</label>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-13dhpxh-MuiAutocomplete-root"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"[39m
+                      [36m>[39m
+                        [36m<label[39m
+                          [33mclass[39m=[32m"MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"[39m
+                          [33mdata-shrink[39m=[32m"true"[39m
+                          [33mfor[39m=[32m"combo-box-demo"[39m
+                          [33mid[39m=[32m"combo-box-demo-label"[39m
+                        [36m>[39m
+                          [0mCourse[0m
+                        [36m</label>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"[39m
+                        [36m>[39m
+                          [36m<input[39m
+                            [33maria-autocomplete[39m=[32m"list"[39m
+                            [33maria-expanded[39m=[32m"false"[39m
+                            [33maria-invalid[39m=[32m"false"[39m
+                            [33mautocapitalize[39m=[32m"none"[39m
+                            [33mautocomplete[39m=[32m"off"[39m
+                            [33mclass[39m=[32m"MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"[39m
+                            [33mid[39m=[32m"combo-box-demo"[39m
+                            [33mrole[39m=[32m"combobox"[39m
+                            [33mspellcheck[39m=[32m"false"[39m
+                            [33mtype[39m=[32m"text"[39m
+                            [33mvalue[39m=[32m"CISC106"[39m
+                          [36m/>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"[39m
+                          [36m>[39m
+                            [36m<button[39m
+                              [33maria-label[39m=[32m"Clear"[39m
+                              [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"[39m
+                              [33mtabindex[39m=[32m"-1"[39m
+                              [33mtitle[39m=[32m"Clear"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<svg[39m
+                                [33maria-hidden[39m=[32m"true"[39m
+                                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"[39m
+                                [33mdata-testid[39m=[32m"CloseIcon"[39m
+                                [33mfocusable[39m=[32m"false"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"[39m
+                                [36m/>[39m
+                              [36m</svg>[39m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                              [36m/>[39m
+                            [36m</button>[39m
+                            [36m<button[39m
+                              [33maria-label[39m=[32m"Open"[39m
+                              [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
+                              [33mtabindex[39m=[32m"-1"[39m
+                              [33mtitle[39m=[32m"Open"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<svg[39m
+                                [33maria-hidden[39m=[32m"true"[39m
+                                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                [33mdata-testid[39m=[32m"ArrowDropDownIcon"[39m
+                                [33mfocusable[39m=[32m"false"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M7 10l5 5 5-5z"[39m
+                                [36m/>[39m
+                              [36m</svg>[39m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                              [36m/>[39m
+                            [36m</button>[39m
+                          [36m</div>[39m
+                          [36m<fieldset[39m
+                            [33maria-hidden[39m=[32m"true"[39m
+                            [33mclass[39m=[32m"MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"[39m
+                          [36m>[39m
+                            [36m<legend[39m
+                              [33mclass[39m=[32m"css-1in441m"[39m
+                            [36m>[39m
+                              [36m<span>[39m
+                                [0mCourse[0m
+                              [36m</span>[39m
+                            [36m</legend>[39m
+                          [36m</fieldset>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mAdd Course[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"CoursesRight col"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mstyle[39m=[32m"color: white;"[39m
+                  [36m>[39m
+                    [0mCourses:[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mstyle[39m=[32m"color: white; font-weight: bold;"[39m
+                  [36m>[39m
+                    [36m<p>[39m
+                      [0mThis semester has no courses![0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mHide Course Menu[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check form-switch"[39m
+                  [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"edit-Semester-view"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"edit-Semester-view"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [0mSelected Semester View[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      84 |
+      85 |     test("There is an Clear Courses Button", () => {
+    > 86 |         const editButton = screen.getByRole("button", {
+         |                                   ^
+      87 |             name: /clear courses/i
+      88 |         });
+      89 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:86:35)
+
+  ● ClassPicker tests › There is an Clear Courses Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/clear courses/i`
+
+    Here are the accessible roles:
+
+      heading:
+
+      Name "Courses":
+      [36m<h1 />[39m
+
+      --------------------------------------------------
+      combobox:
+
+      Name "Course":
+      [36m<input[39m
+        [33maria-autocomplete[39m=[32m"list"[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-invalid[39m=[32m"false"[39m
+        [33mautocapitalize[39m=[32m"none"[39m
+        [33mautocomplete[39m=[32m"off"[39m
+        [33mclass[39m=[32m"MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"[39m
+        [33mid[39m=[32m"combo-box-demo"[39m
+        [33mrole[39m=[32m"combobox"[39m
+        [33mspellcheck[39m=[32m"false"[39m
+        [33mtype[39m=[32m"text"[39m
+        [33mvalue[39m=[32m"CISC106"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Open":
+      [36m<button[39m
+        [33maria-label[39m=[32m"Open"[39m
+        [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtitle[39m=[32m"Open"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Add Course":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Hide Course Menu":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      checkbox:
+
+      Name "Selected Semester View":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-check-input"[39m
+        [33mid[39m=[32m"edit-Semester-view"[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h1>[39m
+            [0mCourses[0m
+          [36m</h1>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Courses container"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"CoursesLeft col"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-label"[39m
+                      [33mstyle[39m=[32m"color: white;"[39m
+                    [36m>[39m
+                      [0mSelect Course[0m
+                    [36m</label>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-13dhpxh-MuiAutocomplete-root"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"[39m
+                      [36m>[39m
+                        [36m<label[39m
+                          [33mclass[39m=[32m"MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"[39m
+                          [33mdata-shrink[39m=[32m"true"[39m
+                          [33mfor[39m=[32m"combo-box-demo"[39m
+                          [33mid[39m=[32m"combo-box-demo-label"[39m
+                        [36m>[39m
+                          [0mCourse[0m
+                        [36m</label>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"[39m
+                        [36m>[39m
+                          [36m<input[39m
+                            [33maria-autocomplete[39m=[32m"list"[39m
+                            [33maria-expanded[39m=[32m"false"[39m
+                            [33maria-invalid[39m=[32m"false"[39m
+                            [33mautocapitalize[39m=[32m"none"[39m
+                            [33mautocomplete[39m=[32m"off"[39m
+                            [33mclass[39m=[32m"MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"[39m
+                            [33mid[39m=[32m"combo-box-demo"[39m
+                            [33mrole[39m=[32m"combobox"[39m
+                            [33mspellcheck[39m=[32m"false"[39m
+                            [33mtype[39m=[32m"text"[39m
+                            [33mvalue[39m=[32m"CISC106"[39m
+                          [36m/>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"[39m
+                          [36m>[39m
+                            [36m<button[39m
+                              [33maria-label[39m=[32m"Clear"[39m
+                              [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"[39m
+                              [33mtabindex[39m=[32m"-1"[39m
+                              [33mtitle[39m=[32m"Clear"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<svg[39m
+                                [33maria-hidden[39m=[32m"true"[39m
+                                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"[39m
+                                [33mdata-testid[39m=[32m"CloseIcon"[39m
+                                [33mfocusable[39m=[32m"false"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"[39m
+                                [36m/>[39m
+                              [36m</svg>[39m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                              [36m/>[39m
+                            [36m</button>[39m
+                            [36m<button[39m
+                              [33maria-label[39m=[32m"Open"[39m
+                              [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
+                              [33mtabindex[39m=[32m"-1"[39m
+                              [33mtitle[39m=[32m"Open"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<svg[39m
+                                [33maria-hidden[39m=[32m"true"[39m
+                                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                [33mdata-testid[39m=[32m"ArrowDropDownIcon"[39m
+                                [33mfocusable[39m=[32m"false"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M7 10l5 5 5-5z"[39m
+                                [36m/>[39m
+                              [36m</svg>[39m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                              [36m/>[39m
+                            [36m</button>[39m
+                          [36m</div>[39m
+                          [36m<fieldset[39m
+                            [33maria-hidden[39m=[32m"true"[39m
+                            [33mclass[39m=[32m"MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"[39m
+                          [36m>[39m
+                            [36m<legend[39m
+                              [33mclass[39m=[32m"css-1in441m"[39m
+                            [36m>[39m
+                              [36m<span>[39m
+                                [0mCourse[0m
+                              [36m</span>[39m
+                            [36m</legend>[39m
+                          [36m</fieldset>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mAdd Course[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"CoursesRight col"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mstyle[39m=[32m"color: white;"[39m
+                  [36m>[39m
+                    [0mCourses:[0m
+                  [36m</label>[39m
+                  [36m<div[39m
+                    [33mstyle[39m=[32m"color: white; font-weight: bold;"[39m
+                  [36m>[39m
+                    [36m<p>[39m
+                      [0mThis semester has no courses![0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mHide Course Menu[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check form-switch"[39m
+                  [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"edit-Semester-view"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"edit-Semester-view"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [0mSelected Semester View[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      124 |
+      125 |     test("There is an Clear Courses Button", () => {
+    > 126 |         const editButton = screen.getByRole("button", {
+          |                                   ^
+      127 |             name: /clear courses/i
+      128 |         });
+      129 |         expect(editButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ClassPicker.test.tsx:126:35)
+
 PASS src/App.test.tsx
 PASS src/components/YearView.test.tsx
 PASS src/components/SingleSemester.test.tsx
 PASS src/components/MultipleSemester.test.tsx
------------------------|---------|----------|---------|---------|----------------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s          
------------------------|---------|----------|---------|---------|----------------------------
-All files              |   39.48 |    38.96 |   23.21 |   42.54 |                            
- src                   |   66.66 |      100 |      50 |   66.66 |                            
-  App.tsx              |   66.66 |      100 |      50 |   66.66 | 29                         
- src/components        |   39.06 |    38.96 |   22.72 |   42.13 |                            
-  ClassPicker.tsx      |   56.66 |    33.33 |   36.84 |   62.96 | 40-47,71,96,118-192        
-  CourseDisplay.tsx    |       0 |        0 |       0 |       0 | 5-6                        
-  CourseEditor.tsx     |   21.73 |        0 |    9.09 |   21.73 | 23-48,72-124               
-  DropdownMenu.tsx     |   85.71 |    66.66 |      75 |   85.71 | 44                         
-  EditSemester.tsx     |       0 |      100 |       0 |       0 | 16-45                      
-  MainView.tsx         |   54.54 |       50 |   33.33 |   54.54 | 15,18-26                   
-  MultipleSemester.tsx |   33.33 |      100 |   33.33 |   33.33 | 11-12                      
-  PlanAdder.tsx        |      50 |      100 |   33.33 |      50 | 17,39                      
-  PlanCreator.tsx      |   21.05 |    16.66 |    7.69 |   26.66 | 22-44,70-107               
-  PlanHide.tsx         |       0 |        0 |       0 |       0 | 15-64                      
-  PlanView.tsx         |       0 |        0 |       0 |       0 | 15-43                      
-  SemesterCreator.tsx  |   56.81 |       48 |   31.81 |   60.97 | 45,48-59,79-90,124,151-244 
-  SemesterEditor.tsx   |   23.07 |      100 |   14.28 |   23.07 | 22-34,56-71                
-  SingleSemester.tsx   |      40 |       25 |      25 |      40 | 8-9,22                     
-  YearView.tsx         |   66.66 |      100 |   33.33 |   66.66 | 26-33                      
- src/interfaces        |       0 |        0 |       0 |       0 |                            
-  projectInterfaces.ts |       0 |        0 |       0 |       0 |                            
------------------------|---------|----------|---------|---------|----------------------------
+-------------------------|---------|----------|---------|---------|----------------------------
+File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s          
+-------------------------|---------|----------|---------|---------|----------------------------
+All files                |    40.4 |    39.24 |   25.21 |   43.47 |                            
+ src                     |   66.66 |      100 |      50 |   66.66 |                            
+  App.tsx                |   66.66 |      100 |      50 |   66.66 | 10                         
+ src/components          |   39.68 |    38.35 |   23.36 |   42.85 |                            
+  ClassPicker.tsx        |   58.62 |    33.33 |   38.88 |   65.38 | 41-45,69,94,116-191        
+  CourseDisplay.tsx      |       0 |        0 |       0 |       0 | 5-6                        
+  CourseEditor.tsx       |   21.73 |        0 |    9.09 |   21.73 | 23-48,72-124               
+  DropdownMenu.tsx       |   85.71 |    66.66 |      75 |   85.71 | 44                         
+  EditSemester.tsx       |       0 |      100 |       0 |       0 | 16-45                      
+  MainView.tsx           |   54.54 |       50 |   33.33 |   54.54 | 15,18-26                   
+  MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 11-12                      
+  PlanAdder.tsx          |      50 |      100 |   33.33 |      50 | 17,39                      
+  PlanCreator.tsx        |   22.22 |        0 |    8.33 |   28.57 | 24-44,70-107               
+  PlanHide.tsx           |       0 |        0 |       0 |       0 | 15-64                      
+  PlanView.tsx           |       0 |        0 |       0 |       0 | 15-43                      
+  SemesterCreator.tsx    |   58.13 |    47.82 |   33.33 |    62.5 | 46,49-60,80-87,121,148-222 
+  SemesterEditor.tsx     |   23.07 |      100 |   14.28 |   23.07 | 22-34,56-71                
+  SingleSemester.tsx     |      40 |       25 |      25 |      40 | 8-9,22                     
+  YearView.tsx           |   66.66 |      100 |   33.33 |   66.66 | 26-33                      
+ src/deleteAllComponents |      50 |       50 |      50 |      50 |                            
+  DeleteAllCourses.tsx   |      50 |       50 |      50 |      50 | 13                         
+  DeleteAllPLans.tsx     |      50 |       50 |      50 |      50 | 13                         
+  DeleteAllSemesters.tsx |      50 |       50 |      50 |      50 | 13                         
+ src/interfaces          |       0 |        0 |       0 |       0 |                            
+  projectInterfaces.ts   |       0 |        0 |       0 |       0 |                            
+-------------------------|---------|----------|---------|---------|----------------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       32 passed, 32 total
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       2 failed, 30 passed, 32 total
 Snapshots:   0 total
-Time:        7.948 s
+Time:        8.722 s
 Ran all test suites.
