@@ -28,7 +28,7 @@ export function DeleteAllSemesters({
                         fontWeight: "bold"
                     }}
                 >
-                    Delete Semesters
+                    Delete All Semesters
                 </Button>
             ) : (
                 <p>This plan has no semesters!</p>
