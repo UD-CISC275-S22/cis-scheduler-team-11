@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import SingleSemester from "./SingleSemester";
+import SingleSemester from "../components/SingleSemester";
 
 describe("SingleSemester tests", () => {
     beforeEach(() => {

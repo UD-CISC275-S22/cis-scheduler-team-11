@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ClassPicker } from "./ClassPicker";
+import { ClassPicker } from "../components/ClassPicker";
 import { Semester } from "../interfaces/projectInterfaces";
-import { DropdownMenu } from "./DropdownMenu";
+import { DropdownMenu } from "../components/DropdownMenu";
 import { Button } from "react-bootstrap";
 
 const defaultSem: Semester = { id: "X 0", courses: [] };
@@ -46,25 +46,15 @@ describe("ClassPicker tests", () => {
     test("There is an Edit Button", () => {
         render(
             <DropdownMenu
-                buttons={[
-                    <Button
-                        variant="secondary"
-                        size="sm"
-                        key={1}
-                        onClick={() => setShowAddModal()}
-                    >
-                        edit
-                    </Button>,
-                    <Button
-                        variant="danger"
-                        size="sm"
-                        key={2}
-                        onClick={() => deleteSpecificCourse()}
-                    >
-                        ⦻
-                    </Button>
-                ]}
                 horizontal={false}
+                buttons={[
+                    { click: () => setShowAddModal(), text: "edit" },
+                    {
+                        variant: "danger",
+                        click: () => deleteSpecificCourse(),
+                        text: "⦻"
+                    }
+                ]}
             />
         );
         /* const addCourseButton = screen.getByRole("button", {
@@ -91,25 +81,15 @@ describe("ClassPicker tests", () => {
     test("There is a Delete Button", () => {
         render(
             <DropdownMenu
-                buttons={[
-                    <Button
-                        variant="secondary"
-                        size="sm"
-                        key={1}
-                        onClick={() => setShowAddModal()}
-                    >
-                        edit
-                    </Button>,
-                    <Button
-                        variant="danger"
-                        size="sm"
-                        key={2}
-                        onClick={() => deleteSpecificCourse()}
-                    >
-                        ⦻
-                    </Button>
-                ]}
                 horizontal={false}
+                buttons={[
+                    { click: () => setShowAddModal(), text: "edit" },
+                    {
+                        variant: "danger",
+                        click: () => deleteSpecificCourse(),
+                        text: "⦻"
+                    }
+                ]}
             />
         );
         const editButton = screen.getByRole("button", {
