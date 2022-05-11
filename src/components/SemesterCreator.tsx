@@ -183,45 +183,31 @@ export function SemesterCreator({
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
-                                                <Button
-                                                    size="sm"
-                                                    key={3}
-                                                    onClick={
-                                                        () =>
-                                                            setSemester(
-                                                                semester
-                                                            ) // did this just to get rid of the warning lol
-                                                    }
-                                                >
-                                                    Select
-                                                </Button>,
-                                                <Button
-                                                    variant="secondary"
-                                                    size="sm"
-                                                    key={1}
-                                                    onClick={() => {
+                                                {
+                                                    variant: "primary",
+                                                    text: "Select",
+                                                    click: () =>
+                                                        setSemester(semester)
+                                                },
+                                                {
+                                                    text: "Edit",
+                                                    click: () => {
                                                         selectSemester(
                                                             semester
                                                         );
                                                         setShowAddModal(
                                                             !showAddModal
                                                         );
-                                                    }}
-                                                >
-                                                    Edit
-                                                </Button>,
-                                                <Button
-                                                    variant="danger"
-                                                    size="sm"
-                                                    key={2}
-                                                    onClick={() =>
+                                                    }
+                                                },
+                                                {
+                                                    variant: "danger",
+                                                    text: "Delete",
+                                                    click: () =>
                                                         deleteSpecificSemester(
                                                             semester.id
                                                         )
-                                                    }
-                                                >
-                                                    Delete
-                                                </Button>
+                                                }
                                             ]}
                                         />
                                     </Col>

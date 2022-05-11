@@ -85,23 +85,24 @@ export function PlanCreator({
                                     <DropdownMenu
                                         horizontal={true}
                                         buttons={[
-                                            <Button
-                                                size="sm"
-                                                key={1}
-                                                onClick={() => selectPlan(plan)}
-                                            >
-                                                Select
-                                            </Button>,
-                                            <Button
-                                                variant="danger"
-                                                size="sm"
-                                                key={2}
-                                                onClick={() =>
+                                            {
+                                                variant: "primary",
+                                                text: "Select",
+                                                click: () => selectPlan(plan)
+                                            },
+                                            {
+                                                text: "Edit",
+                                                click: () =>
+                                                    console.log(
+                                                        "add functionality to plan edit!!!"
+                                                    )
+                                            },
+                                            {
+                                                variant: "danger",
+                                                text: "Delete",
+                                                click: () => () =>
                                                     deleteSpecificPlan(plan.id)
-                                                }
-                                            >
-                                                Delete
-                                            </Button>
+                                            }
                                         ]}
                                     />
                                 </Col>

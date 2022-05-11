@@ -73,6 +73,8 @@ export function ClassPicker({
                 code + name.toLowerCase ===
                 course.code + course.name.toLowerCase()
         );
+        console.log("check");
+        console.log(check);
         if (check.length === 0) {
             setSchedule(newScheduleList);
         } else {
@@ -138,7 +140,13 @@ export function ClassPicker({
                             {schedule.flat().map((course: Course) => (
                                 <li
                                     className="CoursesList"
-                                    key={course.code + course.credits}
+                                    key={
+                                        course.code +
+                                        course.name +
+                                        course.credits +
+                                        "  " +
+                                        course.uid
+                                    }
                                     style={{
                                         display: "flex",
                                         height: "33px",
@@ -150,41 +158,29 @@ export function ClassPicker({
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
-                                                <Button
-                                                    variant="secondary"
-                                                    size="sm"
-                                                    key={1}
-                                                    onClick={() => {
-                                                        selectCourse(course);
-                                                    }}
-                                                >
-                                                    Select
-                                                </Button>,
-                                                <Button
-                                                    variant="secondary"
-                                                    size="sm"
-                                                    key={1}
-                                                    onClick={() => {
+                                                {
+                                                    variant: "primary",
+                                                    text: "Select",
+                                                    click: () =>
+                                                        selectCourse(course)
+                                                },
+                                                {
+                                                    text: "Edit",
+                                                    click: () => {
                                                         selectCourse(course);
                                                         setShowAddModal(
                                                             !showAddModal
                                                         );
-                                                    }}
-                                                >
-                                                    Edit
-                                                </Button>,
-                                                <Button
-                                                    variant="danger"
-                                                    size="sm"
-                                                    key={2}
-                                                    onClick={() =>
+                                                    }
+                                                },
+                                                {
+                                                    variant: "danger",
+                                                    text: "Delete",
+                                                    click: () =>
                                                         deleteSpecificCourse(
                                                             course
                                                         )
-                                                    }
-                                                >
-                                                    Delete
-                                                </Button>
+                                                }
                                             ]}
                                         />
                                     </Col>

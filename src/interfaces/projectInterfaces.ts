@@ -1,13 +1,4 @@
-/*export interface CourseOLD {
-    /** A unique identifier for the course */ /*
-    id: string;
-    /** The human-friendly title of the course */ /*
-    title: string;
-    /** Number of credits for the course */ /*
-    credits: number;
-    /** The current status of the course */ /*
-    enrolled: boolean;
-}*/
+import { MouseEventHandler } from "react";
 
 export interface Course {
     /** A unique identifier for the course */
@@ -49,44 +40,17 @@ export interface Plan {
 }
 
 export interface Buttons {
-    buttons: JSX.Element[];
+    buttons: ButtonProps[];
     horizontal: boolean;
 }
 
 export interface Plans {
     plans: Plan[];
 }
-/*
-export interface ButtonData {
-    hook: [
-        (
-            | number
-            | string
-            | string
-            | boolean
-            | object
-            | JSX.Element
-            | number[]
-            | string[]
-            | boolean[]
-            | object[]
-            | JSX.Element[]
-        ),
-        (
-            arg:
-                | void
-                | number
-                | string
-                | string
-                | boolean
-                | object
-                | JSX.Element
-                | number[]
-                | string[]
-                | boolean[]
-                | object[]
-                | JSX.Element[]
-        ) => void
-    ];
+
+export interface ButtonProps {
+    variant?: string;
+    size?: "sm" | "lg" | undefined;
     text: string;
-}*/
+    click: MouseEventHandler<HTMLButtonElement>;
+}
