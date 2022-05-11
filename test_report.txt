@@ -948,7 +948,7 @@ PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   39.42 |     35.6 |   25.95 |   40.89 |                                  
+All files                |   38.59 |     35.6 |   24.81 |      40 |                                  
  src                     |   66.66 |      100 |      50 |   66.66 |                                  
   App.tsx                |   66.66 |      100 |      50 |   66.66 | 10                               
  src/components          |   38.88 |    34.92 |   24.39 |   40.38 |                                  
@@ -959,17 +959,17 @@ All files                |   39.42 |     35.6 |   25.95 |   40.89 |
   MainView.tsx           |      50 |    46.15 |      25 |      50 | 18-20,23-31                      
   MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 11-12                            
   PlanAdder.tsx          |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
-  PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-52,78-121                     
+  PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,77-120                     
   PlanEditor.tsx         |   18.18 |      100 |   14.28 |      20 | 20-30,54-68                      
   PlanView.tsx           |       0 |        0 |       0 |       0 | 15-43                            
   SemesterCreator.tsx    |   57.14 |    48.14 |   33.33 |   59.57 | 55,58-69,103,108-121,155,185-248 
   SemesterEditor.tsx     |   11.11 |        0 |   11.11 |   11.11 | 23-42,66-105                     
   SingleSemester.tsx     |      40 |       25 |      25 |      40 | 8-9,33                           
   YearView.tsx           |   66.66 |      100 |   33.33 |   66.66 | 26-33                            
- src/deleteAllComponents |      50 |       50 |      50 |      50 |                                  
-  DeleteAllCourses.tsx   |      50 |       50 |      50 |      50 | 13                               
-  DeleteAllPLans.tsx     |      50 |       50 |      50 |      50 | 13                               
-  DeleteAllSemesters.tsx |      50 |       50 |      50 |      50 | 13                               
+ src/deleteAllComponents |      25 |       50 |      25 |      25 |                                  
+  DeleteAllCourses.tsx   |      25 |       50 |      25 |      25 | 14-24                            
+  DeleteAllPLans.tsx     |      25 |       50 |      25 |      25 | 14-24                            
+  DeleteAllSemesters.tsx |      25 |       50 |      25 |      25 | 14-24                            
  src/interfaces          |       0 |        0 |       0 |       0 |                                  
   projectInterfaces.ts   |       0 |        0 |       0 |       0 |                                  
 -------------------------|---------|----------|---------|---------|----------------------------------
@@ -977,5 +977,5 @@ All files                |   39.42 |     35.6 |   25.95 |   40.89 |
 Test Suites: 1 failed, 5 passed, 6 total
 Tests:       3 failed, 29 passed, 32 total
 Snapshots:   0 total
-Time:        9.678 s
+Time:        12.145 s
 Ran all test suites.
