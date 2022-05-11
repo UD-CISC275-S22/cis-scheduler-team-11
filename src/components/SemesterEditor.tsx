@@ -1,37 +1,45 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
-import { Semester, Course } from "../interfaces/projectInterfaces";
+import { Semester /*, Course*/ } from "../interfaces/projectInterfaces";
 
 export function SemesterEditor({
     show,
     handleClose,
     semester,
     semesters,
-    setSemesters
+    setSemesters,
+    selectSemester
 }: {
     show: boolean;
     handleClose: () => void;
     semester: Semester;
     semesters: Semester[];
     setSemesters: (semester: Semester[]) => void;
+    selectSemester: (semester: Semester) => void;
 }) {
-    const [id, setId] = useState<string>("");
-    const [courses] = useState<Course[]>([]);
+    const [ID, setID] = useState<string>(semester.id);
 
     function saveChanges(index: number) {
         const newSemesters = semesters.map(
             (semester: Semester): Semester => ({ ...semester })
-        );
-        newSemesters[index] = {
-            id: id,
-            courses: courses
-        };
-        console.log(newSemesters);
-        setSemesters(newSemesters);
-        handleClose();
+        ); //add alert
+        newSemesters[index] = { ...newSemesters[index], id: ID };
+        if (
+            newSemesters.filter((asemester: Semester) => asemester.id == ID)
+                .length > 1
+        ) {
+            alert("A semester with that ID already exists");
+        } else if (parseInt(newSemesters[index].id.split(" ")[1]) > 4444) {
+            alert("Semester year must be within the next 2 milenia");
+        } else {
+            //console.log(newSemesters);
+            setSemesters(newSemesters);
+            selectSemester(newSemesters[index]);
+            handleClose();
+        }
     }
     function refresh() {
-        setId(semester.id);
+        setID(semester.id);
     }
 
     return (
@@ -46,14 +54,40 @@ export function SemesterEditor({
             </Modal.Header>
             <Modal.Body>
                 {/* Title */}
-                <Form.Group controlId="formMovieId" as={Row}>
-                    <Form.Label>Semester:</Form.Label>
+                <Form.Group controlId="formSemesterSeason" as={Row}>
+                    <Form.Label>Semester Season:</Form.Label>
+                    <Col>
+                        <Form.Label>Add Semester</Form.Label>
+                        <Form.Select
+                            value={ID.split(" ")[0]}
+                            onChange={(
+                                event: React.ChangeEvent<HTMLSelectElement>
+                            ) =>
+                                setID(
+                                    event.target.value + " " + ID.split(" ")[1]
+                                )
+                            }
+                        >
+                            <option value="Fall">Fall</option>
+                            <option value="Winter">Winter</option>
+                            <option value="Spring">Spring</option>
+                            <option value="Summer">Summer</option>
+                        </Form.Select>
+                    </Col>
+                </Form.Group>
+                <Form.Group controlId="formSemesterYear" as={Row}>
+                    <Form.Label>Semester Year:</Form.Label>
                     <Col>
                         <Form.Control
-                            value={id}
+                            value={ID.split(" ")[1]}
                             onChange={(
                                 event: React.ChangeEvent<HTMLInputElement>
-                            ) => setId(event.target.value)}
+                            ) =>
+                                setID(
+                                    ID.split(" ")[0] + " " + event.target.value
+                                )
+                            }
+                            type="number"
                         />
                     </Col>
                 </Form.Group>

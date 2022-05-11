@@ -5,7 +5,7 @@ import CourseDisplay from "./CourseDisplay";
 
 function SingleSemester({ id, courses }: Semester): JSX.Element {
     const totalCredits = courses
-        .map((course: Course) => course.credits)
+        .map((course: Course) => parseInt(course.credits))
         .reduce((prev, current) => prev + current, 0);
     return (
         <Col className="col1">
@@ -18,16 +18,33 @@ function SingleSemester({ id, courses }: Semester): JSX.Element {
                       " Course" +
                       (courses.length != 1 ? "s" : "")}
             </Row>
-            {courses.map(({ id, title, credits, enrolled }: Course) => (
-                <Row className="row1" key={id}>
-                    <CourseDisplay
-                        id={id}
-                        title={title}
-                        credits={credits}
-                        enrolled={enrolled}
-                    />
-                </Row>
-            ))}
+            {courses.map(
+                ({
+                    code,
+                    name,
+                    descr,
+                    credits,
+                    preReq,
+                    restrict,
+                    breadth,
+                    typ,
+                    uid
+                }: Course) => (
+                    <Row className="row1" key={code}>
+                        <CourseDisplay
+                            code={code}
+                            name={name}
+                            descr={descr}
+                            credits={credits}
+                            preReq={preReq}
+                            restrict={restrict}
+                            breadth={breadth}
+                            typ={typ}
+                            uid={uid}
+                        />
+                    </Row>
+                )
+            )}
         </Col>
     );
 }

@@ -292,3 +292,11 @@
         transform: rotate(360deg);
     }
 }
+
+.modal {
+    display: flex;
+}
+
+.modalTextCol {
+    width: 100px;
+}

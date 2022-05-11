@@ -5,14 +5,33 @@ import { CourseEditor } from "./CourseEditor";
 import TextField from "@mui/material/TextField";
 import { Course, Semester } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
+//import courses from "../data/courses.json";
+import catalog from "../data/catalog.json";
 import { DeleteAllCourses } from "../deleteAllComponents/DeleteAllCourses";
-import courses from "../data/courses.json";
 import SingleSemester from "./SingleSemester";
-const COURSES = courses.map(
+
+/*const COURSES = courses.map(
     (course): Course => ({
         ...course
     })
-);
+);*/
+const COURSES: Course[] = Object.values(catalog)
+    .flat()
+    .map((category) => Object.values(category).flat())
+    .flat()
+    .map((crs) => ({ ...crs, uid: -1 }));
+////console.log(COURSES);
+const defaultCourse = {
+    code: " ",
+    name: " ",
+    descr: " ",
+    credits: " ",
+    preReq: " ",
+    restrict: " ",
+    breadth: " ",
+    typ: " ",
+    uid: -1
+};
 
 export function ClassPicker({
     setCourseMenuView,
@@ -24,6 +43,29 @@ export function ClassPicker({
     updateSelectedSemester: (semester: Semester) => void;
 }): JSX.Element {
     const [course, setCourse] = useState<Course>(COURSES[0]);
+    const [selectedCourse, selectCourse] = useState<Course>(defaultCourse);
+    if (
+        selectedSemester.courses.length > 0 &&
+        selectedCourse == defaultCourse
+    ) {
+        selectCourse(selectedSemester.courses[0]);
+    }
+    if (
+        selectedSemester.courses.length == 0 &&
+        selectedCourse != defaultCourse
+    ) {
+        selectCourse(defaultCourse);
+    }
+    //console.log("test2");
+    //console.log(selectedSemester);
+    /*
+    if (selectedSemester.courses.length > 0 && selectedCourse.code === " ") {
+        selectCourse(selectedSemester.courses[0]);
+    }
+    if (selectedSemester.courses.length == 0 && selectedCourse.code != " ") {
+        selectCourse(defaultCourse);
+    }*/
+    const [UID, setUID] = useState<number>(0);
     const schedule = selectedSemester.courses;
     function setSchedule(courses: Course[]) {
         updateSelectedSemester({ ...selectedSemester, courses: courses });
@@ -32,17 +74,38 @@ export function ClassPicker({
     const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
-        const newSchedule = { ...course };
-        const newScheduleList = [...schedule, newSchedule];
-        const check = schedule.filter(({ id }) => id === course.id);
+        const possible = COURSES.find(
+            (crs: Course) => crs.code === course.code
+        );
+        const courseInfo: Course = possible
+            ? { ...possible }
+            : { ...course, code: "error" };
+        const newCourse: Course = { ...courseInfo, uid: UID };
+        setUID(UID + 1);
+        const newSchedule: Course[] = [...schedule, newCourse];
+        const check = schedule.filter(({ code, name }) => {
+            /*console.log(
+                UID,
+                code + name.toLowerCase(),
+                course.code + course.name.toLowerCase(),
+                code + name.toLowerCase() ===
+                    course.code + course.name.toLowerCase()
+            );*/
+            return (
+                code + name.toLowerCase() ===
+                course.code + course.name.toLowerCase()
+            );
+        });
+        //console.log("check");
+        //console.log(check, check.length);
         if (check.length === 0) {
-            setSchedule(newScheduleList);
+            setSchedule(newSchedule);
         } else {
             alert("You are already enrolled in that course in this semester");
         }
     }
     function deleteSpecificCourse(course: Course) {
-        setSchedule(schedule.filter(({ id }) => id !== course.id));
+        setSchedule(schedule.filter(({ code }) => code !== course.code));
     }
     const [selSemView, setSelSemView] = useState<boolean>(false);
 
@@ -64,19 +127,19 @@ export function ClassPicker({
                                 <Autocomplete
                                     disablePortal
                                     id="combo-box-demo"
-                                    inputValue={course.id}
+                                    inputValue={course.code}
                                     onChange={(e, v) =>
                                         setCourse({
                                             ...course,
-                                            id:
+                                            code:
                                                 v === null
                                                     ? " "
                                                     : v.toUpperCase()
                                         })
                                     }
-                                    value={course.id}
+                                    value={course.code}
                                     options={COURSES.map(
-                                        (course: Course): string => course.id
+                                        (course: Course): string => course.code
                                     )}
                                     //map the options
                                     sx={{
@@ -87,21 +150,28 @@ export function ClassPicker({
                                     }}
                                     renderInput={(params) => (
                                         <TextField
-                                            value={course.id}
+                                            value={course.code}
                                             {...params}
                                             label="Course"
                                             onChange={({ target }) =>
                                                 setCourse({
                                                     ...course,
-                                                    id: target.value.toUpperCase()
+                                                    code: target.value.toUpperCase()
                                                 })
                                             }
                                         />
                                     )}
                                 />
-                                <Button onClick={() => chooseSchedule()}>
-                                    Add Course
-                                </Button>
+                                {COURSES.find(
+                                    (crs: Course) => crs.code === course.code
+                                ) && (
+                                    <Button onClick={() => chooseSchedule()}>
+                                        Add Course
+                                    </Button>
+                                )}
+                                {!COURSES.find(
+                                    (crs: Course) => crs.code === course.code
+                                ) && "This is not a valid course!"}
                             </Form.Group>
                         </Col>
                         <Col className="CoursesRight">
@@ -115,11 +185,21 @@ export function ClassPicker({
                             {schedule.flat().map((course: Course) => (
                                 <li
                                     className="CoursesList"
-                                    key={course.id + course.credits}
+                                    key={
+                                        course.code +
+                                        course.name +
+                                        course.credits +
+                                        "  " +
+                                        course.uid
+                                    }
                                     style={{
                                         display: "flex",
                                         height: "33px",
-                                        border: "1px solid black"
+                                        border: "1px solid black",
+                                        backgroundColor:
+                                            selectedCourse == course
+                                                ? "lime"
+                                                : "lightgray"
                                     }}
                                 >
                                     <Col
@@ -128,7 +208,7 @@ export function ClassPicker({
                                             backgroundColor: "blue"
                                         }}
                                     >
-                                        {course.id}{" "}
+                                        {course.code}{" "}
                                     </Col>
                                     <Col
                                         style={{
@@ -138,30 +218,29 @@ export function ClassPicker({
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
-                                                <Button
-                                                    variant="secondary"
-                                                    size="sm"
-                                                    key={1}
-                                                    onClick={() =>
+                                                {
+                                                    variant: "primary",
+                                                    text: "Select",
+                                                    click: () =>
+                                                        selectCourse(course)
+                                                },
+                                                {
+                                                    text: "Edit",
+                                                    click: () => {
+                                                        selectCourse(course);
                                                         setShowAddModal(
                                                             !showAddModal
-                                                        )
+                                                        );
                                                     }
-                                                >
-                                                    edit
-                                                </Button>,
-                                                <Button
-                                                    variant="danger"
-                                                    size="sm"
-                                                    key={2}
-                                                    onClick={() =>
+                                                },
+                                                {
+                                                    variant: "danger",
+                                                    text: "⦻",
+                                                    click: () =>
                                                         deleteSpecificCourse(
                                                             course
                                                         )
-                                                    }
-                                                >
-                                                    ⦻
-                                                </Button>
+                                                }
                                             ]}
                                         />
                                     </Col>
@@ -206,10 +285,14 @@ export function ClassPicker({
                 </Col>
             </Container>
             <div>
+                {
+                    //console.log("test1:")}
+                }
+                {console.log(selectedCourse)}
                 <CourseEditor
                     show={showAddModal}
                     handleClose={handleCloseAddModal}
-                    course={course}
+                    course={selectedCourse}
                     schedule={schedule}
                     setSchedule={setSchedule}
                 ></CourseEditor>

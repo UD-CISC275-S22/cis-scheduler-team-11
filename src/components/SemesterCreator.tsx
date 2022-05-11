@@ -17,20 +17,28 @@ export function SemesterCreator({
 }): JSX.Element {
     const defaultSem: Semester = { id: "X 0", courses: [] };
     const semesterList = selectedPlan.semesters.flat();
-    function CalcIdx(semester: Semester, semesterList: Semester[]): number {
-        return (
-            parseInt(semester.id.split(" ")[1]) -
-            parseInt(semesterList[0].id.split(" ")[1])
-        );
+    function CalcIdx(semester: Semester): number {
+        return parseInt(semester.id.split(" ")[1]) - selectedPlan.start;
+    }
+    function CalcIdx2(semester: Semester): number {
+        const seasons = ["Fall", "Winter", "Spring", "Summer"];
+        return seasons.indexOf(semester.id.split(" ")[0]);
     }
     function setSemesterList(semList: Semester[]) {
         const newSems: Semester[][] = [[]];
-        //console.log(semList);
-        semList.map(
+        ////console.log(semList);
+        const semListC = [...semList];
+        /*console.log(
+            semListC.sort(
+                (sem: Semester, sem2: Semester) =>
+                    CalcIdx2(sem) - CalcIdx2(sem2)
+            )
+        );*/
+        semListC.map(
             (semester: Semester) =>
-                (newSems[CalcIdx(semester, semList)] =
-                    newSems[CalcIdx(semester, semList)] != null
-                        ? newSems[CalcIdx(semester, semList)].concat(semester)
+                (newSems[CalcIdx(semester)] =
+                    newSems[CalcIdx(semester)] != null
+                        ? newSems[CalcIdx(semester)].concat(semester)
                         : [semester])
         );
         updateSelectedPlan({
@@ -59,9 +67,22 @@ export function SemesterCreator({
         );
         selectSemester(semester);
     }
-
-    const [semesterSeason, setSemesterSeason] = useState<string>("Fall");
-    const [semesterYear, setSemesterYear] = useState<string>("2022");
+    const [formSemesterSeason, setFormSemesterSeason] =
+        useState<string>("Fall");
+    const [formSemesterYear, setFormSemesterYear] = useState<string>("2000");
+    /*
+    function setSemesterSeason(season: string) {
+        updateSelectedSemester({
+            ...selectedSemester,
+            id: season + " " + selectedSemester.id.split(" ")[1]
+        });
+    }
+    function setSemesterYear(year: string) {
+        updateSelectedSemester({
+            ...selectedSemester,
+            id: selectedSemester.id.split(" ")[0] + " " + year
+        });
+    }*/
     const [semester, setSemester] = [selectedSemester, selectSemester];
 
     const [showAddModal, setShowAddModal] = useState(false);
@@ -69,19 +90,31 @@ export function SemesterCreator({
     //const semesterSeason = selected
 
     function addSemester(season: string, year: string) {
-        const semesterId = season + " " + year;
-        const newSemester = { id: semesterId, courses: [] };
-        //setSemester(newSemester);
-        const newSemesterList = [...semesterList, newSemester];
-        const check = semesterList.filter(({ id }) => id === semesterId);
-        if (check.length === 0) {
-            setSemesterList(newSemesterList);
+        if (parseInt(year) < 4444) {
+            if (parseInt(year) >= selectedPlan.start) {
+                const semesterId = season + " " + year;
+                const newSemester = { id: semesterId, courses: [] };
+                //setSemester(newSemester);
+                const newSemesterList = [...semesterList, newSemester];
+                //console.log(semesterList);
+                //console.log(newSemesterList);
+                const check = semesterList.filter(
+                    ({ id }) => id === semesterId
+                );
+                if (check.length === 0) {
+                    setSemesterList(newSemesterList);
+                } else {
+                    alert("That semester already exists!");
+                }
+            } else {
+                alert("Semester year must be after plan start year");
+            }
         } else {
-            alert("That semester already exists!");
+            alert("Semester year must be within the next 2 milenia");
         }
     }
     function updateSeason(event: React.ChangeEvent<HTMLSelectElement>) {
-        setSemesterSeason(event.target.value);
+        setFormSemesterSeason(event.target.value);
     }
     function deleteSpecificSemester(id: string) {
         setSemesterList(semesterList.filter((semester) => semester.id != id));
@@ -105,7 +138,7 @@ export function SemesterCreator({
                                 Add Semester
                             </Form.Label>
                             <Form.Select
-                                value={semesterSeason}
+                                value={formSemesterSeason}
                                 onChange={updateSeason}
                             >
                                 <option value="Fall">Fall</option>
@@ -115,10 +148,10 @@ export function SemesterCreator({
                             </Form.Select>
                             <Form.Control
                                 type="number"
-                                value={semesterYear}
+                                value={formSemesterYear}
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
-                                ) => setSemesterYear(event.target.value)}
+                                ) => setFormSemesterYear(event.target.value)}
                             />
                             <Button
                                 size="sm"
@@ -128,7 +161,10 @@ export function SemesterCreator({
                                     fontWeight: "bold"
                                 }}
                                 onClick={() =>
-                                    addSemester(semesterSeason, semesterYear)
+                                    addSemester(
+                                        formSemesterSeason,
+                                        formSemesterYear
+                                    )
                                 }
                             >
                                 Add
@@ -163,42 +199,32 @@ export function SemesterCreator({
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
-                                                <Button
-                                                    size="sm"
-                                                    key={3}
-                                                    onClick={
-                                                        () =>
-                                                            setSemester(
-                                                                semester
-                                                            ) // did this just to get rid of the warning lol
-                                                    }
-                                                >
-                                                    Select
-                                                </Button>,
-                                                <Button
-                                                    variant="secondary"
-                                                    size="sm"
-                                                    key={1}
-                                                    onClick={() =>
+                                                {
+                                                    variant: "primary",
+                                                    text: "Select",
+                                                    click: () =>
+                                                        setSemester(semester)
+                                                },
+                                                {
+                                                    text: "Edit",
+                                                    click: () => {
+                                                        selectSemester(
+                                                            semester
+                                                        );
                                                         setShowAddModal(
                                                             !showAddModal
-                                                        )
+                                                        );
                                                     }
-                                                >
-                                                    Edit
-                                                </Button>,
-                                                <Button
-                                                    variant="danger"
-                                                    size="sm"
-                                                    key={2}
-                                                    onClick={() =>
+                                                },
+                                                {
+                                                    variant: "danger",
+                                                    text: "⦻",
+                                                    click: () =>
                                                         deleteSpecificSemester(
                                                             semester.id
                                                         )
-                                                    }
-                                                >
-                                                    ⦻
-                                                </Button>
+                                                }
+
                                             ]}
                                         />
                                     </Col>
@@ -242,8 +268,9 @@ export function SemesterCreator({
                     handleClose={handleCloseAddModal}
                     semester={semester}
                     semesters={semesterList}
+                    selectSemester={selectSemester}
                     setSemesters={setSemesterList}
-                ></SemesterEditor>
+                />
             </div>
         </div>
     );

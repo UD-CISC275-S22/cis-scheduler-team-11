@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import { Buttons } from "../interfaces/projectInterfaces";
+import { Buttons, ButtonProps } from "../interfaces/projectInterfaces";
 
 export function DropdownMenu(Buttons: Buttons): JSX.Element {
     const [display, setDisplay] = useState<boolean>(false);
@@ -40,14 +40,42 @@ export function DropdownMenu(Buttons: Buttons): JSX.Element {
                 >
                     {Buttons.horizontal &&
                         Buttons.buttons.map(
-                            (button: JSX.Element): JSX.Element => (
-                                <Col key={key++}>{button}</Col>
+                            (button: ButtonProps): JSX.Element => (
+                                <Col key={key++}>
+                                    <Button
+                                        variant={
+                                            button.variant
+                                                ? button.variant
+                                                : "secondary"
+                                        }
+                                        size={button.size ? button.size : "sm"}
+                                        key={key}
+                                        onClick={button.click}
+                                    >
+                                        {" "}
+                                        {button.text}
+                                    </Button>
+                                </Col>
                             )
                         )}
                     {!Buttons.horizontal &&
                         Buttons.buttons.map(
-                            (button: JSX.Element): JSX.Element => (
-                                <Row key={key++}>{button}</Row>
+                            (button: ButtonProps): JSX.Element => (
+                                <Row key={key++}>
+                                    <Button
+                                        variant={
+                                            button.variant
+                                                ? button.variant
+                                                : "primary"
+                                        }
+                                        size={button.size ? button.size : "sm"}
+                                        key={key}
+                                        onClick={button.click}
+                                    >
+                                        {" "}
+                                        {button.text}
+                                    </Button>
+                                </Row>
                             )
                         )}
                 </Container>

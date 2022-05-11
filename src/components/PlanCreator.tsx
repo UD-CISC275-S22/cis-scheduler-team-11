@@ -19,17 +19,24 @@ export function PlanCreator({
     setPlanList: (planList: Plan[]) => void;
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
-    //Adds a new plan if that plan does not already exit
-    function addPlan(newPlan: Plan) {
-        if (!planList.some((plan) => plan.id === newPlan.id)) {
+    function addPlan(newPlan: Plan): number {
+        if (newPlan.id === "Plan Name") {
+            alert("Enter a new name for this plan!");
+            return 0;
+        } else if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
             handleCloseAddModal();
+            return 1;
         } else {
             alert("A plan with that ID already exists!");
+            return 0;
         }
     }
-    //deleting the selected plan from the plan list
-    function deleteSpecificPlan(id: number) {
+    function deletePlans() {
+        setPlanList([]);
+    }
+
+    function deleteSpecificPlan(id: string) {
         confirmAlert({
             title: "Plan Deletion Confirmation",
             message: "Are you sure you want to delete this plan?",
@@ -92,23 +99,24 @@ export function PlanCreator({
                                     <DropdownMenu
                                         horizontal={true}
                                         buttons={[
-                                            <Button
-                                                size="sm"
-                                                key={1}
-                                                onClick={() => selectPlan(plan)}
-                                            >
-                                                Select
-                                            </Button>,
-                                            <Button
-                                                variant="danger"
-                                                size="sm"
-                                                key={2}
-                                                onClick={() =>
+                                            {
+                                                variant: "primary",
+                                                text: "Select",
+                                                click: () => selectPlan(plan)
+                                            },
+                                            {
+                                                text: "Edit",
+                                                click: () =>
+                                                    console.log(
+                                                        "add functionality to plan edit!!!"
+                                                    )
+                                            },
+                                            {
+                                                variant: "danger",
+                                                text: "⦻",
+                                                click: () => () =>
                                                     deleteSpecificPlan(plan.id)
-                                                }
-                                            >
-                                                ⦻
-                                            </Button>
+                                            }
                                         ]}
                                     />
                                 </Col>
