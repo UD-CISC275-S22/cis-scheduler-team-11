@@ -3,6 +3,8 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
+import { PlanEditor } from "./PlanEditor";
+import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
@@ -18,7 +20,10 @@ export function PlanCreator({
     planList: Plan[];
     setPlanList: (planList: Plan[]) => void;
 }): JSX.Element {
+    const [plan, setPlan] = useState<Plan>(planList[0]);
     const [showAddModal, setShowAddModal] = useState(false);
+    const [showAddModal2, setShowAddModal2] = useState(false);
+    const handleCloseAddModal2 = () => setShowAddModal2(false);
     function addPlan(newPlan: Plan): number {
         if (newPlan.id === "Plan Name") {
             alert("Enter a new name for this plan!");
@@ -89,7 +94,7 @@ export function PlanCreator({
                                         color: "white"
                                     }}
                                 >
-                                    {"Plan"} {plan.id}
+                                    {plan.id}
                                 </Col>
                                 <Col>
                                     <DropdownMenu
@@ -102,10 +107,12 @@ export function PlanCreator({
                                             },
                                             {
                                                 text: "Edit",
-                                                click: () =>
-                                                    console.log(
-                                                        "add functionality to plan edit!!!"
-                                                    )
+                                                click: () => {
+                                                    setPlan(plan);
+                                                    setShowAddModal2(
+                                                        !showAddModal2
+                                                    );
+                                                }
                                             },
                                             {
                                                 variant: "danger",
@@ -132,6 +139,15 @@ export function PlanCreator({
                     handleClose={handleCloseAddModal}
                     addPlan={addPlan}
                 ></PlanAdder>
+            </div>
+            <div>
+                <PlanEditor
+                    show={showAddModal2}
+                    handleClose={handleCloseAddModal2}
+                    plan={plan}
+                    planList={planList}
+                    setPlanList={setPlanList}
+                ></PlanEditor>
             </div>
         </div>
     );
