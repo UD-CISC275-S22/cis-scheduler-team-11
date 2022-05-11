@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import YearView from "./YearView";
+import YearView from "../components/YearView";
 import { Plan } from "../interfaces/projectInterfaces";
 
-const defaultPlan: Plan = { id: 0, semesters: [] };
+const defaultPlan: Plan = { id: "0", semesters: [], start: 2000 };
 
 describe("YearView tests", () => {
     beforeEach(() => {

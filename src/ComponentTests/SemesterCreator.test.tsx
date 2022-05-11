@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { SemesterCreator } from "./SemesterCreator";
+import { SemesterCreator } from "../components/SemesterCreator";
 import { Plan } from "../interfaces/projectInterfaces";
-import { DropdownMenu } from "./DropdownMenu";
+import { DropdownMenu } from "../components/DropdownMenu";
 import { Button } from "react-bootstrap";
 
-const defaultPlan: Plan = { id: 0, semesters: [] };
+const defaultPlan: Plan = { id: "0", semesters: [], start: 2000 };
 
 describe("SingleSemester tests", () => {
     beforeEach(() => {
@@ -59,34 +59,20 @@ describe("SingleSemester tests", () => {
     test("There is an Select Button", () => {
         render(
             <DropdownMenu
-                buttons={[
-                    <Button
-                        size="sm"
-                        key={3}
-                        onClick={
-                            () => setSemester() // did this just to get rid of the warning lol
-                        }
-                    >
-                        Select
-                    </Button>,
-                    <Button
-                        variant="secondary"
-                        size="sm"
-                        key={1}
-                        onClick={() => setShowAddModal()}
-                    >
-                        edit
-                    </Button>,
-                    <Button
-                        variant="danger"
-                        size="sm"
-                        key={2}
-                        onClick={() => deleteSpecificCourse()}
-                    >
-                        ⦻
-                    </Button>
-                ]}
                 horizontal={false}
+                buttons={[
+                    {
+                        variant: "primary",
+                        click: () => setSemester(),
+                        text: "Select"
+                    },
+                    { click: () => setShowAddModal(), text: "edit" },
+                    {
+                        variant: "danger",
+                        click: () => deleteSpecificCourse(),
+                        text: "⦻"
+                    }
+                ]}
             />
         );
         const optionsButton = screen.getByRole("button", {
@@ -102,34 +88,20 @@ describe("SingleSemester tests", () => {
     test("There is an Edit Button", () => {
         render(
             <DropdownMenu
-                buttons={[
-                    <Button
-                        size="sm"
-                        key={3}
-                        onClick={
-                            () => setSemester() // did this just to get rid of the warning lol
-                        }
-                    >
-                        Select
-                    </Button>,
-                    <Button
-                        variant="secondary"
-                        size="sm"
-                        key={1}
-                        onClick={() => setShowAddModal()}
-                    >
-                        edit
-                    </Button>,
-                    <Button
-                        variant="danger"
-                        size="sm"
-                        key={2}
-                        onClick={() => deleteSpecificCourse()}
-                    >
-                        ⦻
-                    </Button>
-                ]}
                 horizontal={false}
+                buttons={[
+                    {
+                        variant: "primary",
+                        click: () => setSemester(),
+                        text: "Select"
+                    },
+                    { click: () => setShowAddModal(), text: "edit" },
+                    {
+                        variant: "danger",
+                        click: () => deleteSpecificCourse(),
+                        text: "⦻"
+                    }
+                ]}
             />
         );
         const optionsButton = screen.getByRole("button", {
@@ -144,34 +116,20 @@ describe("SingleSemester tests", () => {
     test("There is a Delete Button", () => {
         render(
             <DropdownMenu
-                buttons={[
-                    <Button
-                        size="sm"
-                        key={3}
-                        onClick={
-                            () => setSemester() // did this just to get rid of the warning lol
-                        }
-                    >
-                        Select
-                    </Button>,
-                    <Button
-                        variant="secondary"
-                        size="sm"
-                        key={1}
-                        onClick={() => setShowAddModal()}
-                    >
-                        edit
-                    </Button>,
-                    <Button
-                        variant="danger"
-                        size="sm"
-                        key={2}
-                        onClick={() => deleteSpecificCourse()}
-                    >
-                        ⦻
-                    </Button>
-                ]}
                 horizontal={false}
+                buttons={[
+                    {
+                        variant: "primary",
+                        click: () => setSemester(),
+                        text: "Select"
+                    },
+                    { click: () => setShowAddModal(), text: "edit" },
+                    {
+                        variant: "danger",
+                        click: () => deleteSpecificCourse(),
+                        text: "⦻"
+                    }
+                ]}
             />
         );
         const optionsButton = screen.getByRole("button", {
