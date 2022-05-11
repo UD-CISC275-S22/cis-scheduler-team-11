@@ -7,7 +7,6 @@ import { PlanEditor } from "./PlanEditor";
 import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
-import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 
 export function PlanCreator({
     selectedPlan,
