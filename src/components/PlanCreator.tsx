@@ -5,6 +5,7 @@ import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
+import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 
 export function PlanCreator({
     selectedPlan,
@@ -31,10 +32,6 @@ export function PlanCreator({
             return 0;
         }
     }
-    function deletePlans() {
-        setPlanList([]);
-    }
-
     function deleteSpecificPlan(id: string) {
         confirmAlert({
             title: "Plan Deletion Confirmation",
@@ -123,7 +120,10 @@ export function PlanCreator({
                         ))}
                     </div>
                     {/* If there are no plans currently, we do not need a delete all button */}
-                    <Button onClick={() => deletePlans()}>Delete All</Button>
+                    <DeleteAllPlans
+                        planList={planList}
+                        setPlanList={setPlanList}
+                    />
                 </Col>
             </Row>
             <div>
