@@ -29,7 +29,7 @@ export function MainView(): JSX.Element {
             )
         );
         selectPlan(editedPlan);
-        //console.log(selectedPlan);
+        ////console.log(selectedPlan);
     }
 
     return (
