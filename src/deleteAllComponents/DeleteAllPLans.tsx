@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { confirmAlert } from "react-confirm-alert";
 import { Plan } from "../interfaces/projectInterfaces";
 
 export function DeleteAllPlans({
@@ -10,7 +11,20 @@ export function DeleteAllPlans({
     setPlanList: (plan: Plan[]) => void;
 }): JSX.Element {
     function deletePlans() {
-        setPlanList([]);
+        confirmAlert({
+            title: "Plan Deletion Confirmation",
+            message: "Are you sure you want to delete all plans?",
+            buttons: [
+                {
+                    label: "Yes",
+                    onClick: () => setPlanList([])
+                },
+                {
+                    label: "No",
+                    onClick: () => console.log("deletion cancelled")
+                }
+            ]
+        });
     }
     return (
         <div
