@@ -79,8 +79,8 @@ export function CourseEditor({
             if (nameList.length > 1) {
                 setCheck(true);
             }
-            console.log("check" + check);
-            console.log("checked" + checked);
+            //console.log("check" + check);
+            //console.log("checked" + checked);
             if (check && !checked) {
                 alert("Some courses have the same code or title!");
                 setChecked(true);
@@ -115,8 +115,7 @@ export function CourseEditor({
 
     return (
         <Modal
-            overlayClassName="overlay-modal-class-name"
-            ClassName="modal"
+            className="modal"
             show={show}
             onHide={handleClose}
             onShow={refresh}

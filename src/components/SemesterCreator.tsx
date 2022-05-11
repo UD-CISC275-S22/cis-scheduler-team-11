@@ -25,14 +25,14 @@ export function SemesterCreator({
     }
     function setSemesterList(semList: Semester[]) {
         const newSems: Semester[][] = [[]];
-        //console.log(semList);
+        ////console.log(semList);
         const semListC = [...semList];
-        console.log(
+        /*console.log(
             semListC.sort(
                 (sem: Semester, sem2: Semester) =>
                     CalcIdx2(sem) - CalcIdx2(sem2)
             )
-        );
+        );*/
         semListC.map(
             (semester: Semester) =>
                 (newSems[CalcIdx(semester)] =
@@ -95,8 +95,8 @@ export function SemesterCreator({
                 const newSemester = { id: semesterId, courses: [] };
                 //setSemester(newSemester);
                 const newSemesterList = [...semesterList, newSemester];
-                console.log(semesterList);
-                console.log(newSemesterList);
+                //console.log(semesterList);
+                //console.log(newSemesterList);
                 const check = semesterList.filter(
                     ({ id }) => id === semesterId
                 );

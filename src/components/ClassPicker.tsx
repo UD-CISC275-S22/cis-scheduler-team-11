@@ -14,12 +14,12 @@ import SingleSemester from "./SingleSemester";
         ...course
     })
 );*/
-const COURSES = Object.values(catalog)
+const COURSES: Course[] = Object.values(catalog)
     .flat()
     .map((category) => Object.values(category).flat())
     .flat()
     .map((crs) => ({ ...crs, uid: -1 }));
-//console.log(COURSES);
+////console.log(COURSES);
 const defaultCourse = {
     code: " ",
     name: " ",
@@ -42,19 +42,28 @@ export function ClassPicker({
     updateSelectedSemester: (semester: Semester) => void;
 }): JSX.Element {
     const [course, setCourse] = useState<Course>(COURSES[0]);
-    const [selectedCourse, selectCourse] = useState<Course>(
-        selectedSemester.courses[0]
-            ? selectedSemester.courses[0]
-            : defaultCourse
-    );
-    console.log("test2");
-    console.log(selectedSemester);
+    const [selectedCourse, selectCourse] = useState<Course>(defaultCourse);
+    if (
+        selectedSemester.courses.length > 0 &&
+        selectedCourse == defaultCourse
+    ) {
+        selectCourse(selectedSemester.courses[0]);
+    }
+    if (
+        selectedSemester.courses.length == 0 &&
+        selectedCourse != defaultCourse
+    ) {
+        selectCourse(defaultCourse);
+    }
+    //console.log("test2");
+    //console.log(selectedSemester);
+    /*
     if (selectedSemester.courses.length > 0 && selectedCourse.code === " ") {
         selectCourse(selectedSemester.courses[0]);
     }
     if (selectedSemester.courses.length == 0 && selectedCourse.code != " ") {
         selectCourse(defaultCourse);
-    }
+    }*/
     const [UID, setUID] = useState<number>(0);
     const schedule = selectedSemester.courses;
     function setSchedule(courses: Course[]) {
@@ -64,19 +73,32 @@ export function ClassPicker({
     const handleCloseAddModal = () => setShowAddModal(false);
 
     function chooseSchedule() {
-        setCourse(COURSES.filter((crs: Course) => crs.code === course.code)[0]);
-        const newSchedule = { ...course, uid: UID };
-        setUID(UID + 1);
-        const newScheduleList = [...schedule, newSchedule];
-        const check = schedule.filter(
-            ({ code, name }) =>
-                code + name.toLowerCase ===
-                course.code + course.name.toLowerCase()
+        const possible = COURSES.find(
+            (crs: Course) => crs.code === course.code
         );
-        console.log("check");
-        console.log(check);
+        const courseInfo: Course = possible
+            ? { ...possible }
+            : { ...course, code: "error" };
+        const newCourse: Course = { ...courseInfo, uid: UID };
+        setUID(UID + 1);
+        const newSchedule: Course[] = [...schedule, newCourse];
+        const check = schedule.filter(({ code, name }) => {
+            /*console.log(
+                UID,
+                code + name.toLowerCase(),
+                course.code + course.name.toLowerCase(),
+                code + name.toLowerCase() ===
+                    course.code + course.name.toLowerCase()
+            );*/
+            return (
+                code + name.toLowerCase() ===
+                course.code + course.name.toLowerCase()
+            );
+        });
+        //console.log("check");
+        //console.log(check, check.length);
         if (check.length === 0) {
-            setSchedule(newScheduleList);
+            setSchedule(newSchedule);
         } else {
             alert("You are already enrolled in that course in this semester");
         }
@@ -130,9 +152,16 @@ export function ClassPicker({
                                         />
                                     )}
                                 />
-                                <Button onClick={() => chooseSchedule()}>
-                                    Add Course
-                                </Button>
+                                {COURSES.find(
+                                    (crs: Course) => crs.code === course.code
+                                ) && (
+                                    <Button onClick={() => chooseSchedule()}>
+                                        Add Course
+                                    </Button>
+                                )}
+                                {!COURSES.find(
+                                    (crs: Course) => crs.code === course.code
+                                ) && "This is not a valid course!"}
                             </Form.Group>
                         </Col>
                         <Col className="CoursesRight">
@@ -150,7 +179,11 @@ export function ClassPicker({
                                     style={{
                                         display: "flex",
                                         height: "33px",
-                                        border: "1px solid black"
+                                        border: "1px solid black",
+                                        backgroundColor:
+                                            selectedCourse == course
+                                                ? "lime"
+                                                : "lightgray"
                                     }}
                                 >
                                     <Col>{course.code} </Col>
@@ -224,7 +257,9 @@ export function ClassPicker({
                 </Col>
             </Container>
             <div>
-                {console.log("test1")}
+                {
+                    //console.log("test1:")}
+                }
                 {console.log(selectedCourse)}
                 <CourseEditor
                     show={showAddModal}
