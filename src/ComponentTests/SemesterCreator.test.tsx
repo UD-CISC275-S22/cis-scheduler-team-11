@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { SemesterCreator } from "../components/SemesterCreator";
 import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "../components/DropdownMenu";
-import { Button } from "react-bootstrap";
 
 const defaultPlan: Plan = { id: "0", semesters: [], start: 2000 };
 
