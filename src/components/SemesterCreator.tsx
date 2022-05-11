@@ -3,6 +3,7 @@ import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import { Semester, Plan } from "../interfaces/projectInterfaces";
 import { SemesterEditor } from "./SemesterEditor";
 import { ClassPicker } from "./ClassPicker";
+import { DeleteAllSemesters } from "../deleteAllComponents/DeleteAllSemesters";
 import { DropdownMenu } from "./DropdownMenu";
 
 export function SemesterCreator({
@@ -115,16 +116,13 @@ export function SemesterCreator({
     function updateSeason(event: React.ChangeEvent<HTMLSelectElement>) {
         setFormSemesterSeason(event.target.value);
     }
-    function deleteSemester() {
-        setSemesterList([]);
-    }
-
     function deleteSpecificSemester(id: string) {
         setSemesterList(semesterList.filter((semester) => semester.id != id));
     }
 
     return (
         <div>
+            <h1>Semesters</h1>
             <Container className="semesterAdd">
                 <Row>
                     <Col>
@@ -132,7 +130,13 @@ export function SemesterCreator({
                             controlId="Semester"
                             className="semesterAddForm"
                         >
-                            <Form.Label>Add Semester</Form.Label>
+                            <Form.Label
+                                style={{
+                                    color: "white"
+                                }}
+                            >
+                                Add Semester
+                            </Form.Label>
                             <Form.Select
                                 value={formSemesterSeason}
                                 onChange={updateSeason}
@@ -151,6 +155,11 @@ export function SemesterCreator({
                             />
                             <Button
                                 size="sm"
+                                style={{
+                                    backgroundColor: "yellow",
+                                    color: "black",
+                                    fontWeight: "bold"
+                                }}
                                 onClick={() =>
                                     addSemester(
                                         formSemesterSeason,
@@ -163,7 +172,13 @@ export function SemesterCreator({
                         </Form.Group>
                     </Col>
                     <Col className="semesterAddListDelete">
-                        <strong>Semester:</strong>
+                        <Form.Label
+                            style={{
+                                color: "white"
+                            }}
+                        >
+                            Add Semester
+                        </Form.Label>
                         <div className="semesterAddList">
                             {semesterList.map((semester: Semester) => (
                                 <li
@@ -171,11 +186,12 @@ export function SemesterCreator({
                                     style={{
                                         display: "flex",
                                         height: "33px",
-                                        border: "1px solid black",
-                                        backgroundColor:
+                                        border:
                                             semester.id === selectedSemester.id
-                                                ? "green"
-                                                : "grey"
+                                                ? "3px solid yellow"
+                                                : "2px solid gray",
+                                        color: "white",
+                                        backgroundColor: "blue"
                                     }}
                                 >
                                     <Col>{semester.id} </Col>
@@ -202,32 +218,37 @@ export function SemesterCreator({
                                                 },
                                                 {
                                                     variant: "danger",
-                                                    text: "Delete",
+                                                    text: "⦻",
                                                     click: () =>
                                                         deleteSpecificSemester(
                                                             semester.id
                                                         )
                                                 }
+
                                             ]}
                                         />
                                     </Col>
                                 </li>
                             ))}
                         </div>
-                        <Button onClick={deleteSemester}>
-                            Delete Semester
-                        </Button>
+                        <DeleteAllSemesters
+                            semesterList={semesterList}
+                            setSemesterList={setSemesterList}
+                        ></DeleteAllSemesters>
                     </Col>
                 </Row>
                 <div>
-                    <Button onClick={() => setSemMenuView(false)}>
+                    <Button onClick={() => setSemMenuView(false)} size="sm">
                         Hide Semester Menu
                     </Button>
                 </div>
                 {!courseMenuView && selectedSemester.id != defaultSem.id ? (
                     <div>
-                        <Button onClick={() => setCourseMenuView(true)}>
-                            Show Course Menu
+                        <Button
+                            onClick={() => setCourseMenuView(true)}
+                            size="sm"
+                        >
+                            ▼ Add Course Menu ▼
                         </Button>
                     </div>
                 ) : (

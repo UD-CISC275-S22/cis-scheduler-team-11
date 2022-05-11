@@ -7,6 +7,7 @@ import { Course, Semester } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 //import courses from "../data/courses.json";
 import catalog from "../data/catalog.json";
+import { DeleteAllCourses } from "../deleteAllComponents/DeleteAllCourses";
 import SingleSemester from "./SingleSemester";
 
 /*const COURSES = courses.map(
@@ -103,9 +104,6 @@ export function ClassPicker({
             alert("You are already enrolled in that course in this semester");
         }
     }
-    function clearSchedule() {
-        setSchedule([]);
-    }
     function deleteSpecificCourse(course: Course) {
         setSchedule(schedule.filter(({ code }) => code !== course.code));
     }
@@ -113,12 +111,19 @@ export function ClassPicker({
 
     return (
         <div>
+            <h1>Courses</h1>
             <Container className="Courses">
                 <Col>
                     <Row>
                         <Col className="CoursesLeft">
                             <Form.Group>
-                                <Form.Label>Select Course</Form.Label>
+                                <Form.Label
+                                    style={{
+                                        color: "white"
+                                    }}
+                                >
+                                    Select Course
+                                </Form.Label>
                                 <Autocomplete
                                     disablePortal
                                     id="combo-box-demo"
@@ -137,7 +142,12 @@ export function ClassPicker({
                                         (course: Course): string => course.code
                                     )}
                                     //map the options
-                                    sx={{ width: 300, background: "white" }}
+                                    sx={{
+                                        width: 200,
+                                        textAlign: "center",
+                                        align: "center",
+                                        backgroundColor: "white"
+                                    }}
                                     renderInput={(params) => (
                                         <TextField
                                             value={course.code}
@@ -165,7 +175,13 @@ export function ClassPicker({
                             </Form.Group>
                         </Col>
                         <Col className="CoursesRight">
-                            <strong>Courses:</strong>
+                            <Form.Label
+                                style={{
+                                    color: "white"
+                                }}
+                            >
+                                Courses:
+                            </Form.Label>
                             {schedule.flat().map((course: Course) => (
                                 <li
                                     className="CoursesList"
@@ -186,8 +202,19 @@ export function ClassPicker({
                                                 : "lightgray"
                                     }}
                                 >
-                                    <Col>{course.code} </Col>
-                                    <Col>
+                                    <Col
+                                        style={{
+                                            color: "white",
+                                            backgroundColor: "blue"
+                                        }}
+                                    >
+                                        {course.code}{" "}
+                                    </Col>
+                                    <Col
+                                        style={{
+                                            backgroundColor: "blue"
+                                        }}
+                                    >
                                         <DropdownMenu
                                             horizontal={true}
                                             buttons={[
@@ -208,7 +235,7 @@ export function ClassPicker({
                                                 },
                                                 {
                                                     variant: "danger",
-                                                    text: "Delete",
+                                                    text: "⦻",
                                                     click: () =>
                                                         deleteSpecificCourse(
                                                             course
@@ -219,9 +246,10 @@ export function ClassPicker({
                                     </Col>
                                 </li>
                             ))}
-                            <Button onClick={clearSchedule}>
-                                Clear Courses
-                            </Button>
+                            <DeleteAllCourses
+                                courseList={schedule}
+                                setCourseList={setSchedule}
+                            ></DeleteAllCourses>
                         </Col>
                     </Row>
                     <Row>
