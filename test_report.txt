@@ -941,22 +941,127 @@ FAIL src/ComponentTests/ClassPicker.test.tsx
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/ComponentTests/ClassPicker.test.tsx:105:35)
 
-PASS src/App.test.tsx
+FAIL src/App.test.tsx
+  ● Directions are shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /Below you will see which courses/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript By Shaun Gupta & Andrew Long & Andrew Gkonos![0m
+          [36m</header>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"formName"[39m
+              [36m>[39m
+                [0mWhat is your Name?[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mid[39m=[32m"formName"[39m
+                [33mplaceholder[39m=[32m"insert your name"[39m
+                [33mvalue[39m=[32m" "[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<h1>[39m
+            [0mWelcome to your scheduler, [0m
+            [0m [0m
+            [0m![0m
+          [36m</h1>[39m
+          [36m<h2>[39m
+            [0mHere you will see all of your plans to complete your degrees![0m
+          [36m</h2>[39m
+          [36m<h3>[39m
+            [0mBelow you will see your degree plans, and their respective semesters and courses.[0m
+          [36m</h3>[39m
+          [36m<br />[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [0mYou currently do not have any plans, click the button below to add one![0m
+              [36m<div>[39m
+                [36m<h1>[39m
+                  [0mPlans[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"planAdd row"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"planAddListDelete col"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-label"[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33mclass[39m=[32m"btn btn-primary"[39m
+                        [33mstyle[39m=[32m"background-color: blue; color: white; font-weight: bold;"[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [0mNew Plan[0m
+                      [36m</button>[39m
+                    [36m</label>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"planAddList"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      [33mstyle[39m=[32m"color: black; font-weight: bold;"[39m
+                    [36m>[39m
+                      [36m<p>[39m
+                        [0mTo start, Press New Plan![0m
+                      [36m</p>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div />[39m
+                [36m<div />[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<span>[39m
+            [0mUp to date with last save[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      17 | test("Directions are shown", () => {
+      18 |     render(<App />);
+    > 19 |     const linkElement = screen.getByText(/Below you will see which courses/i);
+         |                                ^
+      20 |     expect(linkElement).toBeInTheDocument();
+      21 | });
+      22 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:19:32)
+
 PASS src/ComponentTests/YearView.test.tsx
 PASS src/ComponentTests/SingleSemester.test.tsx
 PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   38.59 |     35.6 |   24.81 |      40 |                                  
- src                     |   66.66 |      100 |      50 |   66.66 |                                  
-  App.tsx                |   66.66 |      100 |      50 |   66.66 | 10                               
- src/components          |   38.88 |    34.92 |   24.39 |   40.38 |                                  
+All files                |   37.54 |    33.33 |   24.46 |   38.83 |                                  
+ src                     |      30 |    16.66 |      25 |      30 |                                  
+  App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,74-75                      
+ src/components          |   38.66 |    34.92 |   24.39 |   40.15 |                                  
   ClassPicker.tsx        |   64.44 |       50 |   47.82 |   67.44 | 51,57,94,104-108,132,157,186-270 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
   CourseEditor.tsx       |   21.73 |     9.09 |    4.54 |   21.73 | 38-113,139-282                   
   DropdownMenu.tsx       |   85.71 |       55 |      75 |   85.71 | 44                               
-  MainView.tsx           |      50 |    46.15 |      25 |      50 | 18-20,23-31                      
+  MainView.tsx           |   45.45 |    46.15 |      25 |   45.45 | 23-25,28-36                      
   MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 11-12                            
   PlanAdder.tsx          |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
   PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,77-120                     
@@ -974,8 +1079,8 @@ All files                |   38.59 |     35.6 |   24.81 |      40 |
   projectInterfaces.ts   |       0 |        0 |       0 |       0 |                                  
 -------------------------|---------|----------|---------|---------|----------------------------------
 
-Test Suites: 1 failed, 5 passed, 6 total
-Tests:       3 failed, 29 passed, 32 total
+Test Suites: 2 failed, 4 passed, 6 total
+Tests:       4 failed, 28 passed, 32 total
 Snapshots:   0 total
-Time:        12.145 s
+Time:        9.085 s
 Ran all test suites.
