@@ -3,7 +3,6 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
-import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
 
@@ -124,10 +123,7 @@ export function PlanCreator({
                         ))}
                     </div>
                     {/* If there are no plans currently, we do not need a delete all button */}
-                    <DeleteAllPlans
-                        planList={planList}
-                        setPlanList={setPlanList}
-                    ></DeleteAllPlans>
+                    <Button onClick={() => deletePlans()}>Delete All</Button>
                 </Col>
             </Row>
             <div>
