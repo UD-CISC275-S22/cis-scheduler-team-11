@@ -83,25 +83,31 @@ export function ClassPicker({
         const newCourse: Course = { ...courseInfo, uid: UID };
         setUID(UID + 1);
         const newSchedule: Course[] = [...schedule, newCourse];
-        const check = schedule.filter(({ code, name }) => {
-            /*console.log(
+        if (possible) {
+            const check = schedule.filter(({ code, name }) => {
+                /*console.log(
                 UID,
                 code + name.toLowerCase(),
                 course.code + course.name.toLowerCase(),
                 code + name.toLowerCase() ===
                     course.code + course.name.toLowerCase()
             );*/
-            return (
-                code + name.toLowerCase() ===
-                course.code + course.name.toLowerCase()
-            );
-        });
-        //console.log("check");
-        //console.log(check, check.length);
-        if (check.length === 0) {
-            setSchedule(newSchedule);
+                return (
+                    code + name.toLowerCase() ===
+                    course.code + possible.name.toLowerCase()
+                );
+            });
+            //console.log("check");
+            //console.log(check, check.length, "\n", course.code + course.name);
+            if (check.length === 0 && possible) {
+                setSchedule(newSchedule);
+            } else {
+                alert(
+                    "You are already enrolled in that course in this semester"
+                );
+            }
         } else {
-            alert("You are already enrolled in that course in this semester");
+            alert("That course does not exist!!!");
         }
     }
     function deleteSpecificCourse(course: Course) {
@@ -288,7 +294,9 @@ export function ClassPicker({
                 {
                     //console.log("test1:")}
                 }
-                {console.log(selectedCourse)}
+                {
+                    //console.log(selectedCourse)
+                }
                 <CourseEditor
                     show={showAddModal}
                     handleClose={handleCloseAddModal}

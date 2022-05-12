@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form /*, Button */ } from "react-bootstrap";
 import "./App.css";
 import { MainView } from "./components/MainView";
+import { CSVDownload } from "./components/CSVDownload";
 import { Plan } from "./interfaces/projectInterfaces";
 
 function App(): JSX.Element {
