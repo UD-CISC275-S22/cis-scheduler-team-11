@@ -829,12 +829,9 @@ FAIL src/App.test.tsx
               [36m</div>[39m
             [36m</div>[39m
             [36m<br />[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0m Download your Plan![0m
-            [36m</button>[39m
+            [36m<span>[39m
+              [0mYou need to make a plan before you can download it[0m
+            [36m</span>[39m
           [36m</div>[39m
           [36m<span>[39m
             [0mUp to date with last save[0m
@@ -863,11 +860,11 @@ PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   34.82 |    34.41 |   23.02 |   36.11 |                                  
+All files                |    34.4 |    33.75 |   22.87 |   35.54 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,74-75                      
- src/components          |   35.52 |    36.15 |   22.79 |   36.98 |                                  
-  CSVDownload.tsx        |    9.09 |      100 |    7.69 |    9.67 | 8,30-80                          
+ src/components          |   35.04 |    35.29 |   22.62 |   36.33 |                                  
+  CSVDownload.tsx        |      10 |    16.66 |    7.14 |   10.25 | 8,30-80,84-106                   
   ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,192-276 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
   CourseEditor.tsx       |   21.73 |     9.09 |    4.54 |   21.73 | 38-113,139-282                   
@@ -893,5 +890,5 @@ All files                |   34.82 |    34.41 |   23.02 |   36.11 |
 Test Suites: 2 failed, 4 passed, 6 total
 Tests:       4 failed, 28 passed, 32 total
 Snapshots:   0 total
-Time:        9.126 s
+Time:        9.106 s
 Ran all test suites.
