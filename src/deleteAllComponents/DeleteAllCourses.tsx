@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { confirmAlert } from "react-confirm-alert";
 import { Course } from "../interfaces/projectInterfaces";
 
 export function DeleteAllCourses({
@@ -10,7 +11,20 @@ export function DeleteAllCourses({
     setCourseList: (course: Course[]) => void;
 }): JSX.Element {
     function deleteCourses() {
-        setCourseList([]);
+        confirmAlert({
+            title: "Course Deletion Confirmation",
+            message: "Are you sure you want to delete all courses?",
+            buttons: [
+                {
+                    label: "Yes",
+                    onClick: () => setCourseList([])
+                },
+                {
+                    label: "No",
+                    onClick: () => console.log("deletion cancelled")
+                }
+            ]
+        });
     }
     return (
         <div

@@ -36,7 +36,6 @@ export function PlanCreator({
             return 0;
         }
     }
-
     function deleteSpecificPlan(id: string) {
         confirmAlert({
             title: "Plan Deletion Confirmation",
@@ -130,7 +129,7 @@ export function PlanCreator({
                     <DeleteAllPlans
                         planList={planList}
                         setPlanList={setPlanList}
-                    ></DeleteAllPlans>
+                    />
                 </Col>
             </Row>
             <div>

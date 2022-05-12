@@ -1,13 +1,46 @@
 import React, { useState } from "react";
-import { Form /*, Button */ } from "react-bootstrap";
+import { Button, Form /*, Button */ } from "react-bootstrap";
 import "./App.css";
 import { MainView } from "./components/MainView";
+import { Plan } from "./interfaces/projectInterfaces";
 
 function App(): JSX.Element {
-    //const [plans, setPlans] = useState<Plan[]>([]);
-    const [name, setName] = useState<string>("");
+    const nameCheck = localStorage.getItem("mostRecentName");
+    const [name, setName] = useState<string>(nameCheck ? nameCheck : " ");
+    const startingPlan = localStorage.getItem(name);
+    const [plans, setPlans] = useState<Plan[]>(
+        startingPlan ? JSON.parse(startingPlan) : []
+    );
+    const [saveCheck, setSaveCheck] = useState<boolean>(false);
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
+        localStorage.setItem("mostRecentName", event.target.value);
+        const newPlans: string | null = localStorage.getItem(
+            event.target.value
+        );
+        console.log(
+            event.target.value,
+            localStorage.getItem(event.target.value)
+        );
+        setPlans(newPlans ? JSON.parse(newPlans) : []);
+        if (
+            JSON.stringify(newPlans ? JSON.parse(newPlans) : []) !=
+            localStorage.getItem(event.target.value)
+        ) {
+            setSaveCheck(true);
+        }
+        if (
+            JSON.stringify(newPlans ? JSON.parse(newPlans) : []) ===
+            localStorage.getItem(event.target.value)
+        ) {
+            setSaveCheck(false);
+        }
+    }
+    function setPlansUpdate(plans: Plan[]): void {
+        setPlans(plans);
+        if (JSON.stringify(plans) != localStorage.getItem(name)) {
+            setSaveCheck(true);
+        }
     }
     return (
         <div className="App">
@@ -30,18 +63,28 @@ function App(): JSX.Element {
                 </Form.Group>
             </div>
             <h1>Welcome to your scheduler, {name}!</h1>
-            <h2>Here you will see all of your classes for your major!</h2>
+            <h2>
+                Here you will see all of your plans to complete your degrees!
+            </h2>
             <h3>
-                Below you will see which courses you need to take during which
-                semesters.
+                Below you will see your degree plans, and their respective
+                semesters and courses.
             </h3>
             <br />
-            <MainView />
-            ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
+            <MainView plans={plans} setPlans={setPlansUpdate} />
+            {saveCheck ? (
+                <Button
+                    onClick={() => {
+                        localStorage.setItem(name, JSON.stringify(plans));
+                        setSaveCheck(false);
+                    }}
+                >
+                    {" "}
+                    Save your data!{" "}
+                </Button>
+            ) : (
+                <span>Up to date with last save</span>
+            )}
         </div>
     );
 }

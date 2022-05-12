@@ -4,14 +4,19 @@ import { Plan } from "../interfaces/projectInterfaces";
 import { PlanCreator } from "../components/PlanCreator";
 import { PlanView } from "../components/PlanView";
 
-export function MainView(): JSX.Element {
+export function MainView({
+    plans,
+    setPlans
+}: {
+    plans: Plan[];
+    setPlans: (plans: Plan[]) => void;
+}): JSX.Element {
     const defaultPlan: Plan = {
         start: 2000,
         id: "Plan Name",
         semesters: []
     };
     const [selectedPlan, selectPlan] = useState<Plan>(defaultPlan);
-    const [plans, setPlans] = useState<Plan[]>([]);
     if (
         plans.length > 0 &&
         (selectedPlan.id == "Plan Name" ||
