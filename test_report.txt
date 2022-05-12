@@ -4,203 +4,6 @@
 
 PASS src/ComponentTests/SemesterCreator.test.tsx
 FAIL src/ComponentTests/ClassPicker.test.tsx
-  ● Console
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
-    console.log
-      {
-        code: ' ',
-        name: ' ',
-        descr: ' ',
-        credits: ' ',
-        preReq: ' ',
-        restrict: ' ',
-        breadth: ' ',
-        typ: ' ',
-        uid: -1
-      }
-
-      at ClassPicker (src/components/ClassPicker.tsx:291:26)
-
   ● ClassPicker tests › Adds CISC106 course to the list
 
     TestingLibraryElementError: Unable to find an element with the display value: CISC106.
@@ -1025,6 +828,13 @@ FAIL src/App.test.tsx
                 [36m<div />[39m
               [36m</div>[39m
             [36m</div>[39m
+            [36m<br />[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m Download your Plan![0m
+            [36m</button>[39m
           [36m</div>[39m
           [36m<span>[39m
             [0mUp to date with last save[0m
@@ -1053,15 +863,16 @@ PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   37.54 |    33.33 |   24.46 |   38.83 |                                  
+All files                |   34.82 |    34.41 |   23.02 |   36.11 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,74-75                      
- src/components          |   38.66 |    34.92 |   24.39 |   40.15 |                                  
-  ClassPicker.tsx        |   64.44 |       50 |   47.82 |   67.44 | 51,57,94,104-108,132,157,186-270 
+ src/components          |   35.52 |    36.15 |   22.79 |   36.98 |                                  
+  CSVDownload.tsx        |    9.09 |      100 |    7.69 |    9.67 | 8,30-80                          
+  ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,192-276 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
   CourseEditor.tsx       |   21.73 |     9.09 |    4.54 |   21.73 | 38-113,139-282                   
   DropdownMenu.tsx       |   85.71 |       55 |      75 |   85.71 | 44                               
-  MainView.tsx           |   45.45 |    46.15 |      25 |   45.45 | 23-25,28-36                      
+  MainView.tsx           |   45.45 |    46.15 |      25 |   45.45 | 24-26,29-37                      
   MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 11-12                            
   PlanAdder.tsx          |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
   PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,77-120                     
@@ -1082,5 +893,5 @@ All files                |   37.54 |    33.33 |   24.46 |   38.83 |
 Test Suites: 2 failed, 4 passed, 6 total
 Tests:       4 failed, 28 passed, 32 total
 Snapshots:   0 total
-Time:        9.085 s
+Time:        9.126 s
 Ran all test suites.
