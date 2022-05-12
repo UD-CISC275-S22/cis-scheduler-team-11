@@ -12,6 +12,10 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
+                <img
+                    className="headerImage"
+                    src="https://cdn.shopify.com/s/files/1/1209/2544/products/New-Delaware-Blue-Hens_435x485.jpg?v=1542469747"
+                ></img>
                 UD CISC275 with React Hooks and TypeScript By Shaun Gupta &
                 Andrew Long & Andrew Gkonos!
             </header>

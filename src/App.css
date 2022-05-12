@@ -15,16 +15,21 @@
 
 .App-header {
     width: 100%;
-    background-color: #282c34;
+    background-color: #014b9a;
     min-height: 40vh;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: rgb(255, 255, 255);
+    font-family: "Times New Roman", Times, serif;
 }
-
+.headerImage {
+    margin-right: auto;
+    width: 15%;
+    height: 15%;
+}
 .App-link {
     color: #61dafb;
 }
