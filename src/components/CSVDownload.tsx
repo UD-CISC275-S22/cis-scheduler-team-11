@@ -80,5 +80,36 @@ function click(plan: Plan) {
     link.click();
 }
 export function CSVDownload({ plan }: { plan: Plan }): JSX.Element {
-    return <Button onClick={() => click(plan)}> Download your Plan!</Button>;
+    if (plan.id != "Plan Name") {
+        if (plan.semesters.flat().length > 0) {
+            if (
+                Math.max(
+                    ...plan.semesters
+                        .flat()
+                        .map((sem: Semester) => sem.courses.length)
+                )
+            ) {
+                return (
+                    <Button onClick={() => click(plan)}>
+                        {" "}
+                        Download your Plan!
+                    </Button>
+                );
+            } else {
+                return (
+                    <span>
+                        You do not have enough courses to download your plan
+                    </span>
+                );
+            }
+        } else {
+            return (
+                <span>
+                    You do not have enough semesters to download your plan
+                </span>
+            );
+        }
+    } else {
+        return <span>You need to make a plan before you can download it</span>;
+    }
 }
