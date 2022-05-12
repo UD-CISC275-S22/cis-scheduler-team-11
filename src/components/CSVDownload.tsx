@@ -2,36 +2,37 @@ import React from "react";
 import { Plan, Semester, Course } from "../interfaces/projectInterfaces";
 import { Button } from "react-bootstrap";
 
+const vertBord = [":::", ":::"];
+
 function course2CSV(crs: Course): string[][] {
     return [
-        [crs.code + ",", crs.name + ","],
-        [",", crs.credits + ","],
-        [",", crs.preReq + ","],
-        [",", crs.restrict + ","],
-        [",", crs.breadth + ","],
-        [",", crs.typ + ","]
+        [crs.code, crs.name.replaceAll(",", ";"), vertBord[0]],
+        ["Credits:", crs.credits.replaceAll(",", ";"), vertBord[1]],
+        ["Prereqs:", crs.preReq.replaceAll(",", ";"), vertBord[0]],
+        ["Restrictions:", crs.restrict.replaceAll(",", ";"), vertBord[1]],
+        ["Breadth", crs.breadth.replaceAll(",", ";"), vertBord[0]],
+        ["Offered", crs.typ.replaceAll(",", ";"), vertBord[1]],
+        ["-".repeat(15), "-".repeat(80), "-".repeat(2)]
     ];
 }
 
 const blankCourse = [
-    [",", ","],
-    [",", ","],
-    [",", ","],
-    [",", ","],
-    [",", ","],
-    [",", ","]
+    [",", ""],
+    [",", ""],
+    [",", ""],
+    [",", ""],
+    [",", ""],
+    [",", ""],
+    [",", ""]
 ];
 
 function semester2CSV(sem: Semester, max: number): string[][] {
-    const ret = [[sem.id + ",", ","]].concat(
-        sem.courses.map((crs: Course) => course2CSV(crs).flat())
-    );
+    let ret = [[sem.id.split(" ")[0], sem.id.split(" ")[1], vertBord[1]]];
+    sem.courses.map((crs: Course) => (ret = ret.concat(course2CSV(crs))));
     Array(max - sem.courses.length)
         .fill(1)
-        .map(() => ret.concat(blankCourse));
-    return [[sem.id + ",", ","]].concat(
-        sem.courses.map((crs: Course) => course2CSV(crs).flat())
-    );
+        .map(() => (ret = ret.concat(blankCourse)));
+    return ret;
 }
 
 function findMaxCourses(plan: Plan): number {
@@ -43,35 +44,41 @@ function findMaxCourses(plan: Plan): number {
 function plan2CSV(plan: Plan): string[][] {
     const planSems = plan.semesters.flat();
     const numSem = planSems.length;
-    const ret = [[plan.id + ",", plan.start + ",", ",".repeat(numSem * 2 - 2)]];
+    const ret = [
+        [
+            plan.id.replaceAll(",", ";"),
+            plan.start + "",
+            ",".repeat(numSem * 2 - 2)
+        ]
+    ];
     const max = findMaxCourses(plan);
-    const semesters = Array(semester2CSV(planSems[0], max).length).fill([]);
+    const semesters = Array(max * 7 + 1).fill([]);
     let i = 0;
-    const crsIdxArray = Array(max)
+    const crsIdxArray = Array(max * 7 + 1)
         .fill(0)
         .map((n: number) => n + i++);
     planSems.map((sem: Semester) => {
         const semArray = semester2CSV(sem, max);
-        crsIdxArray.map(
-            (idx: number) =>
-                (semesters[idx] = semesters[idx].concat(semArray[idx]))
-        );
+        crsIdxArray.map((idx: number) => {
+            semesters[idx] = semesters[idx].concat(semArray[idx]);
+        });
     });
     return ret.concat(semesters);
 }
 
-function planList2CSV(plans: Plan[]): string {
-    const ret = [];
-    plans.map((plan: Plan) => ret.concat(plan2CSV(plan)));
-    return ret.join("\n");
-}
-
-export function CSVDownload({ plans }: { plans: Plan[] }): JSX.Element {
-    const csvContent = "data:text/csv;charset=utf-8," + planList2CSV(plans);
+function click(plan: Plan) {
+    const csvContent =
+        "data:text/csv;charset=utf-8," + plan2CSV(plan).join("\n");
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "my_data.csv");
+    link.setAttribute(
+        "download",
+        "my_plan_" + plan.id.replace(" ", "_") + ".csv"
+    );
     document.body.appendChild(link); // Required for FF
-    return <Button onClick={() => link.click()}> Download your Plans!</Button>;
+    link.click();
+}
+export function CSVDownload({ plan }: { plan: Plan }): JSX.Element {
+    return <Button onClick={() => click(plan)}> Download your Plan!</Button>;
 }
