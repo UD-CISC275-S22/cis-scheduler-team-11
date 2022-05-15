@@ -55,7 +55,7 @@ describe("CourseEditor tests", () => {
                     {
                         variant: "primary",
                         text: "Select",
-                        click: () => selectCourse(defaultcourse)
+                        click: () => selectCourse(selectedCourse)
                     },
                     {
                         text: "Edit",
