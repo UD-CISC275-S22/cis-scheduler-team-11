@@ -20,12 +20,12 @@ describe("ClassPicker tests", () => {
             />
         );
     });
-    test("Adds CISC106 course to the list", () => {
+    test("Adds ACCT 166 course to the list", () => {
         const addCourseButton = screen.getByRole("button", {
             name: /add course/i
         });
         addCourseButton.click();
-        expect(screen.getByDisplayValue("CISC106")).toBeInTheDocument();
+        expect(screen.getByDisplayValue("ACCT 166")).toBeInTheDocument();
     });
 
     test("There is an 'Add Course' button present", () => {
@@ -34,6 +34,14 @@ describe("ClassPicker tests", () => {
         });
         expect(addCourseButton).toBeInTheDocument();
     });
+
+    test("There is an 'Hide Course Menu' button present", () => {
+        const addCourseButton = screen.getByRole("button", {
+            name: /Hide Course Menu/i
+        });
+        expect(addCourseButton).toBeInTheDocument();
+    });
+
     test("There is a Dropdown Options Button", () => {
         render(<DropdownMenu buttons={[]} horizontal={false} />);
         const editButton = screen.getByRole("button", {
@@ -56,27 +64,65 @@ describe("ClassPicker tests", () => {
                 ]}
             />
         );
-        /* const addCourseButton = screen.getByRole("button", {
-            name: /add course/i
-        });
-        addCourseButton.click();
-        // const editButton = screen.getByRole("button", { name: /●●●/i });
-        // editButton.click();
-        expect(screen.getByDisplayValue(/●●●/i)).toBeInTheDocument(); */
-        const editButton = screen.getByRole("button", {
+
+        const optionsButton = screen.getByRole("button", {
             name: /●●●/i
         });
-        editButton.click();
-        const linkElement = screen.getByText(/edit/i);
-        expect(linkElement).toBeInTheDocument();
-    });
+        optionsButton.click();
 
-    test("There is an Clear Courses Button", () => {
         const editButton = screen.getByRole("button", {
-            name: /clear courses/i
+            name: /edit/i
         });
         expect(editButton).toBeInTheDocument();
     });
+
+    test("There is a Select Button", () => {
+        render(
+            <DropdownMenu
+                horizontal={false}
+                buttons={[
+                    {
+                        variant: "primary",
+                        text: "Select",
+                        click: () => selectCourse()
+                    },
+                    {
+                        text: "Edit",
+                        click: () => {
+                            selectCourse();
+                            setShowAddModal();
+                        }
+                    },
+                    {
+                        variant: "danger",
+                        text: "⦻",
+                        click: () => deleteSpecificCourse()
+                    }
+                ]}
+            />
+        );
+
+        const optionsButton = screen.getByRole("button", {
+            name: /●●●/i
+        });
+        optionsButton.click();
+
+        const selectButton = screen.getByRole("button", {
+            name: /select/i
+        });
+        expect(selectButton).toBeInTheDocument();
+    });
+
+    test("The screen initially says semester has no courses", () => {
+        const linkElement = screen.getByText(/This semester has no courses!/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+
+    test("There is a Selected Semester View", () => {
+        const linkElement = screen.getByLabelText(/Selected Semester View/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+
     test("There is a Delete Button", () => {
         render(
             <DropdownMenu
@@ -91,21 +137,15 @@ describe("ClassPicker tests", () => {
                 ]}
             />
         );
-        const editButton = screen.getByRole("button", {
+        const optionsButton = screen.getByRole("button", {
             name: /●●●/i
         });
-        editButton.click();
-        const editButton2 = screen.getByRole("button", {
+        optionsButton.click();
+
+        const deleteButton = screen.getByRole("button", {
             name: /⦻/i
         });
-        expect(editButton2).toBeInTheDocument();
-    });
-
-    test("There is an Clear Courses Button", () => {
-        const editButton = screen.getByRole("button", {
-            name: /clear courses/i
-        });
-        expect(editButton).toBeInTheDocument();
+        expect(deleteButton).toBeInTheDocument();
     });
     test("Add Courses Title is Present", () => {
         const linkElement = screen.getByText(/Add Course/i);
@@ -133,5 +173,8 @@ function setShowAddModal(): void {
 }
 
 function deleteSpecificCourse(): void {
+    throw new Error("Function not implemented.");
+}
+function selectCourse(): void {
     throw new Error("Function not implemented.");
 }

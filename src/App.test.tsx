@@ -16,7 +16,9 @@ test("Welcome message is shown", () => {
 
 test("Directions are shown", () => {
     render(<App />);
-    const linkElement = screen.getByText(/Below you will see which courses/i);
+    const linkElement = screen.getByText(
+        /Below you will see your degree plans/i
+    );
     expect(linkElement).toBeInTheDocument();
 });
 

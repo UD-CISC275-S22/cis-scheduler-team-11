@@ -4,7 +4,7 @@ import MultipleSemester from "../components/MultipleSemester";
 import { Plan } from "../interfaces/projectInterfaces";
 
 const defaultPlan: Plan = { id: "1", semesters: [], start: 2000 };
-describe("SingleSemester tests", () => {
+describe("MultipleSemester tests", () => {
     beforeEach(() => {
         render(<MultipleSemester plan={defaultPlan} />);
     });
