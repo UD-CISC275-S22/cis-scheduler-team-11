@@ -63,13 +63,13 @@ export function PlanCreator({
                     <Form.Label>
                         <Button
                             style={{
-                                backgroundColor: "blue",
+                                backgroundColor: "#F0A369",
                                 color: "white",
                                 fontWeight: "bold"
                             }}
                             onClick={handleShowAddModal}
                         >
-                            New Plan
+                            📁 New Plan
                         </Button>
                     </Form.Label>
                     <div className="planAddList">
@@ -83,9 +83,9 @@ export function PlanCreator({
                                     width: "200",
                                     border:
                                         selectedPlan == plan
-                                            ? "3px solid yellow"
+                                            ? "3px solid white"
                                             : "2px solid gray",
-                                    backgroundColor: "blue"
+                                    backgroundColor: "#F0A369"
                                 }}
                             >
                                 <Col

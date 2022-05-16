@@ -53,9 +53,13 @@ function App(): JSX.Element {
                 Andrew Long & Andrew Gkonos!
             </header>
             <div>
-                <Form.Group controlId="formName">
+                <Form.Group controlId="formName" className="NameControl">
                     <Form.Label>What is your Name?</Form.Label>
                     <Form.Control
+                        style={{
+                            backgroundColor: "#f0a369",
+                            width: "200px"
+                        }}
                         placeholder="insert your name"
                         value={name}
                         onChange={updateName}
@@ -77,6 +81,10 @@ function App(): JSX.Element {
                     onClick={() => {
                         localStorage.setItem(name, JSON.stringify(plans));
                         setSaveCheck(false);
+                    }}
+                    style={{
+                        backgroundColor: "#f0a369",
+                        color: "white"
                     }}
                 >
                     {" "}

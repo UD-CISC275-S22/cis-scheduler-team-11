@@ -37,15 +37,22 @@ export function DeleteAllPlans({
                 <Button
                     onClick={deletePlans}
                     style={{
-                        backgroundColor: "red",
+                        backgroundColor: "#E85151",
                         color: "white",
                         fontWeight: "bold"
                     }}
                 >
-                    Delete Plans
+                    Delete All Plans
                 </Button>
             ) : (
-                <p>To start, Press New Plan!</p>
+                <p
+                    style={{
+                        color: "white",
+                        fontWeight: "bold"
+                    }}
+                >
+                    To start, Press New Plan!
+                </p>
             )}
         </div>
     );

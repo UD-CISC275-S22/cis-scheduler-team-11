@@ -1,5 +1,7 @@
 .App {
     text-align: center;
+    align-items: center;
+    background-color: #89a1ba;
 }
 
 .App-logo {
@@ -33,7 +35,13 @@
 .App-link {
     color: #61dafb;
 }
-
+.NameControl {
+    align-items: middle;
+    align-content: middle;
+    text-align: middle;
+    border-radius: 5px;
+    padding: 5px;
+}
 .row1 {
     border: 1px solid grey;
     justify-content: center;
@@ -141,92 +149,120 @@
 */
 
 .Courses {
-    width: 50%;
+    width: 55%;
     justify-content: center;
-    background-color: rgb(190, 190, 190);
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 25px;
-    padding: 20px;
+    align-items: center;
+    border: 5px solid #f0a369;
+    background-color: #3f71a7;
+    border-radius: 5px;
+    padding: 5px;
     margin: auto;
     min-height: 137.5px;
     max-height: 275px;
 }
 .CoursesLeft {
-    background-color: rgb(106, 92, 238);
-    border: 1px solid grey;
-    border-radius: 25px;
-    padding: 20px;
-    border: 2px solid rgb(255, 255, 255);
+    background-color: #3f71a7;
+    border: 4px solid #f0a369;
+    align-items: center;
+    align-content: center;
+    border-radius: 5px;
+    padding: 5px;
 }
 .CoursesRight {
-    background-color: rgb(106, 92, 238);
-    border: 1px solid grey;
-    border-radius: 25px;
-    padding: 20px;
-    border: 2px solid rgb(255, 255, 255);
+    background-color: #3f71a7;
+    border: 4px solid #f0a369;
+    border-radius: 5px;
+    padding: 5px;
 }
 .CoursesList {
-    background-color: rgb(21, 4, 177);
-    border: 1px solid grey;
+    background-color: #3f71a7;
+    border: 4px solid #f0a369;
+    align-items: center;
     overflow: scroll;
     max-height: 195px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    border-radius: 5px;
+    padding: 5px;
 }
 .CoursesList::-webkit-scrollbar {
     display: none;
 }
+.CoursePool {
+    overflow: "scroll";
+    height: "auto";
+    width: "auto";
+    border: "solid";
+    border: 5px solid #f0a369;
+    background-color: #3f71a7;
+    border-radius: 5px;
+    padding: 5px;
+}
+.CoursePoolList {
+    border-radius: 5px;
+    padding: 5px;
+    text-align: middle;
+    text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
 .semesterAdd {
-    width: 58%;
+    width: 55%;
     justify-content: center;
-    background-color: rgb(190, 190, 190);
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 25px;
-    padding: 20px;
+    border: 5px solid #f0a369;
+    background-color: #3f71a7;
+    border-radius: 5px;
+    padding: 5px;
     margin: auto;
     min-height: 137.5px;
     max-height: 275px;
     text-shadow: 2px 2px "black";
 }
 .semesterAddForm {
-    border-radius: 25px;
-    padding: 20px;
-    background-color: rgb(106, 92, 238);
-    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #3f71a7;
+    border: 4px solid #f0a369;
 }
 .semesterAddListDelete {
-    border-radius: 25px;
-    padding: 20px;
-    background-color: rgb(106, 92, 238);
-    border: 2px solid rgb(255, 255, 255);
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    width: 30%;
+    align-items: flex-end;
+    background-color: #3f71a7;
+    border: 4px solid #f0a369;
 }
 .semesterAddList {
-    background-color: rgb(21, 4, 177);
-    border: 1px solid grey;
     overflow: scroll;
     max-height: 195px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+.SemesterList {
+    border-radius: 5px;
+    padding: 5px;
+    align-items: center;
+}
 .semesterAddList::-webkit-scrollbar {
     display: none;
+    align-items: center;
 }
 
 .planAdd {
     width: 31%;
     justify-content: center;
-    background-color: rgb(190, 190, 190);
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 25px;
-    padding: 20px;
+    border: 5px solid #f0a369;
+    background-color: #3f71a7;
+    border-radius: 5px;
+    padding: 5px;
     margin: auto;
     min-height: 137.5px;
     max-height: 275px;
 }
 .planAddListDelete {
     background-color: rgba(199, 45, 255, 0);
-    border-radius: 25px;
-    padding: 20px;
+    border-radius: 5px;
+    padding: 5px;
 }
 .planAddList {
     overflow: scroll;
@@ -237,7 +273,11 @@
 .planAddList::-webkit-scrollbar {
     display: none;
 }
-
+.planList {
+    border-radius: 5px;
+    padding: 5px;
+    align-items: center;
+}
 .dropdownVertical {
     overflow: visible;
     height: 32px;

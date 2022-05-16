@@ -37,7 +37,7 @@ export function DeleteAllCourses({
                 <Button
                     onClick={deleteCourses}
                     style={{
-                        backgroundColor: "red",
+                        backgroundColor: "#E85151",
                         color: "white",
                         fontWeight: "bold"
                     }}

@@ -157,9 +157,8 @@ export function SemesterCreator({
                             <Button
                                 size="sm"
                                 style={{
-                                    backgroundColor: "yellow",
-                                    color: "black",
-                                    fontWeight: "bold"
+                                    backgroundColor: "#f0a369",
+                                    color: "white"
                                 }}
                                 onClick={() =>
                                     addSemester(
@@ -168,7 +167,7 @@ export function SemesterCreator({
                                     )
                                 }
                             >
-                                Add
+                                + Add
                             </Button>
                         </Form.Group>
                     </Col>
@@ -183,16 +182,17 @@ export function SemesterCreator({
                         <div className="semesterAddList">
                             {semesterList.map((semester: Semester) => (
                                 <li
+                                    className="SemesterList"
                                     key={semester.id}
                                     style={{
                                         display: "flex",
                                         height: "33px",
                                         border:
                                             semester.id === selectedSemester.id
-                                                ? "3px solid yellow"
+                                                ? "3px solid white"
                                                 : "2px solid gray",
                                         color: "white",
-                                        backgroundColor: "blue"
+                                        backgroundColor: "#f0a369"
                                     }}
                                 >
                                     <Col>{semester.id} </Col>
@@ -238,7 +238,14 @@ export function SemesterCreator({
                     </Col>
                 </Row>
                 <div>
-                    <Button onClick={() => setSemMenuView(false)} size="sm">
+                    <Button
+                        onClick={() => setSemMenuView(false)}
+                        size="sm"
+                        style={{
+                            backgroundColor: "#F0A369",
+                            color: "white"
+                        }}
+                    >
                         Hide Semester Menu
                     </Button>
                 </div>
@@ -247,6 +254,10 @@ export function SemesterCreator({
                         <Button
                             onClick={() => setCourseMenuView(true)}
                             size="sm"
+                            style={{
+                                backgroundColor: "#F0A369",
+                                color: "white"
+                            }}
                         >
                             ▼ Add Course Menu ▼
                         </Button>

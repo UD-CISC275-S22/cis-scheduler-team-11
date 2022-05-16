@@ -165,7 +165,13 @@ export function ClassPicker({
                                 {COURSES.find(
                                     (crs: Course) => crs.code === course.code
                                 ) && (
-                                    <Button onClick={() => chooseSchedule()}>
+                                    <Button
+                                        onClick={() => chooseSchedule()}
+                                        style={{
+                                            backgroundColor: "#f0a369",
+                                            color: "white"
+                                        }}
+                                    >
                                         Add Course
                                     </Button>
                                 )}
@@ -195,24 +201,25 @@ export function ClassPicker({
                                     style={{
                                         display: "flex",
                                         height: "33px",
-                                        border: "1px solid black",
-                                        backgroundColor:
-                                            selectedCourse == course
-                                                ? "lime"
-                                                : "lightgray"
+                                        border:
+                                            selectedCourse === course
+                                                ? "3px solid white"
+                                                : "2px solid gray",
+                                        color: "white",
+                                        backgroundColor: "#f0a369"
                                     }}
                                 >
                                     <Col
                                         style={{
                                             color: "white",
-                                            backgroundColor: "blue"
+                                            backgroundColor: "#f0a369"
                                         }}
                                     >
                                         {course.code}{" "}
                                     </Col>
                                     <Col
                                         style={{
-                                            backgroundColor: "blue"
+                                            backgroundColor: "#f0a369"
                                         }}
                                     >
                                         <DropdownMenu
@@ -254,7 +261,13 @@ export function ClassPicker({
                     </Row>
                     <Row>
                         <div>
-                            <Button onClick={() => setCourseMenuView(false)}>
+                            <Button
+                                onClick={() => setCourseMenuView(false)}
+                                style={{
+                                    backgroundColor: "#f0a369",
+                                    color: "white"
+                                }}
+                            >
                                 Hide Course Menu
                             </Button>
                         </div>

@@ -37,7 +37,7 @@ export function DeleteAllSemesters({
                 <Button
                     onClick={deleteSemesters}
                     style={{
-                        backgroundColor: "red",
+                        backgroundColor: "#E85151",
                         color: "white",
                         fontWeight: "bold"
                     }}
