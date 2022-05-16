@@ -61,16 +61,20 @@ export function PlanCreator({
             <Row className="planAdd">
                 <Col className="planAddListDelete">
                     <Form.Label>
-                        <Button
-                            style={{
-                                backgroundColor: "#F0A369",
-                                color: "white",
-                                fontWeight: "bold"
-                            }}
-                            onClick={handleShowAddModal}
-                        >
-                            📁 New Plan
-                        </Button>
+                        <div>
+                            <Button
+                                style={{
+                                    backgroundColor: "#f0a369",
+                                    color: "white",
+                                    fontWeight: "bold"
+                                }}
+                                onClick={handleShowAddModal}
+                            >
+                                <span data-testid="new-plan-button">
+                                    📁 New Plan
+                                </span>
+                            </Button>
+                        </div>
                     </Form.Label>
                     <div className="planAddList">
                         {planList.map((plan: Plan) => (

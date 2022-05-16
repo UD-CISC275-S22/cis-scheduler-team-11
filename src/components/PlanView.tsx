@@ -40,7 +40,13 @@ export function PlanView({
                     setSemMenuView={setSemMenuView}
                 />
             ) : (
-                <Button onClick={() => setSemMenuView(true)}>
+                <Button
+                    onClick={() => setSemMenuView(true)}
+                    style={{
+                        backgroundColor: "#F0A369",
+                        color: "white"
+                    }}
+                >
                     {" "}
                     Open Semester Menu{" "}
                 </Button>

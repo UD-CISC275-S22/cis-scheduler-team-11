@@ -136,7 +136,7 @@ export function SemesterCreator({
                                     color: "white"
                                 }}
                             >
-                                Add Semester
+                                Add Your Semesters
                             </Form.Label>
                             <Form.Select
                                 value={formSemesterSeason}
@@ -177,7 +177,7 @@ export function SemesterCreator({
                                 color: "white"
                             }}
                         >
-                            Add Semester
+                            Your Semesters:
                         </Form.Label>
                         <div className="semesterAddList">
                             {semesterList.map((semester: Semester) => (

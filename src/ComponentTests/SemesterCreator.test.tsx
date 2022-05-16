@@ -6,7 +6,7 @@ import { DropdownMenu } from "../components/DropdownMenu";
 
 const defaultPlan: Plan = { id: "0", semesters: [], start: 2000 };
 
-describe("SingleSemester tests", () => {
+describe("SemesterCreator tests", () => {
     beforeEach(() => {
         render(
             <SemesterCreator
@@ -20,11 +20,22 @@ describe("SingleSemester tests", () => {
             />
         );
     });
-    /* //need to make this more specific since there are a lot of add semesters
-    test("Add Semester option is shown", () => {
-        const linkElement = screen.getByText(/add semester/i);
+
+    test("Add Your Semesters option is shown", () => {
+        const linkElement = screen.getByText(/Add Your Semesters/i);
         expect(linkElement).toBeInTheDocument();
-    }); */
+    });
+
+    test("Your Semesters is shown", () => {
+        const linkElement = screen.getByText(/Your Semesters:/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+
+    test("Initial has no semesters shown", () => {
+        const linkElement = screen.getByText(/This plan has no semesters!/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+
     test("Fall Semester option is shown", () => {
         const linkElement = screen.getByText(/fall/i);
         expect(linkElement).toBeInTheDocument();
@@ -39,6 +50,10 @@ describe("SingleSemester tests", () => {
     });
     test("Winter Semester option is shown", () => {
         const linkElement = screen.getByText(/winter/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+    test("Initial Year is shown", () => {
+        const linkElement = screen.getByDisplayValue(/2000/i);
         expect(linkElement).toBeInTheDocument();
     });
     test("There is a Add Button", () => {
@@ -141,35 +156,21 @@ describe("SingleSemester tests", () => {
         expect(deleteButton).toBeInTheDocument();
     });
 
+    //figure out what to see as semesterlist and setsemester list
     /* test("There is a Delete Semester Button", () => {
+        <DeleteAllSemesters
+            semesterList={[semesterList]}
+            setSemesterList={setSemesterList}
+        ></DeleteAllSemesters>;
         const editButton = screen.getByRole("button", {
             name: /delete semesters/i
         });
         expect(editButton).toBeInTheDocument();
     }); */
+
     test("There is a Hide Semester Menu Button", () => {
         const editButton = screen.getByRole("button", {
             name: /hide semester menu/i
-        });
-        expect(editButton).toBeInTheDocument();
-    });
-
-    /* test("There is a add course menu Button", () => {
-        const addCourseButton = screen.getByRole("button", {
-            name: /add/i
-        });
-        addCourseButton.click();
-        const linkElement = screen.getByText(/▼ Add Course Menu ▼/i);
-        expect(linkElement).toBeInTheDocument();
-    }); */
-
-    test("There is a hide semester  Menu Button", () => {
-        const addCourseButton = screen.getByRole("button", {
-            name: /add/i
-        });
-        addCourseButton.click();
-        const editButton = screen.getByRole("button", {
-            name: /Hide Semester Menu/i
         });
         expect(editButton).toBeInTheDocument();
     });

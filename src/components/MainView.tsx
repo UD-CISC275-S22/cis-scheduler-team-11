@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Plan } from "../interfaces/projectInterfaces";
 import { PlanCreator } from "../components/PlanCreator";
 import { PlanView } from "../components/PlanView";
-import { CoursePool } from "../components/CoursePool";
+import { CSVDownload } from "./CSVDownload";
+import { CoursePool } from "./CoursePool";
 
 export function MainView({
     plans,
@@ -67,6 +68,8 @@ export function MainView({
                     />
                 </div>
             )}
+            <br />
+            <CSVDownload plan={selectedPlan} />
         </div>
     );
 }
