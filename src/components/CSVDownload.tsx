@@ -3,6 +3,8 @@ import { Plan, Semester, Course } from "../interfaces/projectInterfaces";
 import { Button } from "react-bootstrap";
 
 const vertBord = [":::", ":::"];
+const horzBord = "_";
+const yearBord = "~";
 
 function course2CSV(crs: Course): string[][] {
     return [
@@ -12,7 +14,7 @@ function course2CSV(crs: Course): string[][] {
         ["Restrictions:", crs.restrict.replaceAll(",", ";"), vertBord[1]],
         ["Breadth", crs.breadth.replaceAll(",", ";"), vertBord[0]],
         ["Offered", crs.typ.replaceAll(",", ";"), vertBord[1]],
-        ["-".repeat(15), "-".repeat(80), "-".repeat(2)]
+        [horzBord.repeat(15), horzBord.repeat(80), horzBord.repeat(2)]
     ];
 }
 
@@ -26,44 +28,60 @@ const blankCourse = [
     [",", ""]
 ];
 
+const len = blankCourse.length;
+
 function semester2CSV(sem: Semester, max: number): string[][] {
-    let ret = [[sem.id.split(" ")[0], sem.id.split(" ")[1], vertBord[1]]];
+    let ret = [[sem.id.split(" ")[0], "", vertBord[1]]];
     sem.courses.map((crs: Course) => (ret = ret.concat(course2CSV(crs))));
     Array(max - sem.courses.length)
         .fill(1)
         .map(() => (ret = ret.concat(blankCourse)));
+    return ret.concat([
+        [yearBord.repeat(15), yearBord.repeat(80), yearBord.repeat(2)]
+    ]);
+}
+
+function findMaxCourses(year: Semester[]): number {
+    return Math.max(...year.map((sem: Semester) => sem.courses.length));
+}
+
+function year2CSV(year: Semester[], max: number): string[][] {
+    let ret = [[year[0].id.split(" ")[1], "", vertBord[1]]];
+    const extras = 2;
+    const courses = Array(max * len + extras).fill([]);
+    let i = 0;
+    const crsIdxArray = Array(max * len + extras)
+        .fill(0)
+        .map((n: number) => n + i++);
+    year.map((sem: Semester) => {
+        const crsArray = semester2CSV(sem, max);
+        crsIdxArray.map((idx: number) => {
+            courses[idx] = courses[idx].concat(crsArray[idx]);
+        });
+    });
+    ret = ret.concat(courses);
     return ret;
 }
 
-function findMaxCourses(plan: Plan): number {
-    return Math.max(
-        ...plan.semesters.flat().map((sem: Semester) => sem.courses.length)
-    );
-}
-
 function plan2CSV(plan: Plan): string[][] {
-    const planSems = plan.semesters.flat();
-    const numSem = planSems.length;
-    const ret = [
-        [
-            plan.id.replaceAll(",", ";"),
-            plan.start + "",
-            ",".repeat(numSem * 2 - 2)
-        ]
+    let ret = [
+        [plan.id.replaceAll(",", ";"), plan.start + "", ",".repeat(4 * 2 - 2)]
     ];
-    const max = findMaxCourses(plan);
-    const semesters = Array(max * 7 + 1).fill([]);
-    let i = 0;
-    const crsIdxArray = Array(max * 7 + 1)
-        .fill(0)
-        .map((n: number) => n + i++);
-    planSems.map((sem: Semester) => {
-        const semArray = semester2CSV(sem, max);
-        crsIdxArray.map((idx: number) => {
+    plan.semesters.map((year: Semester[]) => {
+        const max = findMaxCourses(year);
+        const extras = 3;
+        const semesters = Array(max * len + extras).fill([]);
+        let i = 0;
+        const semIdxArray = Array(max * len + extras)
+            .fill(0)
+            .map((n: number) => n + i++);
+        const semArray = year2CSV(year, max);
+        semIdxArray.map((idx: number) => {
             semesters[idx] = semesters[idx].concat(semArray[idx]);
         });
+        ret = ret.concat(semesters);
     });
-    return ret.concat(semesters);
+    return ret;
 }
 
 function click(plan: Plan) {
