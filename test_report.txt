@@ -717,33 +717,566 @@ PASS src/ComponentTests/PlanEditor.test.tsx
 PASS src/ComponentTests/DeleteAllCourses.test.tsx
 PASS src/ComponentTests/DeleteAllSemesters.test.tsx
 PASS src/ComponentTests/DeleteAllPlans.test.tsx
-PASS src/App.test.tsx
+FAIL src/App.test.tsx
+  ● App tests › Directions are shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /Below you will see your degree plans/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33mclass[39m=[32m"headerImage"[39m
+              [33msrc[39m=[32m"https://cdn.shopify.com/s/files/1/1209/2544/products/New-Delaware-Blue-Hens_435x485.jpg?v=1542469747"[39m
+            [36m/>[39m
+            [0mUD CISC275 with React Hooks and TypeScript By Shaun Gupta & Andrew Long & Andrew Gkonos![0m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"EnterName"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"NameControl"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"formName"[39m
+                [33mstyle[39m=[32m"color: white;"[39m
+              [36m>[39m
+                [0mPlease Enter Your Name[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mid[39m=[32m"formName"[39m
+                [33mplaceholder[39m=[32m"insert your name"[39m
+                [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); color: black; width: 200px; border: 2px solid white; font-weight: bolder;"[39m
+                [33mvalue[39m=[32m" "[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<h1[39m
+              [33mstyle[39m=[32m"color: white;"[39m
+            [36m>[39m
+              [0mWelcome to your scheduler, [0m
+              [0m [0m
+              [0m![0m
+            [36m</h1>[39m
+            [36m<br />[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"MainView"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mid[39m=[32m"leftMain"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"PlanMain"[39m
+                [36m>[39m
+                  [36m<h1>[39m
+                    [0mPlans[0m
+                  [36m</h1>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"planAdd row"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"planAddListDelete col"[39m
+                    [36m>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-label"[39m
+                      [36m>[39m
+                        [36m<div>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); border: 2px solid white; color: black; font-weight: bold;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [36m<span[39m
+                              [33mdata-testid[39m=[32m"new-plan-button"[39m
+                            [36m>[39m
+                              [0m📁 New Plan[0m
+                            [36m</span>[39m
+                          [36m</button>[39m
+                        [36m</div>[39m
+                      [36m</label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"planAddList"[39m
+                      [36m/>[39m
+                      [36m<br />[39m
+                      [36m<div[39m
+                        [33mstyle[39m=[32m"color: black; font-weight: bold;"[39m
+                      [36m>[39m
+                        [36m<p[39m
+                          [33mstyle[39m=[32m"color: white; font-weight: bold;"[39m
+                        [36m>[39m
+                          [0mTo start, Press New Plan![0m
+                        [36m</p>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check form-switch"[39m
+                    [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mchecked[39m=[32m""[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"edit-year-view"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"edit-year-view"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mYear View[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                  [36m<p>[39m
+                    [0mThis plan currently has no semesters! Click the button below to add a new semester[0m
+                  [36m</p>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); border: 2px solid white; color: black; font-weight: bold;"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m [0m
+                    [0mOpen Semester Menu[0m
+                    [0m [0m
+                  [36m</button>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"yearHead container"[39m
+                    [36m>[39m
+                      [0mCurrently displaying plan: Plan Name[0m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mid[39m=[32m"rightMain"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"CoursePool vstack"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mstyle[39m=[32m"color: white;"[39m
+                  [36m>[39m
+                    [36m<h2>[39m
+                      [0mCourse Pool:[0m
+                    [36m</h2>[39m
+                    [0mAdd courses that you may want to take to the course pool. You can then add a course to your selected semester[0m
+                  [36m</div>[39m
+                  [36m<br />[39m
+                  [36m<li[39m
+                    [33mclass[39m=[32m"CoursePoolList"[39m
+                    [33mstyle[39m=[32m"display: flex; height: 33px; border: 2px solid white; color: white; background-color: rgb(240, 188, 149);"[39m
+                  [36m>[39m
+                    [0mtest[0m
+                  [36m</li>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<br />[39m
+            [36m<span>[39m
+              [0mYou need to make a plan before you can download it[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<span>[39m
+            [0mUp to date with last save[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      26 |
+      27 |     test("Directions are shown", () => {
+    > 28 |         const linkElement = screen.getByText(
+         |                                    ^
+      29 |             /Below you will see your degree plans/i
+      30 |         );
+      31 |         expect(linkElement).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:28:36)
+
+  ● App tests › Initial no plans is shown
+
+    TestingLibraryElementError: Unable to find an element with the text: /You currently do not have any plans/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33mclass[39m=[32m"headerImage"[39m
+              [33msrc[39m=[32m"https://cdn.shopify.com/s/files/1/1209/2544/products/New-Delaware-Blue-Hens_435x485.jpg?v=1542469747"[39m
+            [36m/>[39m
+            [0mUD CISC275 with React Hooks and TypeScript By Shaun Gupta & Andrew Long & Andrew Gkonos![0m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"EnterName"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"NameControl"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"formName"[39m
+                [33mstyle[39m=[32m"color: white;"[39m
+              [36m>[39m
+                [0mPlease Enter Your Name[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mid[39m=[32m"formName"[39m
+                [33mplaceholder[39m=[32m"insert your name"[39m
+                [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); color: black; width: 200px; border: 2px solid white; font-weight: bolder;"[39m
+                [33mvalue[39m=[32m" "[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<h1[39m
+              [33mstyle[39m=[32m"color: white;"[39m
+            [36m>[39m
+              [0mWelcome to your scheduler, [0m
+              [0m [0m
+              [0m![0m
+            [36m</h1>[39m
+            [36m<br />[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"MainView"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mid[39m=[32m"leftMain"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"PlanMain"[39m
+                [36m>[39m
+                  [36m<h1>[39m
+                    [0mPlans[0m
+                  [36m</h1>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"planAdd row"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"planAddListDelete col"[39m
+                    [36m>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-label"[39m
+                      [36m>[39m
+                        [36m<div>[39m
+                          [36m<button[39m
+                            [33mclass[39m=[32m"btn btn-primary"[39m
+                            [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); border: 2px solid white; color: black; font-weight: bold;"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [36m<span[39m
+                              [33mdata-testid[39m=[32m"new-plan-button"[39m
+                            [36m>[39m
+                              [0m📁 New Plan[0m
+                            [36m</span>[39m
+                          [36m</button>[39m
+                        [36m</div>[39m
+                      [36m</label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"planAddList"[39m
+                      [36m/>[39m
+                      [36m<br />[39m
+                      [36m<div[39m
+                        [33mstyle[39m=[32m"color: black; font-weight: bold;"[39m
+                      [36m>[39m
+                        [36m<p[39m
+                          [33mstyle[39m=[32m"color: white; font-weight: bold;"[39m
+                        [36m>[39m
+                          [0mTo start, Press New Plan![0m
+                        [36m</p>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check form-switch"[39m
+                    [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mchecked[39m=[32m""[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"edit-year-view"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"edit-year-view"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mYear View[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                  [36m<p>[39m
+                    [0mThis plan currently has no semesters! Click the button below to add a new semester[0m
+                  [36m</p>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); border: 2px solid white; color: black; font-weight: bold;"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m [0m
+                    [0mOpen Semester Menu[0m
+                    [0m [0m
+                  [36m</button>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"yearHead container"[39m
+                    [36m>[39m
+                      [0mCurrently displaying plan: Plan Name[0m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mid[39m=[32m"rightMain"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"CoursePool vstack"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mstyle[39m=[32m"color: white;"[39m
+                  [36m>[39m
+                    [36m<h2>[39m
+                      [0mCourse Pool:[0m
+                    [36m</h2>[39m
+                    [0mAdd courses that you may want to take to the course pool. You can then add a course to your selected semester[0m
+                  [36m</div>[39m
+                  [36m<br />[39m
+                  [36m<li[39m
+                    [33mclass[39m=[32m"CoursePoolList"[39m
+                    [33mstyle[39m=[32m"display: flex; height: 33px; border: 2px solid white; color: white; background-color: rgb(240, 188, 149);"[39m
+                  [36m>[39m
+                    [0mtest[0m
+                  [36m</li>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<br />[39m
+            [36m<span>[39m
+              [0mYou need to make a plan before you can download it[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<span>[39m
+            [0mUp to date with last save[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      38 |
+      39 |     test("Initial no plans is shown", () => {
+    > 40 |         const linkElement = screen.getByText(
+         |                                    ^
+      41 |             /You currently do not have any plans/i
+      42 |         );
+      43 |         expect(linkElement).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:40:36)
+
 PASS src/ComponentTests/PlanAdder.test.tsx
 PASS src/ComponentTests/PlanView.test.tsx
 PASS src/ComponentTests/YearView.test.tsx
-PASS src/ComponentTests/MainView.test.tsx
+FAIL src/ComponentTests/MainView.test.tsx
+  ● MainView tests › Initially says that you do not have any plans present yet
+
+    TestingLibraryElementError: Unable to find an element with the text: /You currently do not have any plans/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"MainView"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mid[39m=[32m"leftMain"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"PlanMain"[39m
+              [36m>[39m
+                [36m<h1>[39m
+                  [0mPlans[0m
+                [36m</h1>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"planAdd row"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"planAddListDelete col"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-label"[39m
+                    [36m>[39m
+                      [36m<div>[39m
+                        [36m<button[39m
+                          [33mclass[39m=[32m"btn btn-primary"[39m
+                          [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); border: 2px solid white; color: black; font-weight: bold;"[39m
+                          [33mtype[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<span[39m
+                            [33mdata-testid[39m=[32m"new-plan-button"[39m
+                          [36m>[39m
+                            [0m📁 New Plan[0m
+                          [36m</span>[39m
+                        [36m</button>[39m
+                      [36m</div>[39m
+                    [36m</label>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"planAddList"[39m
+                    [36m/>[39m
+                    [36m<br />[39m
+                    [36m<div[39m
+                      [33mstyle[39m=[32m"color: black; font-weight: bold;"[39m
+                    [36m>[39m
+                      [36m<p[39m
+                        [33mstyle[39m=[32m"color: white; font-weight: bold;"[39m
+                      [36m>[39m
+                        [0mTo start, Press New Plan![0m
+                      [36m</p>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div />[39m
+                [36m<div />[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"form-check form-switch"[39m
+                  [33mstyle[39m=[32m"display: flex; justify-content: center;"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mchecked[39m=[32m""[39m
+                    [33mclass[39m=[32m"form-check-input"[39m
+                    [33mid[39m=[32m"edit-year-view"[39m
+                    [33mtype[39m=[32m"checkbox"[39m
+                  [36m/>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-check-label"[39m
+                    [33mfor[39m=[32m"edit-year-view"[39m
+                    [33mtitle[39m=[32m""[39m
+                  [36m>[39m
+                    [0mYear View[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<p>[39m
+                  [0mThis plan currently has no semesters! Click the button below to add a new semester[0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mstyle[39m=[32m"background-color: rgb(251, 219, 50); border: 2px solid white; color: black; font-weight: bold;"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0m [0m
+                  [0mOpen Semester Menu[0m
+                  [0m [0m
+                [36m</button>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"yearHead container"[39m
+                  [36m>[39m
+                    [0mCurrently displaying plan: Plan Name[0m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mid[39m=[32m"rightMain"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"CoursePool vstack"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"color: white;"[39m
+                [36m>[39m
+                  [36m<h2>[39m
+                    [0mCourse Pool:[0m
+                  [36m</h2>[39m
+                  [0mAdd courses that you may want to take to the course pool. You can then add a course to your selected semester[0m
+                [36m</div>[39m
+                [36m<br />[39m
+                [36m<li[39m
+                  [33mclass[39m=[32m"CoursePoolList"[39m
+                  [33mstyle[39m=[32m"display: flex; height: 33px; border: 2px solid white; color: white; background-color: rgb(240, 188, 149);"[39m
+                [36m>[39m
+                  [0mtest[0m
+                [36m</li>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<br />[39m
+          [36m<span>[39m
+            [0mYou need to make a plan before you can download it[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      16 |
+      17 |     test("Initially says that you do not have any plans present yet", () => {
+    > 18 |         const linkElement = screen.getByText(
+         |                                    ^
+      19 |             /You currently do not have any plans/i
+      20 |         );
+      21 |         expect(linkElement).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/ComponentTests/MainView.test.tsx:18:36)
+
 PASS src/ComponentTests/SingleSemester.test.tsx
 PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   34.61 |    34.56 |   22.98 |   35.79 |                                  
+All files                |   35.43 |       35 |   24.22 |   36.64 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
-  App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,82-83                      
- src/components          |   34.33 |    34.05 |   20.68 |   35.62 |                                  
-  CSVDownload.tsx        |   12.72 |    16.66 |    5.55 |    13.2 | 10,34-98,102-124                 
-  ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,198-289 
+  App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,90-91                      
+ src/components          |   35.24 |    34.55 |   22.06 |   36.56 |                                  
+  CSVDownload.tsx        |   12.72 |    16.66 |    5.55 |    13.2 | 10,34-98,102-131                 
+  ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,199-292 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
   CourseEditor.tsx       |   39.13 |     9.09 |   13.63 |   39.13 | 38-96,139,151-282                
-  CoursePool.tsx         |   16.66 |        0 |       0 |   16.66 | 21-46                            
+  CoursePool.tsx         |   66.66 |       50 |      50 |   66.66 | 45-46                            
   DropdownMenu.tsx       |   85.71 |       55 |      75 |   85.71 | 44                               
-  MainView.tsx           |   45.45 |    46.15 |      25 |   45.45 | 25-27,30-38                      
-  MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 11-12                            
+  MainView.tsx           |   45.45 |    45.45 |      25 |   45.45 | 25-27,30-38                      
+  MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 13-14                            
   PlanAdder.tsx          |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
-  PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,81-124                     
+  PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,82-125                     
   PlanEditor.tsx         |   27.27 |      100 |   28.57 |      30 | 20-27,54-68                      
   PlanView.tsx           |      60 |       50 |   33.33 |      60 | 25-44                            
-  SemesterCreator.tsx    |   24.48 |    33.33 |    4.76 |   25.53 | 21-47,55,58-69,94-121,155-255    
+  SemesterCreator.tsx    |   24.48 |    33.33 |    4.76 |   25.53 | 21-47,55,58-69,94-121,155-262    
   SemesterEditor.tsx     |   16.66 |        0 |   22.22 |   16.66 | 23-38,66-105                     
   SingleSemester.tsx     |      40 |       25 |      25 |      40 | 8-9,33                           
   YearView.tsx           |   66.66 |      100 |   33.33 |   66.66 | 26-33                            
@@ -755,8 +1288,8 @@ All files                |   34.61 |    34.56 |   22.98 |   35.79 |
   projectInterfaces.ts   |       0 |        0 |       0 |       0 |                                  
 -------------------------|---------|----------|---------|---------|----------------------------------
 
-Test Suites: 16 passed, 16 total
-Tests:       99 passed, 99 total
+Test Suites: 2 failed, 14 passed, 16 total
+Tests:       3 failed, 96 passed, 99 total
 Snapshots:   0 total
-Time:        14.112 s
+Time:        13.888 s
 Ran all test suites.
