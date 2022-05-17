@@ -13,7 +13,7 @@ describe("DeleteAllSemesters tests", () => {
         render(
             <DeleteAllSemesters
                 semesterList={[defaultsemester]}
-                setSemesterList={function (semester: Semester[]): void {
+                setSemesterList={function (): void {
                     throw new Error("Function not implemented.");
                 }}
             />
