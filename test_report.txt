@@ -2,72 +2,746 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
+PASS src/ComponentTests/CourseEditor.test.tsx (5.586 s)
+  ● Console
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.error
+      Warning: A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components
+          at input
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/FormControl.js:27:3
+          at div
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/Col.js:72:8
+          at div
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/Row.js:22:3
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/FormGroup.js:19:3
+          at div
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/createWithBsPrefix.js:31:5
+          at div
+          at div
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/ModalDialog.js:21:3
+          at div
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/@restart/ui/cjs/Modal.js:75:5
+          at /home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/node_modules/react-bootstrap/cjs/Modal.js:85:3
+          at CourseEditor (/home/runner/work/cis-scheduler-team-11/cis-scheduler-team-11/src/components/CourseEditor.tsx:11:5)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at updateWrapper (node_modules/react-dom/cjs/react-dom.development.js:1539:7)
+      at updateProperties (node_modules/react-dom/cjs/react-dom.development.js:9376:7)
+      at commitUpdate (node_modules/react-dom/cjs/react-dom.development.js:10252:3)
+      at commitWork (node_modules/react-dom/cjs/react-dom.development.js:21401:13)
+      at commitMutationEffects (node_modules/react-dom/cjs/react-dom.development.js:23401:11)
+      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: '',
+        name: '',
+        descr: '',
+        credits: '',
+        preReq: '',
+        restrict: '',
+        breadth: '',
+        typ: '',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.log
+      {
+        code: 'ACCT 207',
+        name: 'Accounting I',
+        descr: '',
+        credits: '3',
+        preReq: '',
+        restrict: 'Not open to freshmen.',
+        breadth: 'University: ; A&S: ',
+        typ: 'Fall, Winter, Spring, Summer',
+        uid: 0
+      }
+
+      at refresh (src/components/CourseEditor.tsx:113:17)
+
 PASS src/ComponentTests/SemesterCreator.test.tsx
+PASS src/ComponentTests/SemesterEditor.test.tsx
 PASS src/ComponentTests/ClassPicker.test.tsx
-FAIL src/ComponentTests/PlanCreator.test.tsx
-  ● PlanCreator tests › There is a New Plan Button
-
-    expect(received).toEqual(expected) // deep equality
-
-    Expected: "New Plan"
-    Received: "📁 New Plan"
-
-      30 |     test("There is a New Plan Button", () => {
-      31 |         const linkElement = screen.getByTestId("new-plan-button");
-    > 32 |         expect(linkElement.textContent).toEqual("New Plan");
-         |                                         ^
-      33 |     });
-      34 |
-      35 |     test("Plan directions are shown", () => {
-
-      at Object.<anonymous> (src/ComponentTests/PlanCreator.test.tsx:32:41)
-
-FAIL src/ComponentTests/CourseEditor.test.tsx
-  ● CourseEditor tests › Edit course title is shown
-
-    Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
-    1. You might have mismatching versions of React and the renderer (such as React DOM)
-    2. You might be breaking the Rules of Hooks
-    3. You might have more than one copy of React in the same app
-    See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
-
-      38 |     test("Edit course title is shown", () => {
-      39 |         const defaultSem: Semester = { id: "X 0", courses: [] };
-    > 40 |         const [selectedCourse, selectCourse] = useState<Course>(defaultcourse);
-         |                                                ^
-      41 |         render(
-      42 |             <ClassPicker
-      43 |                 setCourseMenuView={function (): void {
-
-      at Object.throwInvalidHookError (node_modules/react-dom/cjs/react-dom.development.js:14906:13)
-      at useState (node_modules/react/cjs/react.development.js:1508:21)
-      at Object.<anonymous> (src/ComponentTests/CourseEditor.test.tsx:40:48)
-
+PASS src/ComponentTests/PlanCreator.test.tsx
+PASS src/ComponentTests/PlanEditor.test.tsx
 PASS src/App.test.tsx
+PASS src/ComponentTests/PlanAdder.test.tsx
+PASS src/ComponentTests/PlanView.test.tsx
 PASS src/ComponentTests/YearView.test.tsx
+PASS src/ComponentTests/MainView.test.tsx
 PASS src/ComponentTests/SingleSemester.test.tsx
 PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   29.51 |    30.86 |   18.47 |   30.47 |                                  
+All files                |   34.38 |    32.71 |   21.65 |    35.5 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,82-83                      
- src/components          |   29.65 |    31.88 |   17.73 |   30.71 |                                  
+ src/components          |   35.01 |    34.05 |   21.27 |   36.27 |                                  
   CSVDownload.tsx        |      10 |    16.66 |    7.14 |   10.25 | 8,30-80,84-106                   
   ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,198-289 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
-  CourseEditor.tsx       |   21.73 |     9.09 |    4.54 |   21.73 | 38-113,139-282                   
+  CourseEditor.tsx       |   39.13 |     9.09 |   13.63 |   39.13 | 38-96,139,151-282                
   CoursePool.tsx         |   16.66 |        0 |       0 |   16.66 | 21-46                            
   DropdownMenu.tsx       |   85.71 |       55 |      75 |   85.71 | 44                               
   MainView.tsx           |   45.45 |    46.15 |      25 |   45.45 | 25-27,30-38                      
   MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 11-12                            
   PlanAdder.tsx          |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
   PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,81-124                     
-  PlanEditor.tsx         |   18.18 |      100 |   14.28 |      20 | 20-30,54-68                      
-  PlanView.tsx           |       0 |        0 |       0 |       0 | 15-44                            
+  PlanEditor.tsx         |   27.27 |      100 |   28.57 |      30 | 20-27,54-68                      
+  PlanView.tsx           |      60 |       50 |   33.33 |      60 | 25-44                            
   SemesterCreator.tsx    |   24.48 |    33.33 |    4.76 |   25.53 | 21-47,55,58-69,94-121,155-255    
-  SemesterEditor.tsx     |   11.11 |        0 |   11.11 |   11.11 | 23-42,66-105                     
+  SemesterEditor.tsx     |   16.66 |        0 |   22.22 |   16.66 | 23-38,66-105                     
   SingleSemester.tsx     |      40 |       25 |      25 |      40 | 8-9,33                           
   YearView.tsx           |   66.66 |      100 |   33.33 |   66.66 | 26-33                            
  src/deleteAllComponents |      25 |       50 |      25 |      25 |                                  
@@ -78,8 +752,8 @@ All files                |   29.51 |    30.86 |   18.47 |   30.47 |
   projectInterfaces.ts   |       0 |        0 |       0 |       0 |                                  
 -------------------------|---------|----------|---------|---------|----------------------------------
 
-Test Suites: 2 failed, 6 passed, 8 total
-Tests:       2 failed, 43 passed, 45 total
+Test Suites: 13 passed, 13 total
+Tests:       84 passed, 84 total
 Snapshots:   0 total
-Time:        12.576 s
+Time:        21.918 s
 Ran all test suites.
