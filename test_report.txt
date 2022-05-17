@@ -727,11 +727,11 @@ PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   35.24 |    34.56 |   23.56 |   36.39 |                                  
+All files                |   34.61 |    34.56 |   22.98 |   35.79 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,82-83                      
- src/components          |   35.01 |    34.05 |   21.27 |   36.27 |                                  
-  CSVDownload.tsx        |      10 |    16.66 |    7.14 |   10.25 | 8,30-80,84-106                   
+ src/components          |   34.33 |    34.05 |   20.68 |   35.62 |                                  
+  CSVDownload.tsx        |   12.72 |    16.66 |    5.55 |    13.2 | 10,34-98,102-124                 
   ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,198-289 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
   CourseEditor.tsx       |   39.13 |     9.09 |   13.63 |   39.13 | 38-96,139,151-282                
@@ -758,5 +758,5 @@ All files                |   35.24 |    34.56 |   23.56 |   36.39 |
 Test Suites: 16 passed, 16 total
 Tests:       99 passed, 99 total
 Snapshots:   0 total
-Time:        20.541 s
+Time:        14.112 s
 Ran all test suites.
