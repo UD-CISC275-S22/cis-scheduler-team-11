@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Plan } from "../interfaces/projectInterfaces";
 import { MainView } from "../components/MainView";
 
 describe("MainView tests", () => {
