@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPlans";
+import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 import { Plan } from "../interfaces/projectInterfaces";
 
 const defaultPlan: Plan = {

@@ -4,7 +4,7 @@ import { Plan } from "../interfaces/projectInterfaces";
 import { DropdownMenu } from "./DropdownMenu";
 import { PlanAdder } from "./PlanAdder";
 import { PlanEditor } from "./PlanEditor";
-import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPlans";
+import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
 
