@@ -249,7 +249,7 @@ export function CourseEditor({
             {!check || !checked ? (
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        Close!
                     </Button>
                     <Button
                         variant="primary"
@@ -262,7 +262,7 @@ export function CourseEditor({
                             )
                         }
                     >
-                        Save Changes
+                        Save Changes!
                     </Button>
                 </Modal.Footer>
             ) : (

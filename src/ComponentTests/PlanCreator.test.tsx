@@ -29,7 +29,7 @@ describe("PlanCreator tests", () => {
 
     test("There is a New Plan Button", () => {
         const linkElement = screen.getByTestId("new-plan-button");
-        expect(linkElement.textContent).toEqual("New Plan");
+        expect(linkElement.textContent).toEqual("📁 New Plan");
     });
 
     test("Plan directions are shown", () => {

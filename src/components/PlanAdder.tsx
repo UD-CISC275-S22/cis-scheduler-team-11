@@ -63,7 +63,7 @@ export function PlanAdder({
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                    Close
+                    Close!
                 </Button>
                 <Button variant="primary" onClick={saveChanges}>
                     Save Changes

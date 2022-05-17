@@ -50,7 +50,7 @@ export function SemesterEditor({
             animation={false}
         >
             <Modal.Header closeButton>
-                <Modal.Title>Edit Course</Modal.Title>
+                <Modal.Title>Edit Semester</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 {/* Title */}
@@ -94,7 +94,7 @@ export function SemesterEditor({
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                    Close
+                    Close!
                 </Button>
                 <Button
                     variant="primary"
