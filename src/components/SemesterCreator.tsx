@@ -186,7 +186,7 @@ export function SemesterCreator({
                                     key={semester.id}
                                     style={{
                                         display: "flex",
-                                        height: "33px",
+                                        height: "38px",
                                         border:
                                             semester.id === selectedSemester.id
                                                 ? "3px solid white"

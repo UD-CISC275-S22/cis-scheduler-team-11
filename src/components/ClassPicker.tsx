@@ -194,71 +194,75 @@ export function ClassPicker({
                             >
                                 Courses:
                             </Form.Label>
-                            {schedule.flat().map((course: Course) => (
-                                <li
-                                    className="CoursesList"
-                                    key={
-                                        course.code +
-                                        course.name +
-                                        course.credits +
-                                        "  " +
-                                        course.uid
-                                    }
-                                    style={{
-                                        display: "flex",
-                                        height: "33px",
-                                        border:
-                                            selectedCourse === course
-                                                ? "3px solid white"
-                                                : "2px solid gray",
-                                        color: "white",
-                                        backgroundColor: "#f0a369"
-                                    }}
-                                >
-                                    <Col
+                            <div className="CoursesAddList">
+                                {schedule.flat().map((course: Course) => (
+                                    <li
+                                        className="CoursesList"
+                                        key={
+                                            course.code +
+                                            course.name +
+                                            course.credits +
+                                            "  " +
+                                            course.uid
+                                        }
                                         style={{
+                                            display: "flex",
+                                            height: "38px",
+                                            border:
+                                                selectedCourse === course
+                                                    ? "3px solid white"
+                                                    : "2px solid gray",
                                             color: "white",
                                             backgroundColor: "#f0a369"
                                         }}
                                     >
-                                        {course.code}{" "}
-                                    </Col>
-                                    <Col
-                                        style={{
-                                            backgroundColor: "#f0a369"
-                                        }}
-                                    >
-                                        <DropdownMenu
-                                            horizontal={true}
-                                            buttons={[
-                                                {
-                                                    variant: "primary",
-                                                    text: "Select",
-                                                    click: () =>
-                                                        selectCourse(course)
-                                                },
-                                                {
-                                                    text: "Edit",
-                                                    click: () => {
-                                                        selectCourse(course);
-                                                        setShowAddModal(
-                                                            !showAddModal
-                                                        );
+                                        <Col
+                                            style={{
+                                                color: "white",
+                                                backgroundColor: "#f0a369"
+                                            }}
+                                        >
+                                            {course.code}{" "}
+                                        </Col>
+                                        <Col
+                                            style={{
+                                                backgroundColor: "#f0a369"
+                                            }}
+                                        >
+                                            <DropdownMenu
+                                                horizontal={true}
+                                                buttons={[
+                                                    {
+                                                        variant: "primary",
+                                                        text: "Select",
+                                                        click: () =>
+                                                            selectCourse(course)
+                                                    },
+                                                    {
+                                                        text: "Edit",
+                                                        click: () => {
+                                                            selectCourse(
+                                                                course
+                                                            );
+                                                            setShowAddModal(
+                                                                !showAddModal
+                                                            );
+                                                        }
+                                                    },
+                                                    {
+                                                        variant: "danger",
+                                                        text: "⦻",
+                                                        click: () =>
+                                                            deleteSpecificCourse(
+                                                                course
+                                                            )
                                                     }
-                                                },
-                                                {
-                                                    variant: "danger",
-                                                    text: "⦻",
-                                                    click: () =>
-                                                        deleteSpecificCourse(
-                                                            course
-                                                        )
-                                                }
-                                            ]}
-                                        />
-                                    </Col>
-                                </li>
-                            ))}
+                                                ]}
+                                            />
+                                        </Col>
+                                    </li>
+                                ))}
+                            </div>
                             <DeleteAllCourses
                                 courseList={schedule}
                                 setCourseList={setSchedule}

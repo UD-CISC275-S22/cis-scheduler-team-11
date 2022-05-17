@@ -158,7 +158,7 @@
     padding: 5px;
     margin: auto;
     min-height: 137.5px;
-    max-height: 275px;
+    max-height: 290px;
 }
 .CoursesLeft {
     background-color: #3f71a7;
@@ -167,26 +167,32 @@
     align-content: center;
     border-radius: 5px;
     padding: 5px;
+    max-height: 227px;
 }
 .CoursesRight {
     background-color: #3f71a7;
     border: 4px solid #f0a369;
     border-radius: 5px;
     padding: 5px;
+    max-height: 227px;
+}
+.CoursesAddList {
+    overflow: scroll;
+    max-height: 127px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.CoursesAddList::-webkit-scrollbar {
+    display: none;
+    align-items: center;
 }
 .CoursesList {
     background-color: #3f71a7;
     border: 4px solid #f0a369;
     align-items: center;
-    overflow: scroll;
-    max-height: 195px;
-    -ms-overflow-style: none;
     scrollbar-width: none;
     border-radius: 5px;
     padding: 5px;
-}
-.CoursesList::-webkit-scrollbar {
-    display: none;
 }
 .CoursePool {
     overflow: "scroll";
@@ -231,10 +237,11 @@
     align-items: flex-end;
     background-color: #3f71a7;
     border: 4px solid #f0a369;
+    max-height: 227px;
 }
 .semesterAddList {
     overflow: scroll;
-    max-height: 195px;
+    max-height: 127px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }

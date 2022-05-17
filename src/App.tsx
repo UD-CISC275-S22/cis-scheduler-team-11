@@ -71,8 +71,8 @@ function App(): JSX.Element {
                 Here you will see all of your plans to complete your degrees!
             </h2>
             <h3>
-                Below you will see your degree plans, and their respective
-                semesters and courses.
+                Below you will be able to create and save your degree plans and
+                their respective semesters and courses.
             </h3>
             <br />
             <MainView plans={plans} setPlans={setPlansUpdate} />
