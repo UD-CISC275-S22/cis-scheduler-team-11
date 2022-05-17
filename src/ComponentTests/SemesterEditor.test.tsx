@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Semester } from "../interfaces/projectInterfaces";
 import { SemesterEditor } from "../components/SemesterEditor";

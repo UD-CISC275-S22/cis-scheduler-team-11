@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Course } from "../interfaces/projectInterfaces";
 import { CourseEditor } from "../components/CourseEditor";

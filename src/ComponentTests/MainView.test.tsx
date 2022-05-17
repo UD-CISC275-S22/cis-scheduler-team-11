@@ -1,13 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Plan, Plans } from "../interfaces/projectInterfaces";
+import { Plan } from "../interfaces/projectInterfaces";
 import { MainView } from "../components/MainView";
-
-const defaultPlan: Plan = {
-    start: 2000,
-    id: "Plan Name",
-    semesters: []
-};
 
 describe("MainView tests", () => {
     beforeEach(() => {
