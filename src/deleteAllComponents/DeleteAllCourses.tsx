@@ -39,7 +39,8 @@ export function DeleteAllCourses({
                     style={{
                         backgroundColor: "#E85151",
                         color: "white",
-                        fontWeight: "bold"
+                        fontWeight: "bold",
+                        border: "2px solid white"
                     }}
                 >
                     Delete All Courses

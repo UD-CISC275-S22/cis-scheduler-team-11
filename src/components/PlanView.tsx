@@ -43,8 +43,10 @@ export function PlanView({
                 <Button
                     onClick={() => setSemMenuView(true)}
                     style={{
-                        backgroundColor: "#F0A369",
-                        color: "white"
+                        backgroundColor: "#FBDB32",
+                        border: "2px solid white",
+                        color: "black",
+                        fontWeight: "bold"
                     }}
                 >
                     {" "}

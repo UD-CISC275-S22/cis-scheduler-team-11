@@ -116,11 +116,11 @@ export function ClassPicker({
     const [selSemView, setSelSemView] = useState<boolean>(false);
 
     return (
-        <div>
+        <div className="ClassMain">
             <h1>Courses</h1>
             <Container className="Courses">
                 <Col>
-                    <Row>
+                    <Row className="ClassMain">
                         <Col className="CoursesLeft">
                             <Form.Group>
                                 <Form.Label
@@ -174,8 +174,9 @@ export function ClassPicker({
                                     <Button
                                         onClick={() => chooseSchedule()}
                                         style={{
-                                            backgroundColor: "#f0a369",
-                                            color: "white"
+                                            backgroundColor: "#fbdb32",
+                                            color: "black",
+                                            border: "2px solid white"
                                         }}
                                     >
                                         Add Course
@@ -274,8 +275,9 @@ export function ClassPicker({
                             <Button
                                 onClick={() => setCourseMenuView(false)}
                                 style={{
-                                    backgroundColor: "#f0a369",
-                                    color: "white"
+                                    backgroundColor: "#fbdb32",
+                                    color: "black",
+                                    border: "2px solid white"
                                 }}
                             >
                                 Hide Course Menu

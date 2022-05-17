@@ -122,7 +122,7 @@ export function SemesterCreator({
     }
 
     return (
-        <div>
+        <div className="SemesterMain">
             <h1>Semesters</h1>
             <Container className="semesterAdd">
                 <Row>
@@ -157,8 +157,10 @@ export function SemesterCreator({
                             <Button
                                 size="sm"
                                 style={{
-                                    backgroundColor: "#f0a369",
-                                    color: "white"
+                                    backgroundColor: "#FBDB32",
+                                    border: "2px solid white",
+                                    color: "black",
+                                    fontWeight: "bold"
                                 }}
                                 onClick={() =>
                                     addSemester(
@@ -191,8 +193,8 @@ export function SemesterCreator({
                                             semester.id === selectedSemester.id
                                                 ? "3px solid white"
                                                 : "2px solid gray",
-                                        color: "white",
-                                        backgroundColor: "#f0a369"
+                                        color: "black",
+                                        backgroundColor: "#FBDB32"
                                     }}
                                 >
                                     <Col>{semester.id} </Col>
@@ -231,6 +233,7 @@ export function SemesterCreator({
                                 </li>
                             ))}
                         </div>
+                        <br />
                         <DeleteAllSemesters
                             semesterList={semesterList}
                             setSemesterList={setSemesterList}
@@ -239,24 +242,30 @@ export function SemesterCreator({
                 </Row>
                 <div>
                     <Button
+                        className="Buttons"
                         onClick={() => setSemMenuView(false)}
                         size="sm"
                         style={{
-                            backgroundColor: "#F0A369",
-                            color: "white"
+                            backgroundColor: "#FBDB32",
+                            border: "2px solid white",
+                            color: "black",
+                            fontWeight: "bold"
                         }}
                     >
                         Hide Semester Menu
                     </Button>
                 </div>
+                <br />
                 {!courseMenuView && selectedSemester.id != defaultSem.id ? (
                     <div>
                         <Button
                             onClick={() => setCourseMenuView(true)}
                             size="sm"
                             style={{
-                                backgroundColor: "#F0A369",
-                                color: "white"
+                                backgroundColor: "#FBDB32",
+                                border: "2px solid white",
+                                color: "black",
+                                fontWeight: "bold"
                             }}
                         >
                             ▼ Add Course Menu ▼
