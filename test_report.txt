@@ -2,7 +2,7 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/ComponentTests/CourseEditor.test.tsx (5.586 s)
+PASS src/ComponentTests/CourseEditor.test.tsx
   ● Console
 
     console.warn
@@ -714,6 +714,9 @@ PASS src/ComponentTests/SemesterEditor.test.tsx
 PASS src/ComponentTests/ClassPicker.test.tsx
 PASS src/ComponentTests/PlanCreator.test.tsx
 PASS src/ComponentTests/PlanEditor.test.tsx
+PASS src/ComponentTests/DeleteAllCourses.test.tsx
+PASS src/ComponentTests/DeleteAllSemesters.test.tsx
+PASS src/ComponentTests/DeleteAllPlans.test.tsx
 PASS src/App.test.tsx
 PASS src/ComponentTests/PlanAdder.test.tsx
 PASS src/ComponentTests/PlanView.test.tsx
@@ -724,7 +727,7 @@ PASS src/ComponentTests/MultipleSemester.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   34.38 |    32.71 |   21.65 |    35.5 |                                  
+All files                |   35.24 |    34.56 |   23.56 |   36.39 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,82-83                      
  src/components          |   35.01 |    34.05 |   21.27 |   36.27 |                                  
@@ -744,16 +747,16 @@ All files                |   34.38 |    32.71 |   21.65 |    35.5 |
   SemesterEditor.tsx     |   16.66 |        0 |   22.22 |   16.66 | 23-38,66-105                     
   SingleSemester.tsx     |      40 |       25 |      25 |      40 | 8-9,33                           
   YearView.tsx           |   66.66 |      100 |   33.33 |   66.66 | 26-33                            
- src/deleteAllComponents |      25 |       50 |      25 |      25 |                                  
-  DeleteAllCourses.tsx   |      25 |       50 |      25 |      25 | 14-24                            
-  DeleteAllPLans.tsx     |      25 |       50 |      25 |      25 | 14-24                            
-  DeleteAllSemesters.tsx |      25 |       50 |      25 |      25 | 14-24                            
+ src/deleteAllComponents |      50 |      100 |      50 |      50 |                                  
+  DeleteAllCourses.tsx   |      50 |      100 |      50 |      50 | 20-24                            
+  DeleteAllPLans.tsx     |      50 |      100 |      50 |      50 | 20-24                            
+  DeleteAllSemesters.tsx |      50 |      100 |      50 |      50 | 20-24                            
  src/interfaces          |       0 |        0 |       0 |       0 |                                  
   projectInterfaces.ts   |       0 |        0 |       0 |       0 |                                  
 -------------------------|---------|----------|---------|---------|----------------------------------
 
-Test Suites: 13 passed, 13 total
-Tests:       84 passed, 84 total
+Test Suites: 16 passed, 16 total
+Tests:       99 passed, 99 total
 Snapshots:   0 total
-Time:        21.918 s
+Time:        20.541 s
 Ran all test suites.
