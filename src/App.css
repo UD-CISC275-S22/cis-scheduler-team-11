@@ -27,6 +27,17 @@
     color: rgb(255, 255, 255);
     font-family: "Times New Roman", Times, serif;
 }
+.EnterName {
+    width: 55%;
+    text-size-adjust: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    min-height: 137.5px;
+    max-height: 275px;
+}
 .headerImage {
     margin-right: auto;
     width: 15%;
@@ -35,12 +46,9 @@
 .App-link {
     color: #61dafb;
 }
-.NameControl {
-    align-items: middle;
-    align-content: middle;
-    text-align: middle;
-    border-radius: 5px;
-    padding: 5px;
+#rightMain {
+    width: 20%;
+    align-self: auto;
 }
 .row1 {
     border: 1px solid grey;
@@ -107,14 +115,12 @@
 }
 
 .yearHead {
-    border: 1px solid grey;
+    border: 4px solid #f0a369;
+    border-radius: 5px;
     padding: 5px;
     width: 1100px;
-    background-color: rgb(255, 255, 0);
-    border-radius: 25px;
-    padding: 20px;
+    background-color: #3f71a7;
 }
-
 .yearSubHead {
     border: 1px solid grey;
     padding: 5px;
@@ -147,36 +153,38 @@
     scrollbar-width: none;  Firefox 
 }
 */
-
+.ClassMain {
+    color: rgb(255, 255, 255);
+    margin: auto;
+}
 .Courses {
+    overflow: visible;
     width: 55%;
     justify-content: center;
     align-items: center;
-    border: 5px solid #f0a369;
+    border: 5px solid #fbdb32;
     background-color: #3f71a7;
     border-radius: 5px;
     padding: 5px;
     margin: auto;
-    min-height: 137.5px;
-    max-height: 275px;
 }
 .CoursesLeft {
     background-color: #3f71a7;
-    border: 4px solid #f0a369;
-    align-items: center;
-    align-content: center;
+    border: 5px solid #fbdb32;
+    align-items: left;
+    align-content: left;
     border-radius: 5px;
     padding: 5px;
 }
 .CoursesRight {
     background-color: #3f71a7;
-    border: 4px solid #f0a369;
+    border: 5px solid #fbdb32;
     border-radius: 5px;
     padding: 5px;
 }
 .CoursesList {
     background-color: #3f71a7;
-    border: 4px solid #f0a369;
+    border: 5px solid #fbdb32;
     align-items: center;
     overflow: scroll;
     max-height: 195px;
@@ -193,7 +201,7 @@
     height: "auto";
     width: "auto";
     border: "solid";
-    border: 5px solid #f0a369;
+    border: 5px solid #fbdb32;
     background-color: #3f71a7;
     border-radius: 5px;
     padding: 5px;
@@ -205,32 +213,36 @@
     text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000,
         -1px -1px 0 #000;
 }
+.SemesterMain {
+    color: rgb(255, 255, 255);
+    margin: auto;
+}
 .semesterAdd {
     width: 55%;
     justify-content: center;
-    border: 5px solid #f0a369;
+    border: 5px solid #fbdb32;
     background-color: #3f71a7;
     border-radius: 5px;
     padding: 5px;
     margin: auto;
-    min-height: 137.5px;
-    max-height: 275px;
+    overflow: visible;
     text-shadow: 2px 2px "black";
 }
 .semesterAddForm {
+    align-items: center;
     border-radius: 5px;
     padding: 5px;
+    width: auto;
     background-color: #3f71a7;
-    border: 4px solid #f0a369;
+    border: 4px solid #fbdb32;
 }
 .semesterAddListDelete {
     align-items: center;
     border-radius: 5px;
+    width: fit-content;
     padding: 5px;
-    width: 30%;
-    align-items: flex-end;
     background-color: #3f71a7;
-    border: 4px solid #f0a369;
+    border: 4px solid #fbdb32;
 }
 .semesterAddList {
     overflow: scroll;
@@ -247,11 +259,13 @@
     display: none;
     align-items: center;
 }
-
+.PlanMain {
+    color: rgb(255, 255, 255);
+}
 .planAdd {
     width: 31%;
     justify-content: center;
-    border: 5px solid #f0a369;
+    border: 5px solid #fbdb32;
     background-color: #3f71a7;
     border-radius: 5px;
     padding: 5px;

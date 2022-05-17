@@ -41,33 +41,23 @@ export function MainView({
 
     return (
         <div>
-            {plans.length == 0 ? (
-                <div>
-                    {
-                        "You currently do not have any plans, click the button below to add one!"
-                    }
+            <div className="MainView">
+                <div id="leftMain">
                     <PlanCreator
                         selectedPlan={selectedPlan}
                         selectPlan={selectPlan}
                         planList={plans}
                         setPlanList={setPlans}
                     />
-                </div>
-            ) : (
-                <div>
-                    <PlanCreator
-                        selectedPlan={selectedPlan}
-                        selectPlan={selectPlan}
-                        planList={plans}
-                        setPlanList={setPlans}
-                    />
-                    <CoursePool></CoursePool>
                     <PlanView
                         updateSelectedPlan={updateSelectedPlan}
                         selectedPlan={selectedPlan}
                     />
                 </div>
-            )}
+                <div id="rightMain">
+                    <CoursePool></CoursePool>
+                </div>
+            </div>
             <br />
             <CSVDownload plan={selectedPlan} />
         </div>

@@ -56,7 +56,7 @@ export function PlanCreator({
     const handleCloseAddModal = () => setShowAddModal(false);
     const handleShowAddModal = () => setShowAddModal(true);
     return (
-        <div>
+        <div className="PlanMain">
             <h1>Plans</h1>
             <Row className="planAdd">
                 <Col className="planAddListDelete">
@@ -64,8 +64,9 @@ export function PlanCreator({
                         <div>
                             <Button
                                 style={{
-                                    backgroundColor: "#f0a369",
-                                    color: "white",
+                                    backgroundColor: "#FBDB32",
+                                    border: "2px solid white",
+                                    color: "black",
                                     fontWeight: "bold"
                                 }}
                                 onClick={handleShowAddModal}
@@ -89,12 +90,12 @@ export function PlanCreator({
                                         selectedPlan == plan
                                             ? "3px solid white"
                                             : "2px solid gray",
-                                    backgroundColor: "#F0A369"
+                                    backgroundColor: "#FBDB32"
                                 }}
                             >
                                 <Col
                                     style={{
-                                        color: "white"
+                                        color: "black"
                                     }}
                                 >
                                     {plan.id}
@@ -129,6 +130,7 @@ export function PlanCreator({
                             </li>
                         ))}
                     </div>
+                    <br />
                     {/* If there are no plans currently, we do not need a delete all button */}
                     <DeleteAllPlans
                         planList={planList}

@@ -39,6 +39,7 @@ export function DeleteAllSemesters({
                     style={{
                         backgroundColor: "#E85151",
                         color: "white",
+                        border: "2px solid white",
                         fontWeight: "bold"
                     }}
                 >

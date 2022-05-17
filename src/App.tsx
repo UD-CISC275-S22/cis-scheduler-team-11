@@ -52,29 +52,37 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript By Shaun Gupta &
                 Andrew Long & Andrew Gkonos!
             </header>
-            <div>
+            <div className="EnterName">
                 <Form.Group controlId="formName" className="NameControl">
-                    <Form.Label>What is your Name?</Form.Label>
+                    <Form.Label
+                        style={{
+                            color: "white"
+                        }}
+                    >
+                        Please Enter Your Name
+                    </Form.Label>
                     <Form.Control
                         style={{
-                            backgroundColor: "#f0a369",
-                            width: "200px"
+                            backgroundColor: "#FBDB32",
+                            color: "black",
+                            width: "200px",
+                            border: "2px solid white",
+                            fontWeight: "bolder"
                         }}
                         placeholder="insert your name"
                         value={name}
                         onChange={updateName}
                     />
                 </Form.Group>
+                <h1
+                    style={{
+                        color: "white"
+                    }}
+                >
+                    Welcome to your scheduler, {name}!
+                </h1>
+                <br />
             </div>
-            <h1>Welcome to your scheduler, {name}!</h1>
-            <h2>
-                Here you will see all of your plans to complete your degrees!
-            </h2>
-            <h3>
-                Below you will see your degree plans, and their respective
-                semesters and courses.
-            </h3>
-            <br />
             <MainView plans={plans} setPlans={setPlansUpdate} />
             {saveCheck ? (
                 <Button
@@ -83,8 +91,9 @@ function App(): JSX.Element {
                         setSaveCheck(false);
                     }}
                     style={{
-                        backgroundColor: "#f0a369",
-                        color: "white"
+                        backgroundColor: "#fbdb32",
+                        color: "black",
+                        border: "2px solid white"
                     }}
                 >
                     {" "}

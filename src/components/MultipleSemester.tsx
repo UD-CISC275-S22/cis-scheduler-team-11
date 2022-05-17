@@ -6,7 +6,9 @@ import SingleSemester from "./SingleSemester";
 function MultipleSemester({ plan }: { plan: Plan }): JSX.Element {
     return (
         <Container className="MultSemHead">
-            {"Currently displaying plan: " + plan.id}
+            <p style={{ color: "white" }}>
+                {"Currently displaying plan: " + plan.id}
+            </p>
             {plan.semesters.map((years: Semester[]) =>
                 years.map(({ id, courses }: Semester) => (
                     <SingleSemester id={id} courses={courses} key={id} />

@@ -90,7 +90,14 @@ export function CSVDownload({ plan }: { plan: Plan }): JSX.Element {
                 )
             ) {
                 return (
-                    <Button onClick={() => click(plan)}>
+                    <Button
+                        style={{
+                            backgroundColor: "#fbdb32",
+                            color: "black",
+                            border: "2px solid white"
+                        }}
+                        onClick={() => click(plan)}
+                    >
                         {" "}
                         Download your Plan!
                     </Button>
