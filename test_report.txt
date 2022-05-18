@@ -728,10 +728,10 @@ PASS src/ComponentTests/YearView.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
-All files                |   35.43 |       35 |   24.22 |   36.64 |                                  
+All files                |   35.53 |       35 |   24.37 |   36.75 |                                  
  src                     |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                |      30 |    16.66 |      25 |      30 | 16-42,91-92                      
- src/components          |   35.24 |    34.55 |   22.06 |   36.56 |                                  
+ src/components          |   35.34 |    34.55 |   22.22 |   36.67 |                                  
   CSVDownload.tsx        |   12.72 |    16.66 |    5.55 |    13.2 | 10,34-98,102-131                 
   ClassPicker.tsx        |   63.82 |    53.84 |   47.82 |   66.66 | 51,57,95,105-114,138,163,200-295 
   CourseDisplay.tsx      |       0 |      100 |       0 |       0 | 6-7                              
@@ -741,7 +741,7 @@ All files                |   35.43 |       35 |   24.22 |   36.64 |
   MainView.tsx           |   45.45 |    45.45 |      25 |   45.45 | 25-27,30-38                      
   MultipleSemester.tsx   |   33.33 |      100 |   33.33 |   33.33 | 13-14                            
   PlanAdder.tsx          |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
-  PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,82-125                     
+  PlanCreator.tsx        |   24.13 |        0 |    7.14 |   29.16 | 27-51,82-125                     
   PlanEditor.tsx         |   27.27 |      100 |   28.57 |      30 | 20-27,54-68                      
   PlanView.tsx           |      60 |       50 |   33.33 |      60 | 25-44                            
   SemesterCreator.tsx    |   24.48 |    33.33 |    4.76 |   25.53 | 21-47,55,58-69,94-121,155-269    
@@ -759,5 +759,5 @@ All files                |   35.43 |       35 |   24.22 |   36.64 |
 Test Suites: 17 passed, 17 total
 Tests:       100 passed, 100 total
 Snapshots:   0 total
-Time:        20.446 s
+Time:        17.225 s
 Ran all test suites.
