@@ -20,6 +20,7 @@ describe("DeleteAllPlans tests", () => {
             />
         );
     });
+
     test("Delete All Plans button is shown", () => {
         const deleteAllPlansButton = screen.getByRole("button", {
             name: /Delete All Plans/i

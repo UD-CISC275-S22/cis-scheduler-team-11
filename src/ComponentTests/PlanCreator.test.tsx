@@ -114,6 +114,7 @@ describe("PlanCreator tests", () => {
         });
         expect(editButton).toBeInTheDocument();
     });
+
     test("There is a Delete Button", () => {
         render(
             <DropdownMenu

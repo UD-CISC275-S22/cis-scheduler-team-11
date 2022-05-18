@@ -13,8 +13,4 @@ describe("YearView tests", () => {
         const linkElement = screen.getByText(/Currently displaying plan:/i);
         expect(linkElement).toBeInTheDocument();
     });
-    /* test("Displays a year", () => {
-        const linkElement = screen.getByText(/year:/i);
-        expect(linkElement).toBeInTheDocument();
-    }); */
 });
