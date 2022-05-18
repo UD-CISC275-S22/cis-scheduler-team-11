@@ -1526,7 +1526,7 @@ All files                |   35.43 |       35 |   24.22 |   36.64 |
   PlanCreator.tsx        |   23.33 |        0 |    6.66 |      28 | 27-51,82-125                     
   PlanEditor.tsx         |   27.27 |      100 |   28.57 |      30 | 20-27,54-68                      
   PlanView.tsx           |      60 |       50 |   33.33 |      60 | 25-44                            
-  SemesterCreator.tsx    |   24.48 |    33.33 |    4.76 |   25.53 | 21-47,55,58-69,94-121,155-262    
+  SemesterCreator.tsx    |   24.48 |    33.33 |    4.76 |   25.53 | 21-47,55,58-69,94-121,155-269    
   SemesterEditor.tsx     |   16.66 |        0 |   22.22 |   16.66 | 23-38,66-105                     
   SingleSemester.tsx     |      40 |       25 |      25 |      40 | 8-9,33                           
   YearView.tsx           |   66.66 |      100 |   33.33 |   66.66 | 26-33                            
@@ -1541,5 +1541,5 @@ All files                |   35.43 |       35 |   24.22 |   36.64 |
 Test Suites: 2 failed, 14 passed, 16 total
 Tests:       4 failed, 95 passed, 99 total
 Snapshots:   0 total
-Time:        14.848 s
+Time:        15.053 s
 Ran all test suites.
