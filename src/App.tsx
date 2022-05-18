@@ -83,6 +83,10 @@ function App(): JSX.Element {
                 Below you will be able to create and save your degree plans and
                 their respective semesters and courses.
             </h3>
+            <h6>
+                (You can save your progress or download your currently selected
+                plan as a .CSV file at the bottom of the page!)
+            </h6>
             <br />
             <MainView plans={plans} setPlans={setPlansUpdate} />
             {saveCheck ? (
