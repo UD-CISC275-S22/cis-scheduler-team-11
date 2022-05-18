@@ -4,11 +4,12 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { CourseEditor } from "./CourseEditor";
 import TextField from "@mui/material/TextField";
 import { Course, Semester } from "../interfaces/projectInterfaces";
-import { DropdownMenu } from "./DropdownMenu";
 //import courses from "../data/courses.json";
 import catalog from "../data/catalog.json";
 import { DeleteAllCourses } from "../deleteAllComponents/DeleteAllCourses";
 import SingleSemester from "./SingleSemester";
+import { CourseDropdownMenu } from "./CourseDropdownMenu";
+import { confirmAlert } from "react-confirm-alert";
 
 /*const COURSES = courses.map(
     (course): Course => ({
@@ -102,12 +103,29 @@ export function ClassPicker({
             if (check.length === 0 && possible) {
                 setSchedule(newSchedule);
             } else {
-                alert(
-                    "You are already enrolled in that course in this semester"
-                );
+                confirmAlert({
+                    title: "Double Course Error",
+                    message:
+                        "You are already enrolled in that course in this semester",
+                    buttons: [
+                        {
+                            label: "Ok",
+                            onClick: () => undefined
+                        }
+                    ]
+                });
             }
         } else {
-            alert("That course does not exist!!!");
+            confirmAlert({
+                title: "Course Error 404",
+                message: "That course does not exist!!!",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
         }
     }
     function deleteSpecificCourse(course: Course) {
@@ -230,35 +248,20 @@ export function ClassPicker({
                                                 backgroundColor: "#f0a369"
                                             }}
                                         >
-                                            <DropdownMenu
-                                                horizontal={true}
-                                                buttons={[
-                                                    {
-                                                        variant: "primary",
-                                                        text: "Select",
-                                                        click: () =>
-                                                            selectCourse(course)
-                                                    },
-                                                    {
-                                                        text: "Edit",
-                                                        click: () => {
-                                                            selectCourse(
-                                                                course
-                                                            );
-                                                            setShowAddModal(
-                                                                !showAddModal
-                                                            );
-                                                        }
-                                                    },
-                                                    {
-                                                        variant: "danger",
-                                                        text: "⦻",
-                                                        click: () =>
-                                                            deleteSpecificCourse(
-                                                                course
-                                                            )
-                                                    }
-                                                ]}
+                                            <CourseDropdownMenu
+                                                select={() =>
+                                                    selectCourse(course)
+                                                }
+                                                edit={() => {
+                                                    selectCourse(course);
+                                                    setShowAddModal(
+                                                        !showAddModal
+                                                    );
+                                                }}
+                                                del={() =>
+                                                    deleteSpecificCourse(course)
+                                                }
+                                                move={() => 0}
                                             />
                                         </Col>
                                     </li>

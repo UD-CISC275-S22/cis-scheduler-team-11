@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { Course } from "../interfaces/projectInterfaces";
 import catalog from "../data/catalog.json";
+import { confirmAlert } from "react-confirm-alert";
 
 const categories = Object.keys(catalog);
 
@@ -69,9 +70,17 @@ export function CourseEditor({
                 crs.name.toLowerCase() === newCourses[index].name.toLowerCase()
         );
         if (codenameList.length > 1) {
-            alert(
-                "You cannot have multiple courses with the same code and title"
-            );
+            confirmAlert({
+                title: "Duplicate Course Error",
+                message:
+                    "You cannot have multiple courses with the same code and title",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
         } else {
             if (codeList.length > 1) {
                 setCheck(true);
@@ -82,7 +91,16 @@ export function CourseEditor({
             //console.log("check" + check);
             //console.log("checked" + checked);
             if (check && !checked) {
-                alert("Some courses have the same code or title!");
+                confirmAlert({
+                    title: "Similar Course Warning",
+                    message: "Some courses have the same code or title!",
+                    buttons: [
+                        {
+                            label: "Understood",
+                            onClick: () => undefined
+                        }
+                    ]
+                });
                 setChecked(true);
             } else {
                 if (!check) {

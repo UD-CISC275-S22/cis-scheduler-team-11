@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
+import { confirmAlert } from "react-confirm-alert";
 import { Semester /*, Course*/ } from "../interfaces/projectInterfaces";
 
 export function SemesterEditor({
@@ -22,15 +23,33 @@ export function SemesterEditor({
     function saveChanges(index: number) {
         const newSemesters = semesters.map(
             (semester: Semester): Semester => ({ ...semester })
-        ); //add alert
+        );
         newSemesters[index] = { ...newSemesters[index], id: ID };
         if (
             newSemesters.filter((asemester: Semester) => asemester.id == ID)
                 .length > 1
         ) {
-            alert("A semester with that ID already exists");
+            confirmAlert({
+                title: "Duplicate Semester Error",
+                message: "A semester with that ID already exists",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
         } else if (parseInt(newSemesters[index].id.split(" ")[1]) > 4444) {
-            alert("Semester year must be within the next 2 milenia");
+            confirmAlert({
+                title: "Time Traveler Error",
+                message: "Semester year must be within the next 2 milenia",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
         } else {
             //console.log(newSemesters);
             setSemesters(newSemesters);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { Plan } from "../interfaces/projectInterfaces";
-import { DropdownMenu } from "./DropdownMenu";
+import { PlanDropdownMenu } from "./PlanDropdownMenu";
 import { PlanAdder } from "./PlanAdder";
 import { PlanEditor } from "./PlanEditor";
 import { DeleteAllPlans } from "../deleteAllComponents/DeleteAllPLans";
@@ -24,15 +24,21 @@ export function PlanCreator({
     const [showAddModal2, setShowAddModal2] = useState(false);
     const handleCloseAddModal2 = () => setShowAddModal2(false);
     function addPlan(newPlan: Plan): number {
-        if (newPlan.id === "Plan Name") {
-            alert("Enter a new name for this plan!");
-            return 0;
-        } else if (!planList.some((plan) => plan.id === newPlan.id)) {
+        if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
             handleCloseAddModal();
             return 1;
         } else {
-            alert("A plan with that ID already exists!");
+            confirmAlert({
+                title: "Plan Duplicate Error",
+                message: "A plan with that ID already exists!",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
             return 0;
         }
     }
@@ -101,30 +107,13 @@ export function PlanCreator({
                                     {plan.id}
                                 </Col>
                                 <Col>
-                                    <DropdownMenu
-                                        horizontal={true}
-                                        buttons={[
-                                            {
-                                                variant: "primary",
-                                                text: "Select",
-                                                click: () => selectPlan(plan)
-                                            },
-                                            {
-                                                text: "Edit",
-                                                click: () => {
-                                                    setPlan(plan);
-                                                    setShowAddModal2(
-                                                        !showAddModal2
-                                                    );
-                                                }
-                                            },
-                                            {
-                                                variant: "danger",
-                                                text: "⦻",
-                                                click: () =>
-                                                    deleteSpecificPlan(plan.id)
-                                            }
-                                        ]}
+                                    <PlanDropdownMenu
+                                        select={() => selectPlan(plan)}
+                                        edit={() => {
+                                            setPlan(plan);
+                                            setShowAddModal2(!showAddModal2);
+                                        }}
+                                        del={() => deleteSpecificPlan(plan.id)}
                                     />
                                 </Col>
                             </li>

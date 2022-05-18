@@ -4,7 +4,8 @@ import { Semester, Plan } from "../interfaces/projectInterfaces";
 import { SemesterEditor } from "./SemesterEditor";
 import { ClassPicker } from "./ClassPicker";
 import { DeleteAllSemesters } from "../deleteAllComponents/DeleteAllSemesters";
-import { DropdownMenu } from "./DropdownMenu";
+import { SemesterDropdownMenu } from "./SemesterDropdownMenu";
+import { confirmAlert } from "react-confirm-alert";
 
 export function SemesterCreator({
     updateSelectedPlan,
@@ -105,13 +106,40 @@ export function SemesterCreator({
                 if (check.length === 0) {
                     setSemesterList(newSemesterList);
                 } else {
-                    alert("That semester already exists!");
+                    confirmAlert({
+                        title: "Duplicate Semester Error",
+                        message: "That semester already exists!",
+                        buttons: [
+                            {
+                                label: "Ok",
+                                onClick: () => undefined
+                            }
+                        ]
+                    });
                 }
             } else {
-                alert("Semester year must be after plan start year");
+                confirmAlert({
+                    title: "Semester Start Error",
+                    message: "Semester year must be after plan start year",
+                    buttons: [
+                        {
+                            label: "Ok",
+                            onClick: () => undefined
+                        }
+                    ]
+                });
             }
         } else {
-            alert("Semester year must be within the next 2 milenia");
+            confirmAlert({
+                title: "Time Traveler Error",
+                message: "Semester year must be within the next 2 milenia",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
         }
     }
     function updateSeason(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -199,35 +227,17 @@ export function SemesterCreator({
                                 >
                                     <Col>{semester.id} </Col>
                                     <Col>
-                                        <DropdownMenu
-                                            horizontal={true}
-                                            buttons={[
-                                                {
-                                                    variant: "primary",
-                                                    text: "Select",
-                                                    click: () =>
-                                                        setSemester(semester)
-                                                },
-                                                {
-                                                    text: "Edit",
-                                                    click: () => {
-                                                        selectSemester(
-                                                            semester
-                                                        );
-                                                        setShowAddModal(
-                                                            !showAddModal
-                                                        );
-                                                    }
-                                                },
-                                                {
-                                                    variant: "danger",
-                                                    text: "⦻",
-                                                    click: () =>
-                                                        deleteSpecificSemester(
-                                                            semester.id
-                                                        )
-                                                }
-                                            ]}
+                                        <SemesterDropdownMenu
+                                            select={() => setSemester(semester)}
+                                            edit={() => {
+                                                selectSemester(semester);
+                                                setShowAddModal(!showAddModal);
+                                            }}
+                                            del={() =>
+                                                deleteSpecificSemester(
+                                                    semester.id
+                                                )
+                                            }
                                         />
                                     </Col>
                                 </li>

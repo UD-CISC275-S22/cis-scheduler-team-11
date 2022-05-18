@@ -27,9 +27,13 @@
     color: rgb(255, 255, 255);
     font-family: "Times New Roman", Times, serif;
 }
+.NameControl {
+    width: 200px;
+}
 .EnterName {
     width: 55%;
     text-size-adjust: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -56,6 +60,7 @@
     padding: 4px;
     width: 100%;
     background-color: rgb(255, 255, 255);
+    white-space: normal;
 }
 
 .MultSemHead {

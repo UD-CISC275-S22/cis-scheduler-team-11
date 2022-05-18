@@ -23,6 +23,27 @@ export interface Semester {
     courses: Course[];
 }
 
+export interface CourseButtonProps {
+    horizontal?: boolean;
+    select: () => void;
+    edit: () => void;
+    del: () => void;
+    move: () => void;
+}
+
+export interface SemesterButtonProps {
+    horizontal?: boolean;
+    select: () => void;
+    edit: () => void;
+    del: () => void;
+}
+
+export interface PlanButtonProps {
+    select: () => void;
+    edit: () => void;
+    del: () => void;
+}
+
 export interface Plan {
     start: number;
     /** The id of the plan */
