@@ -4,7 +4,7 @@ import { Plan } from "../interfaces/projectInterfaces";
 import { PlanCreator } from "../components/PlanCreator";
 import { PlanView } from "../components/PlanView";
 import { CSVDownload } from "./CSVDownload";
-import { CoursePool } from "./CoursePool";
+import { CourseMove } from "./CoureMove";
 
 export function MainView({
     plans,
@@ -55,7 +55,7 @@ export function MainView({
                     />
                 </div>
                 <div id="rightMain">
-                    <CoursePool></CoursePool>
+                    <CourseMove></CourseMove>
                 </div>
             </div>
             <br />

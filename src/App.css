@@ -46,10 +46,7 @@
 .App-link {
     color: #61dafb;
 }
-#rightMain {
-    width: 20%;
-    align-self: auto;
-}
+
 .row1 {
     border: 1px solid grey;
     justify-content: center;
