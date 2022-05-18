@@ -31,7 +31,7 @@ describe("SemesterCreator tests", () => {
         expect(linkElement).toBeInTheDocument();
     });
 
-    test("Initial has no semesters shown", () => {
+    test("Initially has no semesters shown", () => {
         const linkElement = screen.getByText(/This plan has no semesters!/i);
         expect(linkElement).toBeInTheDocument();
     });
