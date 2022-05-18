@@ -121,7 +121,7 @@ export function PlanCreator({
                                             {
                                                 variant: "danger",
                                                 text: "⦻",
-                                                click: () => () =>
+                                                click: () =>
                                                     deleteSpecificPlan(plan.id)
                                             }
                                         ]}
