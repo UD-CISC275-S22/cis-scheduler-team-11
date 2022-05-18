@@ -709,9 +709,9 @@ PASS src/ComponentTests/CourseEditor.test.tsx
 
       at refresh (src/components/CourseEditor.tsx:113:17)
 
-PASS src/ComponentTests/SemesterCreator.test.tsx
 PASS src/ComponentTests/SemesterEditor.test.tsx
 PASS src/ComponentTests/ClassPicker.test.tsx
+PASS src/ComponentTests/SemesterCreator.test.tsx
 PASS src/ComponentTests/PlanCreator.test.tsx
 PASS src/ComponentTests/PlanEditor.test.tsx
 PASS src/ComponentTests/DeleteAllCourses.test.tsx
@@ -1356,7 +1356,6 @@ FAIL src/App.test.tsx
 
 PASS src/ComponentTests/PlanAdder.test.tsx
 PASS src/ComponentTests/PlanView.test.tsx
-PASS src/ComponentTests/YearView.test.tsx
 FAIL src/ComponentTests/MainView.test.tsx
   ● MainView tests › Initially says that you do not have any plans present yet
 
@@ -1507,6 +1506,7 @@ FAIL src/ComponentTests/MainView.test.tsx
 
 PASS src/ComponentTests/SingleSemester.test.tsx
 PASS src/ComponentTests/MultipleSemester.test.tsx
+PASS src/ComponentTests/YearView.test.tsx
 -------------------------|---------|----------|---------|---------|----------------------------------
 File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 -------------------------|---------|----------|---------|---------|----------------------------------
@@ -1541,5 +1541,5 @@ All files                |   35.43 |       35 |   24.22 |   36.64 |
 Test Suites: 2 failed, 14 passed, 16 total
 Tests:       4 failed, 95 passed, 99 total
 Snapshots:   0 total
-Time:        15.053 s
+Time:        14.134 s
 Ran all test suites.
