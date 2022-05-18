@@ -28,8 +28,8 @@ describe("PlanView tests", () => {
         expect(linkElement).toBeInTheDocument();
     });
 
-    test("Year view switch is shown", () => {
-        const linkElement = screen.getByLabelText(/Year View/i);
+    test("Academic Calendar title is shown", () => {
+        const linkElement = screen.getByText(/Academic Calendar/i);
         expect(linkElement).toBeInTheDocument();
     });
 });
