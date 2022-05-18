@@ -27,6 +27,7 @@
     color: rgb(255, 255, 255);
     font-family: "Times New Roman", Times, serif;
 }
+
 .NameControl {
     width: 200px;
 }
@@ -62,54 +63,62 @@
     background-color: rgb(255, 255, 255);
     white-space: normal;
 }
-
 .MultSemHead {
-    border: 1px solid grey;
     padding: 5px;
     width: 1100px;
     max-height: 500px;
     overflow: scroll;
-    background-color: rgb(160, 229, 250);
+    text-align: center;
     white-space: nowrap;
-    display: flex;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    border: 4px solid #fbdb32;
+    background-color: #3f71a7;
+}
+.CourseDisplay {
+    border: 1px solid rgb(0, 0, 0);
+    word-break: normal;
 }
 .MultSemHead::-webkit-scrollbar {
     display: none;
 }
 
 .MultSemHead2 {
-    border: 1px solid grey;
     padding: 5px;
     width: 95%;
     height: 90%;
     overflow: scroll;
-    background-color: rgb(160, 229, 250);
-    white-space: nowrap;
+    position: relative;
     display: flex;
     position: relative;
     top: 30px;
-
+    white-space: nowrap;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 .MultSemHead2::-webkit-scrollbar {
     display: none;
 }
-
+.row1 {
+    justify-content: center;
+    border: 4px solid #ffffff;
+    border-radius: 5px;
+    padding: 4px;
+    width: 100%;
+    white-space: normal;
+    background-color: #fbdb32;
+}
 .col1 {
-    border: 1px solid grey;
     padding-left: 25px;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 5px;
     min-width: 350px;
     min-height: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: #3f71a7;
     display: inline-block;
     overflow-y: scroll;
+    color: rgb(0, 0, 0);
+    align-content: center;
 
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -118,27 +127,28 @@
 .col1::-webkit-scrollbar {
     display: none;
 }
-
+.Calendar {
+    color: rgb(255, 255, 255);
+}
 .yearHead {
-    border: 4px solid #f0a369;
+    border: 4px solid #fbdb32;
     border-radius: 5px;
     padding: 5px;
     width: 1100px;
     background-color: #3f71a7;
 }
 .yearSubHead {
-    border: 1px solid grey;
+    border: 4px solid #fbdb32;
     padding: 5px;
     width: 97.5%;
     height: 500px;
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 20px;
-    background-color: rgb(0, 102, 255);
+    background-color: #3f71a7;
     white-space: nowrap;
     display: flex;
 }
 .yearName {
-    border: 1px solid grey;
     padding: 5px;
     position: relative;
     left: 10px;
@@ -170,10 +180,11 @@
     border: 5px solid #fbdb32;
     background-color: #3f71a7;
     border-radius: 5px;
-    padding: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
     margin: auto;
-    min-height: 137.5px;
-    max-height: 290px;
 }
 .CoursesLeft {
     background-color: #3f71a7;
@@ -181,18 +192,14 @@
     align-items: left;
     align-content: left;
     border-radius: 5px;
-    padding: 5px;
-    max-height: 227px;
 }
 .CoursesRight {
     background-color: #3f71a7;
     border: 5px solid #fbdb32;
     border-radius: 5px;
-    max-height: 227px;
 }
 .CoursesAddList {
     overflow: scroll;
-    max-height: 127px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -206,24 +213,6 @@
     align-items: center;
     scrollbar-width: none;
     border-radius: 5px;
-    padding: 5px;
-}
-.CoursePool {
-    overflow: "scroll";
-    height: "auto";
-    width: "auto";
-    border: "solid";
-    border: 5px solid #fbdb32;
-    background-color: #3f71a7;
-    border-radius: 5px;
-    padding: 5px;
-}
-.CoursePoolList {
-    border-radius: 5px;
-    padding: 5px;
-    text-align: middle;
-    text-shadow: -1px -1px 0 #000, -1px -1px 0 #000, -1px -1px 0 #000,
-        -1px -1px 0 #000;
 }
 .SemesterMain {
     color: rgb(255, 255, 255);
@@ -238,7 +227,7 @@
     padding-left: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-right: 15px;
+    padding-right: 17px;
     margin: auto;
     overflow: visible;
     text-shadow: 2px 2px "black";

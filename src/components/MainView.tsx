@@ -4,6 +4,7 @@ import { Plan } from "../interfaces/projectInterfaces";
 import { PlanCreator } from "../components/PlanCreator";
 import { PlanView } from "../components/PlanView";
 import { CSVDownload } from "./CSVDownload";
+//import { CourseMove } from "./CoureMove";
 
 export function MainView({
     plans,

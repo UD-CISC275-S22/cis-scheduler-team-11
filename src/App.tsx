@@ -65,9 +65,9 @@ function App(): JSX.Element {
                         style={{
                             backgroundColor: "#FBDB32",
                             color: "black",
-                            width: "200px",
                             border: "2px solid white",
-                            fontWeight: "bolder"
+                            fontWeight: "bolder",
+                            left: "167px"
                         }}
                         placeholder="insert your name"
                         value={name}

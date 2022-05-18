@@ -231,21 +231,21 @@ export function ClassPicker({
                                                 selectedCourse === course
                                                     ? "3px solid white"
                                                     : "2px solid gray",
-                                            color: "white",
-                                            backgroundColor: "#f0a369"
+                                            color: "black",
+                                            backgroundColor: "#fbdb32"
                                         }}
                                     >
                                         <Col
                                             style={{
-                                                color: "white",
-                                                backgroundColor: "#f0a369"
+                                                color: "black",
+                                                backgroundColor: "#fbdb32"
                                             }}
                                         >
                                             {course.code}{" "}
                                         </Col>
                                         <Col
                                             style={{
-                                                backgroundColor: "#f0a369"
+                                                backgroundColor: "#fbdb32"
                                             }}
                                         >
                                             <CourseDropdownMenu
@@ -267,6 +267,7 @@ export function ClassPicker({
                                     </li>
                                 ))}
                             </div>
+                            <br />
                             <DeleteAllCourses
                                 courseList={schedule}
                                 setCourseList={setSchedule}
