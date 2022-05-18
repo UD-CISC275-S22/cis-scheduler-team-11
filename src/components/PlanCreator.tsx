@@ -24,7 +24,19 @@ export function PlanCreator({
     const [showAddModal2, setShowAddModal2] = useState(false);
     const handleCloseAddModal2 = () => setShowAddModal2(false);
     function addPlan(newPlan: Plan): number {
-        if (!planList.some((plan) => plan.id === newPlan.id)) {
+        if (newPlan.id === "Plan Name") {
+            confirmAlert({
+                title: "Plan Name Error",
+                message: "Pick a name other than 'Plan Name'",
+                buttons: [
+                    {
+                        label: "Ok",
+                        onClick: () => undefined
+                    }
+                ]
+            });
+            return 0;
+        } else if (!planList.some((plan) => plan.id === newPlan.id)) {
             setPlanList([...planList, newPlan]);
             handleCloseAddModal();
             return 1;
