@@ -65,9 +65,13 @@ export function PlanAdder({
                 <Button variant="secondary" onClick={handleClose}>
                     Close!
                 </Button>
-                <Button variant="primary" onClick={saveChanges}>
-                    Save Changes
-                </Button>
+                {id != "Plan Name" ? (
+                    <Button variant="primary" onClick={saveChanges}>
+                        Save Changes
+                    </Button>
+                ) : (
+                    "Pick a different Name!"
+                )}
             </Modal.Footer>
         </Modal>
     );
