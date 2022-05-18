@@ -40,28 +40,34 @@ describe("SemesterCreator tests", () => {
         const linkElement = screen.getByText(/fall/i);
         expect(linkElement).toBeInTheDocument();
     });
+
     test("Spring Semester option is shown", () => {
         const linkElement = screen.getByText(/spring/i);
         expect(linkElement).toBeInTheDocument();
     });
+
     test("Summer Semester option is shown", () => {
         const linkElement = screen.getByText(/summer/i);
         expect(linkElement).toBeInTheDocument();
     });
+
     test("Winter Semester option is shown", () => {
         const linkElement = screen.getByText(/winter/i);
         expect(linkElement).toBeInTheDocument();
     });
+
     test("Initial Year is shown", () => {
         const linkElement = screen.getByDisplayValue(/2000/i);
         expect(linkElement).toBeInTheDocument();
     });
+
     test("There is a Add Button", () => {
         const editButton = screen.getByRole("button", {
             name: /add/i
         });
         expect(editButton).toBeInTheDocument();
     });
+
     test("There is a Dropdown Options Button", () => {
         render(<DropdownMenu buttons={[]} horizontal={false} />);
         const optionsButton = screen.getByRole("button", {
@@ -127,6 +133,7 @@ describe("SemesterCreator tests", () => {
         });
         expect(editButton).toBeInTheDocument();
     });
+
     test("There is a Delete Button", () => {
         render(
             <DropdownMenu
@@ -155,18 +162,6 @@ describe("SemesterCreator tests", () => {
         });
         expect(deleteButton).toBeInTheDocument();
     });
-
-    //figure out what to see as semesterlist and setsemester list
-    /* test("There is a Delete Semester Button", () => {
-        <DeleteAllSemesters
-            semesterList={[semesterList]}
-            setSemesterList={setSemesterList}
-        ></DeleteAllSemesters>;
-        const editButton = screen.getByRole("button", {
-            name: /delete semesters/i
-        });
-        expect(editButton).toBeInTheDocument();
-    }); */
 
     test("There is a Hide Semester Menu Button", () => {
         const editButton = screen.getByRole("button", {

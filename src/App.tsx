@@ -74,14 +74,6 @@ function App(): JSX.Element {
                         onChange={updateName}
                     />
                 </Form.Group>
-                <h1
-                    style={{
-                        color: "white"
-                    }}
-                >
-                    Welcome to your scheduler, {name}!
-                </h1>
-                <br />
             </div>
             <h1>Welcome to your scheduler, {name}!</h1>
             <h2>
