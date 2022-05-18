@@ -234,13 +234,20 @@ export function SemesterCreator({
                             ))}
                         </div>
                         <br />
-                        <DeleteAllSemesters
-                            semesterList={semesterList}
-                            setSemesterList={setSemesterList}
-                        ></DeleteAllSemesters>
+                        <div
+                            style={{
+                                position: "relative",
+                                top: "-15px"
+                            }}
+                        >
+                            <DeleteAllSemesters
+                                semesterList={semesterList}
+                                setSemesterList={setSemesterList}
+                            ></DeleteAllSemesters>
+                        </div>
                     </Col>
                 </Row>
-                <div>
+                <div style={{ padding: "5px" }}>
                     <Button
                         className="Buttons"
                         onClick={() => setSemMenuView(false)}
