@@ -36,15 +36,22 @@ describe("App tests", () => {
         expect(linkElement).toBeInTheDocument();
     });
 
-    /*  test("Initial no plans is shown", () => {
+    test("Save or download your plan message is shown", () => {
         const linkElement = screen.getByText(
-            /You currently do not have any plans/i
+            /You can save your progress or download/i
         );
         expect(linkElement).toBeInTheDocument();
-    }); */
+    });
 
     test("Up to date message is shown", () => {
         const linkElement = screen.getByText(/Up to date with last save/i);
+        expect(linkElement).toBeInTheDocument();
+    });
+
+    test("Can't download CSV until plan is added message", () => {
+        const linkElement = screen.getByText(
+            /You need to make a plan before you can download it/i
+        );
         expect(linkElement).toBeInTheDocument();
     });
 });
