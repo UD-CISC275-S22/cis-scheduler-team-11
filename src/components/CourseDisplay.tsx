@@ -5,7 +5,7 @@ function CourseDisplay(course: Course): JSX.Element {
     const { code, name, descr, credits, preReq, restrict, breadth, typ } =
         course;
     return (
-        <div>
+        <div className="CourseDisplay">
             {code}: <br />
             {name} <br />
             {credits} Credits

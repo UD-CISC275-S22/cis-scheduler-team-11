@@ -20,7 +20,7 @@ function YearView({ plan }: { plan: Plan }): JSX.Element {
     ];
     return (
         <Container className="yearHead">
-            {"Currently displaying plan: " + plan.id}
+            {"Currently Displaying Plan: " + plan.id}
             {years.map(
                 (semesters: Semester[]): JSX.Element => (
                     <Container key={year} className="yearSubHead">
@@ -34,7 +34,7 @@ function YearView({ plan }: { plan: Plan }): JSX.Element {
                                     id={id}
                                     courses={courses}
                                     key={id}
-                                />
+                                ></SingleSemester>
                             ))}
                         </Row>
                     </Container>

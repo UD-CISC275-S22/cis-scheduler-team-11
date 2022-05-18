@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Col, Row } from "react-bootstrap";
-import { Semester /*, Course*/ } from "../interfaces/projectInterfaces";
+import { Semester, Course } from "../interfaces/projectInterfaces";
 
 export function CourseMove({
     show,
     handleClose,
+    course,
+    schedule,
+    setSchedule,
     semester,
     semesters,
     setSemesters,
@@ -12,21 +15,31 @@ export function CourseMove({
 }: {
     show: boolean;
     handleClose: () => void;
+    course: Course;
+    schedule: Course[];
+    setSchedule: (courses: Course[]) => void;
     semester: Semester;
     semesters: Semester[];
     setSemesters: (semester: Semester[]) => void;
     selectSemester: (semester: Semester) => void;
 }) {
-    const [ID, setID] = useState<string>(semester.id);
+    const [pickSemester, setPickSemester] = useState<string>(semesters[0].id);
 
     function saveChanges(index: number) {
+        const CourseListFrom = schedule.map(
+            (course: Course): Course => ({ ...course })
+        );
+        const CourseListTo = schedule.map(
+            (course: Course): Course => ({ ...course })
+        );
         const newSemesters = semesters.map(
             (semester: Semester): Semester => ({ ...semester })
         ); //add alert
-        newSemesters[index] = { ...newSemesters[index], id: ID };
+        newSemesters[index] = { ...newSemesters[index], id: pickSemester };
         if (
-            newSemesters.filter((asemester: Semester) => asemester.id == ID)
-                .length > 1
+            newSemesters.filter(
+                (asemester: Semester) => asemester.id == pickSemester
+            ).length > 1
         ) {
             alert("A semester with that ID already exists");
         } else if (parseInt(newSemesters[index].id.split(" ")[1]) > 4444) {
@@ -39,9 +52,11 @@ export function CourseMove({
         }
     }
     function refresh() {
-        setID(semester.id);
+        setPickSemester(semester.id);
     }
-
+    function updateSemester(event: React.ChangeEvent<HTMLSelectElement>) {
+        setPickSemester(event.target.value);
+    }
     return (
         <Modal
             show={show}
@@ -54,47 +69,26 @@ export function CourseMove({
             </Modal.Header>
             <Modal.Body>
                 {/* Title */}
-                <Form.Group controlId="formSemesterSeason" as={Row}>
-                    <Form.Label>Semester Season:</Form.Label>
+                <Form.Group controlId="formMoveCourse" as={Row}>
+                    <Form.Label> Move Course:</Form.Label>
                     <Col>
-                        <Form.Label>Add Semester</Form.Label>
+                        <Form.Label>Select Semester</Form.Label>
                         <Form.Select
-                            value={ID.split(" ")[0]}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLSelectElement>
-                            ) =>
-                                setID(
-                                    event.target.value + " " + ID.split(" ")[1]
-                                )
-                            }
+                            value={pickSemester}
+                            onChange={updateSemester}
                         >
-                            <option value="Fall">Fall</option>
-                            <option value="Winter">Winter</option>
-                            <option value="Spring">Spring</option>
-                            <option value="Summer">Summer</option>
+                            {semesters.map((semester: Semester) => (
+                                <option key={semester.id} value={semester.id}>
+                                    {semester}
+                                </option>
+                            ))}
                         </Form.Select>
-                    </Col>
-                </Form.Group>
-                <Form.Group controlId="formSemesterYear" as={Row}>
-                    <Form.Label>Semester Year:</Form.Label>
-                    <Col>
-                        <Form.Control
-                            value={ID.split(" ")[1]}
-                            onChange={(
-                                event: React.ChangeEvent<HTMLInputElement>
-                            ) =>
-                                setID(
-                                    ID.split(" ")[0] + " " + event.target.value
-                                )
-                            }
-                            type="number"
-                        />
                     </Col>
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                    Close!
+                    Cancel
                 </Button>
                 <Button
                     variant="primary"
@@ -107,7 +101,7 @@ export function CourseMove({
                         )
                     }
                 >
-                    Save Changes
+                    Move
                 </Button>
             </Modal.Footer>
         </Modal>

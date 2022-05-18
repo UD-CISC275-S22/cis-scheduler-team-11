@@ -65,22 +65,15 @@ function App(): JSX.Element {
                         style={{
                             backgroundColor: "#FBDB32",
                             color: "black",
-                            width: "200px",
                             border: "2px solid white",
-                            fontWeight: "bolder"
+                            fontWeight: "bolder",
+                            left: "167px"
                         }}
                         placeholder="insert your name"
                         value={name}
                         onChange={updateName}
                     />
                 </Form.Group>
-                <h1
-                    style={{
-                        color: "white"
-                    }}
-                >
-                    Welcome to your scheduler, {name}!
-                </h1>
                 <br />
             </div>
             <h1>Welcome to your scheduler, {name}!</h1>

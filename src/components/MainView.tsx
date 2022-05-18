@@ -54,9 +54,7 @@ export function MainView({
                         selectedPlan={selectedPlan}
                     />
                 </div>
-                <div id="rightMain">
-                    <CourseMove></CourseMove>
-                </div>
+                <div id="rightMain"></div>
             </div>
             <br />
             <CSVDownload plan={selectedPlan} />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Plan } from "../interfaces/projectInterfaces";
-import { Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import MultipleSemester from "./MultipleSemester";
 import { SemesterCreator } from "./SemesterCreator";
 import YearView from "./YearView";
@@ -12,25 +12,13 @@ export function PlanView({
     selectedPlan: Plan;
     updateSelectedPlan: (plan: Plan) => void;
 }): JSX.Element {
-    const [yearView, setYearView] = useState<boolean>(true);
+    const yearView = true;
     const [semMenuView, setSemMenuView] = useState<boolean>(false);
     return (
         <div>
-            <Form.Check
-                type="switch"
-                id="edit-year-view"
-                label="Year View"
-                checked={yearView}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    setYearView(event.target.checked)
-                }
-                style={{ display: "flex", justifyContent: "center" }}
-            />
             <p>
                 {selectedPlan.semesters.length > 0
-                    ? "This plan currently has " +
-                      selectedPlan.semesters.length +
-                      " semesters!"
+                    ? ""
                     : "This plan currently has no semesters! Click the button below to add a new semester"}
             </p>
             {semMenuView ? (
@@ -53,7 +41,10 @@ export function PlanView({
                     Open Semester Menu{" "}
                 </Button>
             )}
-            <div>
+            <br />
+            <br />
+            <div className="Calendar">
+                <h1>Academic Calendar</h1>
                 {yearView ? (
                     <YearView plan={selectedPlan} />
                 ) : (
