@@ -128,7 +128,27 @@ export function CourseEditor({
         setRestrict(course.restrict);
         setBreadth(course.breadth);
         setTyp(course.typ);
-        console.log(course);
+    }
+
+    function reset() {
+        const COURSES: Course[] = Object.values(catalog)
+            .flat()
+            .map((category) => Object.values(category).flat())
+            .flat()
+            .map((crs) => ({ ...crs, uid: -1 }));
+        const original = COURSES.filter(
+            (course: Course) => course.code == code
+        )[0];
+        setCode(original.code);
+        setCodeCat(original.code.split(" ")[0]);
+        setCodeNum(original.code.split(" ")[1]);
+        setName(original.name);
+        setDescr(original.descr);
+        setCredits(original.credits);
+        setPreReq(original.preReq);
+        setRestrict(original.restrict);
+        setBreadth(original.breadth);
+        setTyp(original.typ);
     }
 
     return (
@@ -263,6 +283,9 @@ export function CourseEditor({
                         />
                     </Col>
                 </Form.Group>
+                <Button variant={"danger"} onClick={reset}>
+                    Reset
+                </Button>
             </Modal.Body>
             {!check || !checked ? (
                 <Modal.Footer>
