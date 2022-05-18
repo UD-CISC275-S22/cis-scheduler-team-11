@@ -14,10 +14,8 @@ describe("MainView tests", () => {
         );
     });
 
-    test("Initially says that you do not have any plans present yet", () => {
-        const linkElement = screen.getByText(
-            /You currently do not have any plans/i
-        );
+    test("Says which plan is currently displayed", () => {
+        const linkElement = screen.getByText(/Currently displaying plan:/i);
         expect(linkElement).toBeInTheDocument();
     });
 });
