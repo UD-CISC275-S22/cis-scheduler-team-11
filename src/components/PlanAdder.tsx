@@ -69,7 +69,8 @@ export function PlanAdder({
                     <Button variant="primary" onClick={saveChanges}>
                         Save Changes
                     </Button>
-                ) : (<div> Pick a different Name!</div>
+                ) : (
+                    <div> Pick a different Name!</div>
                 )}
             </Modal.Footer>
         </Modal>
