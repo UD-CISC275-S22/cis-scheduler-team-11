@@ -449,7 +449,175 @@ PASS src/ComponentTests/DeleteAllCourses.test.tsx
 PASS src/ComponentTests/DeleteAllSemesters.test.tsx
 PASS src/ComponentTests/DeleteAllPlans.test.tsx
 PASS src/App.test.tsx
-PASS src/ComponentTests/PlanAdder.test.tsx
+FAIL src/ComponentTests/PlanAdder.test.tsx
+  ● PlanAdder tests › There is a Save Changes Button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Save Changes/i`
+
+    Here are the accessible roles:
+
+      dialog:
+
+      Name "":
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"modal"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Close":
+      [36m<button[39m
+        [33maria-label[39m=[32m"Close"[39m
+        [33mclass[39m=[32m"btn-close"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Close!":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-secondary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      textbox:
+
+      Name "Plan ID":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mid[39m=[32m"planId"[39m
+        [33mvalue[39m=[32m"Plan Name"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      spinbutton:
+
+      Name "Start Year":
+      [36m<input[39m
+        [33mclass[39m=[32m"form-control"[39m
+        [33mid[39m=[32m"planStart"[39m
+        [33mtype[39m=[32m"number"[39m
+        [33mvalue[39m=[32m"2000"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div />[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"modal"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+              [36m>[39m
+                [0mAdd New Plan[0m
+              [36m</div>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Close"[39m
+                [33mclass[39m=[32m"btn-close"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"planId"[39m
+                [36m>[39m
+                  [0mPlan ID[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"planId"[39m
+                    [33mvalue[39m=[32m"Plan Name"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"row"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"form-label col-form-label col-sm-3"[39m
+                  [33mfor[39m=[32m"planStart"[39m
+                [36m>[39m
+                  [0mStart Year[0m
+                [36m</label>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"col"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"planStart"[39m
+                    [33mtype[39m=[32m"number"[39m
+                    [33mvalue[39m=[32m"2000"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-secondary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClose![0m
+              [36m</button>[39m
+              [36m<div>[39m
+                [0m Pick a different Name![0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      40 |
+      41 |     test("There is a Save Changes Button", () => {
+    > 42 |         const saveChangesButton = screen.getByRole("button", {
+         |                                          ^
+      43 |             name: /Save Changes/i
+      44 |         });
+      45 |         expect(saveChangesButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/ComponentTests/PlanAdder.test.tsx:42:42)
+
 PASS src/ComponentTests/PlanView.test.tsx
 PASS src/ComponentTests/SingleSemester.test.tsx
 PASS src/ComponentTests/MainView.test.tsx
@@ -458,10 +626,10 @@ PASS src/ComponentTests/YearView.test.tsx
 ---------------------------|---------|----------|---------|---------|----------------------------------
 File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                
 ---------------------------|---------|----------|---------|---------|----------------------------------
-All files                  |   33.76 |    37.03 |   21.83 |   34.85 |                                  
+All files                  |   33.76 |    37.19 |   21.83 |   34.85 |                                  
  src                       |      30 |    16.66 |      25 |      30 |                                  
   App.tsx                  |      30 |    16.66 |      25 |      30 | 16-42,95-96                      
- src/components            |   33.42 |    36.95 |   19.62 |    34.6 |                                  
+ src/components            |   33.42 |    37.14 |   19.62 |    34.6 |                                  
   CSVDownload.tsx          |   23.63 |      100 |   11.11 |   24.52 | 10,34-98,117                     
   ClassPicker.tsx          |      60 |    53.84 |    42.3 |    62.5 | 52,58,96,106-132,156,181,218-299 
   CourseDisplay.tsx        |       0 |      100 |       0 |       0 | 6-7                              
@@ -470,7 +638,7 @@ All files                  |   33.76 |    37.03 |   21.83 |   34.85 |
   DropdownMenu.tsx         |   85.71 |       55 |      75 |   85.71 | 44                               
   MainView.tsx             |   45.45 |    45.45 |      25 |   45.45 | 25-27,30-38                      
   MultipleSemester.tsx     |   33.33 |      100 |   33.33 |   33.33 | 15-16                            
-  PlanAdder.tsx            |    37.5 |        0 |      25 |    37.5 | 18-26,45-59                      
+  PlanAdder.tsx            |    37.5 |       25 |      25 |    37.5 | 18-26,45-59                      
   PlanCreator.tsx          |   22.58 |        0 |    6.25 |   26.92 | 27-69,100-128                    
   PlanDropdownMenu.tsx     |       0 |      100 |       0 |       0 | 10                               
   PlanEditor.tsx           |   27.27 |      100 |   28.57 |      30 | 20-27,54-68                      
@@ -488,8 +656,8 @@ All files                  |   33.76 |    37.03 |   21.83 |   34.85 |
   projectInterfaces.ts     |       0 |        0 |       0 |       0 |                                  
 ---------------------------|---------|----------|---------|---------|----------------------------------
 
-Test Suites: 17 passed, 17 total
-Tests:       104 passed, 104 total
+Test Suites: 1 failed, 16 passed, 17 total
+Tests:       1 failed, 103 passed, 104 total
 Snapshots:   0 total
-Time:        14.731 s
+Time:        18.764 s
 Ran all test suites.
